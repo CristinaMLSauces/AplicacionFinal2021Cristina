@@ -1,0 +1,26 @@
+
+    /*-----------------------------footer------------------------*/
+
+.footer{
+
+    font-family: 'Varela Round', sans-serif;
+    position: fixed;
+    bottom: -15px;
+    width: 100%;
+    height: 30px;
+    color: rgb(70, 82, 82);
+    background-color: #E7E7E7;
+    text-align: center;
+    padding: 2px;
+   vertical-align: middle;
+}
+
+.logogit{
+    width: 35px;
+    height: 35px;
+    position: fixed;
+     bottom: 0;
+    margin-left: 75%;
+    display: flex;
+    
+}
