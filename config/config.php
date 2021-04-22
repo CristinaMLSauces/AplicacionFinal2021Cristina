@@ -1,8 +1,8 @@
 <?php
 
-require_once "../core/210322ValidacionFormularios.php";
+require_once "core/210322ValidacionFormularios.php";
 
-//require_once "modelo/Usuario.php";
+require_once "modelo/Usuario.php";
 require_once "modelo/UsuarioPDO.php";
 require_once "modelo/DBPDO.php";
 
@@ -19,3 +19,5 @@ $vistas = [
     "registro" => "vista/vRegistro.php"
 ];
 ?>
+
+
