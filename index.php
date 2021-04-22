@@ -3,7 +3,7 @@
 
     session_start();                         //Iniciamos la sesion
     
-    require_once 'config/configDB.php';      //Cargamos la configuracion de la base de datos
+    require_once 'config/configDBPDO.php';      //Cargamos la configuracion de la base de datos
 
     if(isset($_SESSION['paginaEnCurso']) && $_SESSION['paginaEnCurso']!==$controladores["login"]){      //Si existe en session pagina en curso y es distinta del login entonces 
         require_once $_SESSION['paginaEnCurso'];                                                        // cargamos el controlador que contenga pagina en curso
