@@ -6,7 +6,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="Cristina Manjon Lacalle">
             <meta name="robots" content="index, follow">      
-            <link rel="icon" href="webroot/images/favicon-16x16.png" type="image/x-icon">
+           
             <link href="./webroot/css/estilo.css" rel="stylesheet" type="text/css">
         </head>
         <body>
