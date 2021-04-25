@@ -1,32 +1,96 @@
 <?php
 
-class Usuario{                                  //Creo una clase nueva que se llame Usuario
+class Usuario {
 
-    private $codUsuario;                        //Creo sus atributos con visibilidad private , que significa que sus atributos solo pueden accedidos y modificados desde los emtodos de la clase, no desde sus objetos
+    private $codUsuario;
+    
+  
     private $password;
+  
     private $descUsuario;
+
     private $numConexiones;
+    
+
     private $fechaHoraUltimaConexion;
+    
+
     private $perfil;
+ 
     private $imagenPerfil;
-    
-    function _construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $perfil, $imagenPerfil) {           //Con el metodo magico contruct le doy valor a los atributos
-       $this->codUsuario = $codUsuario;
-       $this->Password = $password;
-       $this->descUsuario = $descUsuario;
-       $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
-       $this->perfil = $perfil;
-       $this->imagenPerfil = $imagenPerfil;
-   }
-    
-    function _set($atributos){                                      //Usamos el metodo magico _set
-       return $this->$atributos;
-    }
-   
-    function _get($atributos){                                      //Usamos el metofo magico _get
-       return $this->$atributos;
+
+    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $perfil, $imagenPerfil) {
+        $this->codUsuario = $codUsuario;
+        $this->password = $password;
+        $this->descUsuario = $descUsuario;
+        $this->numConexiones = $numConexiones;
+        $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
+        $this->perfil = $perfil;
+        $this->imagenPerfil = $imagenPerfil;
     }
     
-    
-    
+ 
+    function getCodUsuario() {
+        return $this->codUsuario;
+    }
+
+ 
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getDescUsuario() {
+        return $this->descUsuario;
+    }
+
+
+    function getNumConexiones() {
+        return $this->numConexiones;
+    }
+
+
+    function getFechaHoraUltimaConexion() {
+        return $this->fechaHoraUltimaConexion;
+    }
+
+
+    function getPerfil() {
+        return $this->perfil;
+    }
+
+    function getImagenPerfil() {
+        return $this->imagenPerfil;
+    }
+
+    function setCodUsuario($codUsuario) {
+        $this->codUsuario = $codUsuario;
+    }
+
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+
+    function setDescUsuario($descUsuario) {
+        $this->descUsuario = $descUsuario;
+    }
+
+    function setNumConexiones($numConexiones) {
+        $this->numConexiones = $numConexiones;
+    }
+
+ 
+    function setFechaHoraUltimaConexion($fechaHoraUltimaConexion) {
+        $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
+    }
+
+
+    function setPerfil($perfil) {
+        $this->perfil = $perfil;
+    }
+
+    function setImagenPerfil($imagenPerfil) {
+        $this->imagenPerfil = $imagenPerfil;
+    }
 }

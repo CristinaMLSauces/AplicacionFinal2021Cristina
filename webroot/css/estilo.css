@@ -20,8 +20,42 @@ img{
   left: 30px;
   }
   
+.info{
+    margin-left: 30%;
+    margin-top: 4%;
+    font-family: 'Indie Flower', cursive;
+    display: inline-block;
+    font-size: 30px;
+    
+}
+.hinicio{
+    background-color: #5FA0B3;
+    padding: 10px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+.cerrarSesion{
+    background-color:  #f2b2b2;
+}
+.cerrarSesion{
+    font-weight: bold;
+    margin-top: 20px;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 30%;
+}
+.cerrarSesion{
+    border:0;
+}
+.finicio{
+    display:flex;
+    align-items:baseline;
 
-
+}
 /*-----------------------------Boton de iniciar sesion------------------------*/
 
 .enviar{
