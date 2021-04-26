@@ -1,4 +1,11 @@
 <?php
+
+if (isset($_REQUEST["registrarse"])) {
+    $_SESSION["paginaEnCurso"] = $controladores['registro'];
+    header('Location: index.php');
+    exit();
+}
+
 define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
 
 $entradaOK = true;
@@ -29,7 +36,7 @@ if (isset($_REQUEST["IniciarSesion"])) { // comprueba que el usuario le ha dado 
 }
 
 if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
-
+    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
     $_SESSION['usuarioDAW207DBLoginLogoff'] = $oUsuario; // guarda en la session el objeto usuario
     $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
 

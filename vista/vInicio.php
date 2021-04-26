@@ -1,13 +1,16 @@
 <header class="hinicio">
             <?php
-                if($imagenUsuario!=null){
-                echo '<img src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "180px"/>';
+                if($imagenUsuario==null){                                       //Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto
+                    echo '<img src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "140px"/>';
+                }else{
+                   echo '<img src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "140px"/>'; 
                 }
                 ?>
     <h1>¡Estas dentro. Bienvenido/a!</h1>
-        <form class="ficinio" name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">  
-            <input type="submit" value="CERRAR SESION" name="salir" class="cerrarSesion">
+        <form class="finicio" name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
             <input class="botones" type="submit" value="DETALLES" name="detalles" id="detalles">
+            <input class="botones" type="submit" value="EDITAR PERFIL" name="editarPerfil" id="editarPerfil">
+            <input class="botones" type="submit" value="CERRAR SESION" name="salir" id="cerrarSesion">
         </form>
 </header>
         <div class="info">
@@ -26,3 +29,4 @@
                         }
                     ?> 
         </div>
+<a href="../webroot/images/user.svg"></a>

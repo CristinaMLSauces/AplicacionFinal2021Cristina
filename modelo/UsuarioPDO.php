@@ -1,8 +1,28 @@
 <?php
 
+/**
+ * Class UsuarioPDO
+ *
+ * Clase cuyos metodos hacen consultas a la tabla T_01Usuario de la base de datos
+ * 
+ * @author Cristina Nuñez y Javier Nieto
+ * @since 1.0
+ * @copyright 16-01-2021
+ * @version 1.0
+ */
 class UsuarioPDO{
     
-  
+    /**
+     * Metodo validarUsuario()
+     * 
+     * Metodo que valida si existe un determinado usuario y password en la base de datos.
+     * Si existe el usuario actualiza la ultima conexion y el numero de conexiones de ese usuario y lo devuelve.
+     * Si no existe el usuario devuelve null.
+     * 
+     * @param string $codUsuario codigo del usuario
+     * @param string $password password del usuario
+     * @return null|\Usuario Si existe,un objeto de tipo Usuario con los datos de la base de datos. Si no existe null.
+     */
     public static function validarUsuario($codUsuario, $password){
         $oUsuario = null; // inicializo la variable que tendrá el objeto de clase ususario en el casod e que se encuentre en la base de datos
         
@@ -28,7 +48,16 @@ class UsuarioPDO{
         return $oUsuario;
     }
 
-  
+    /**
+     * Metodo altaUsuario()
+     * 
+     * Metodo que da de alta en la base de datos a un nuevo usuario
+     * 
+     * @param string $codUsuario codigo del usuario
+     * @param string $password password del usuario
+     * @param string $descripcion descripcion del usuario
+     * @return null|\Usuario devuelve un objeto de tipo Usuario con los datos guardados en la base de datos y null si no se ha podido dar de alta
+     */
     public static function altaUsuario($codUsuario, $password, $descripcion){
         $oUsuario = null;
 
@@ -49,7 +78,14 @@ class UsuarioPDO{
         return $oUsuario;
     }
 
-    
+    /**
+     * Metodo validarCodNoExiste()
+     * 
+     * Metodo que comprueba si un usuario existe o no en la base de datos 
+     * 
+     * @param string $codUsuario codigo de usuario que queremos comprobar
+     * @return boolean devuelve true si no existe y false en caso contrario
+     */
     public static function validarCodNoExiste($codUsuario){
         $usuarioNoExiste = true; // inicializo la variable booleana a true
         
@@ -64,4 +100,3 @@ class UsuarioPDO{
         return $usuarioNoExiste;
     }
 }
-?>

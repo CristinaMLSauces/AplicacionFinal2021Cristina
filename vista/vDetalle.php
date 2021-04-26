@@ -1,12 +1,12 @@
-<header>
+<header class="hdetalle">
         <form  name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <button type="submit" name='volver' value="volver" class="volver">VOLVER</button>
         </form>
-    <h1>Estas viendo las variables superglobales.</h1>
+    <h1 class="h1detalle">Estas viendo las variables superglobales.</h1>
 
 </header>
         
-        <h3>$_COOKIE</h3>
+        <h3 class="h3detalle">$_COOKIE</h3>
         <div>  
         <?php
             foreach ($_COOKIE as $key => $value) {
@@ -15,7 +15,7 @@
             }
         ?>
         </div>
-        <h3>$_SESSION</h3>
+        <h3 class="h3detalle">$_SESSION</h3>
         <div>     
         <?php
             if(isset($_SESSION)){
@@ -26,7 +26,7 @@
             }
         ?>
         </div>
-        <h3>$_SERVER</h3>
+        <h3 class="h3detalle">$_SERVER</h3>
         <div>    
         <?php
             if(isset($_SERVER)){
@@ -37,7 +37,7 @@
             }
         ?>
         </div>
-        <h3>$_GET</h3>
+        <h3 class="h3detalle">$_GET</h3>
         <div> 
         <?php
             foreach ($_GET as $key => $value) {
@@ -45,8 +45,8 @@
                 echo $value."<br>";
             }
         ?>
-        </div>
-        <h3>$_POST</h3>
+        </div >
+        <h3 class="h3detalle">$_POST</h3>
         <div>
         <?php
             foreach ($_POST as $key => $value) {
@@ -55,7 +55,7 @@
             }
         ?>
         </div>
-        <h3>$_FILES</h3>
+        <h3 class="h3detalle">$_FILES</h3>
         <div>   
         <?php
             foreach ($_FILES as $key => $value) {
@@ -65,7 +65,7 @@
         ?>
         </div>
         <h3>$_REQUEST</h3>
-        <div>    
+        <div class="h3detalle">    
         <?php
             foreach ($_REQUEST as $key => $value) {
                 echo $key." ";
@@ -73,7 +73,7 @@
             }
         ?>
         </div>
-        <h3>$_ENV</h3>
+        <h3 class="h3detalle">$_ENV</h3>
         <div> 
         <?php
             foreach ($_ENV as $key => $value) {
