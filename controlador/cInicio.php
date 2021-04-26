@@ -1,16 +1,22 @@
   
 <?php
 
-if(!isset($_SESSION['usuarioDAW207DBLoginLogoff'])){                            // si no se ha logueado le usuario
-    header('Location: index.php');                                              // redirige al login
-    exit;
-}
+    if(!isset($_SESSION['usuarioDAW207DBLoginLogoff'])){                            // si no se ha logueado le usuario
+        header('Location: index.php');                                              // redirige al login
+        exit;
+    }
 
-if (isset($_REQUEST['salir'])) {                                                // si se ha pulsado el boton de Cerrar Sesion
-    session_destroy();                                                          // destruye todos los datos asociados a la sesion
-    header("Location: index.php");                                              // redirige al login
-    exit;
-}
+    if(isset($_REQUEST['detalles'])){                                           //Si se ha pulsado el boton de datalles
+        $_SESSION['paginaEnCurso'] = $controladores['detalle'];
+        header('Location: index.php');
+        exit;
+    }
+
+    if (isset($_REQUEST['salir'])) {                                                // si se ha pulsado el boton de Cerrar Sesion
+        session_destroy();                                                          // destruye todos los datos asociados a la sesion
+        header("Location: index.php");                                              // redirige al login
+        exit;
+    }
 $oUsuarioActual = $_SESSION['usuarioDAW207DBLoginLogoff'];
 
 $numConexiones = $oUsuarioActual->getNumConexiones();                           // variable que tiene el numero de conexiones sacado de la base de datos

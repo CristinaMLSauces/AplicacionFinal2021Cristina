@@ -7,6 +7,7 @@
     <h1>¡Estas dentro. Bienvenido/a!</h1>
         <form class="ficinio" name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">  
             <input type="submit" value="CERRAR SESION" name="salir" class="cerrarSesion">
+            <input class="botones" type="submit" value="DETALLES" name="detalles" id="detalles">
         </form>
 </header>
         <div class="info">

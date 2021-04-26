@@ -94,3 +94,4 @@ class Usuario {
         $this->imagenPerfil = $imagenPerfil;
     }
 }
+?>
