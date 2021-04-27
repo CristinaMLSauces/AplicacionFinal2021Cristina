@@ -24,9 +24,8 @@
                         }else{                                                  //Si no es la prinera vez que inicias sesion
                     ?>
                             <h3><?php echo "Te has conectado ".$numConexiones." veces" ?></h3>
-                            <h3><?php echo "Tu ultima visita ha sido el ".date('d/m/Y H:i:s',$ultimaConexion);?> </h3>
+                            <h3><?php echo "Tu ultima visita ha sido el ".date('d/m/Y H:i:s',$ultimaConexionAnterior);?> </h3>
                     <?php   
                         }
                     ?> 
         </div>
-<a href="../webroot/images/user.svg"></a>

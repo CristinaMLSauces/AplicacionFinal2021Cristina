@@ -5,7 +5,8 @@
  *
  * Clase cuyos metodos hacen consultas a la tabla T_01Usuario de la base de datos
  * 
- * @author Cristina Nuñez y Javier Nieto
+ * @author Cristina Nuñez, Javier Nieto, Beatriz Merino y Cristina Manjon
+ *  
  * @since 1.0
  * @copyright 16-01-2021
  * @version 1.0
@@ -16,7 +17,6 @@ class UsuarioPDO{
      * Metodo validarUsuario()
      * 
      * Metodo que valida si existe un determinado usuario y password en la base de datos.
-     * Si existe el usuario actualiza la ultima conexion y el numero de conexiones de ese usuario y lo devuelve.
      * Si no existe el usuario devuelve null.
      * 
      * @param string $codUsuario codigo del usuario
@@ -24,20 +24,28 @@ class UsuarioPDO{
      * @return null|\Usuario Si existe,un objeto de tipo Usuario con los datos de la base de datos. Si no existe null.
      */
     public static function validarUsuario($codUsuario, $password){
-        $oUsuario = null; // inicializo la variable que tendra mi objeto usuario sacado de la tabla
-                                                                                        
-        $sentenciaSQL = "Select * from T01_Usuario where T01_CodUsuario=? and T01_Password=?"; ////Guardo la sentencia en una variable
-        $passwordEncriptado=hash("sha256", ($codUsuario.$password));            // enctripta el password pasado como parametro
+        $oUsuario = null; // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+
+        
+        $sentenciaSQL = "Select * from T01_Usuario where T01_CodUsuario=? and T01_Password=?";
+        $passwordEncriptado=hash("sha256", ($codUsuario.$password)); // enctripta el password pasado como parametro
         $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$codUsuario,$passwordEncriptado]); // guardo en la variable resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
         
-        if($resultadoConsulta->rowCount()>0){                                   // si la consulta me devuleve algun resultado
-            $oUsuario = $resultadoConsulta->fetchObject();                      // guardo en la variable el resultado de la consulta en forma de objeto
-            
+        if($resultadoConsulta->rowCount()>0){ // si la consulta me devuleve algun resultado
+            $oUsuario = $resultadoConsulta->fetchObject(); // guardo en la variable el resultado de la consulta en forma de objeto
         }
         
         return $oUsuario;
     }
     
+    /**
+     * Metodo registrarUltimaConexion()
+     * 
+     * Metodo que registra la fecha y hora d eultima conexion del usuario
+     * 
+     * @param string $codUsuario codigo del usuario
+     * @return null|\Usuario con los campos actualizados.
+     */
     
     public static function registrarUltimaConexion($codUsuario){
         $oUsuario = null;                                                       // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
@@ -46,11 +54,21 @@ class UsuarioPDO{
         $resultadoActualizacionFechaConexion = DBPDO::ejecutarConsulta($sentenciaSQLActualizacionFechaConexion, [time(),$codUsuario]);
         
         if($resultadoActualizacionFechaConexion){
-            $oUsuarioEncurso = self::buscarUsuarioPorCod($codUsuario);
+            $oUsuario = self::buscarUsuarioPorCod($codUsuario);
         }
 
         return $oUsuario;
     }
+    
+    /**
+     * Metodo buscarUsuarioPorCod()
+     * 
+     * Metodo que busca con el codigo en la base de datos un usuario 
+     * Si existe devuleve el usuario completo
+     * 
+     * @param string $codUsuario codigo del usuario
+     * @return null|\Usuario que existe en la base de datos.
+     */
     
     public static function buscarUsuarioPorCod($codUsuario){
         $oUsuario = null; // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
@@ -68,9 +86,6 @@ class UsuarioPDO{
 
     }
  
-    
-    
-
     /**
      * Metodo altaUsuario()
      * 
@@ -86,11 +101,11 @@ class UsuarioPDO{
 
         $consulta = "Insert into T01_Usuario (T01_CodUsuario, T01_DescUsuario, T01_Password , T01_NumConexiones, T01_FechaHoraUltimaConexion) values (?,?,?,1,?)";
         $passwordEncriptado=hash("sha256", ($codUsuario.$password)); // enctripta el password pasado como parametro
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado,  time()]);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado,  time()]);
 
         
         $consultaDatosUsuario = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultadoDatosUsuario = DBPDO::ejecutaConsulta($consultaDatosUsuario, [$codUsuario]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
+        $resultadoDatosUsuario = DBPDO::ejecutarConsulta($consultaDatosUsuario, [$codUsuario]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
         
         if($resultadoDatosUsuario->rowCount()>0){ // si la consulta me devuleve algun resultado
             $oUsuarioConsulta = $resultadoDatosUsuario->fetchObject(); // guardo en la variable el resultado de la consulta en forma de objeto
@@ -114,7 +129,7 @@ class UsuarioPDO{
         
         // comprueba que el usuario introducido existen en la base de datos
         $consulta = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
         
         if($resultado->rowCount()>0){ // si la consulta me devuleve algun resultado
             $usuarioNoExiste = false; // inicializo la variable booleana a false

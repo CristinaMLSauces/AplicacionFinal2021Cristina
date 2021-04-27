@@ -117,7 +117,7 @@ h1{
     
 }
 
-/*-----------------------------footer------------------------*/
+/*-----------------------------login------------------------*/
 
 
 .box{
@@ -190,11 +190,20 @@ h1{
 
 .h3detalle{
    padding: 6px;
-   text-align: center;
+   
    background-color: #B9DCD3;
    border-radius: 50px 50px 50px 50px;
 }
 
+.h3detalle+div{
+    margin-left: 10%;
+     font-family: 'Comfortaa', cursive;
+}
+
+b{
+    color: #1B8376;
+       
+}
 /*-----------------------------REGISTRO------------------------*/
 
 .h3registro{

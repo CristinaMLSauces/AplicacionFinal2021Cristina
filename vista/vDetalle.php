@@ -5,38 +5,27 @@
     <h1 class="h1detalle">Estas viendo las variables superglobales.</h1>
 
 </header>
-        
         <h3 class="h3detalle">$_COOKIE</h3>
         <div>  
-        <?php
-            foreach ($_COOKIE as $key => $value) {
-                    echo $key."  ";
-                    echo $value."<br>";
-            }
-        ?>
+        <?php foreach ($_COOKIE as $parm => $value)  echo "<b>$parm </b> → '$value'<br>"; ?>
         </div>
+       
         <h3 class="h3detalle">$_SESSION</h3>
-        <div>     
-        <?php
-            if(isset($_SESSION)){
-                foreach ($_SESSION as $key => $value) {
-                    echo $key." ";
-                    echo $value."<br>";
-                }
-            }
-        ?>
-        </div>
-        <h3 class="h3detalle">$_SERVER</h3>
         <div>    
         <?php
-            if(isset($_SERVER)){
-                foreach ($_SERVER as $key => $value) {
-                    echo $key." ";
-                    echo $value."<br>";
-                }
+            if(isset($_SESSION)){
+                foreach ($_SESSION as $key => $value) { echo "<b>$key </b> <br>"; }
             }
         ?>
         </div>
+        
+        <h3 class="h3detalle">$_SERVER</h3>
+        <div>     
+            <?php foreach ($_SERVER as $parm => $value)  echo "<b>$parm </b> → '$value'<br>"; ?>
+        </div>
+        
+        
+
         <h3 class="h3detalle">$_GET</h3>
         <div> 
         <?php
@@ -64,8 +53,8 @@
             }
         ?>
         </div>
-        <h3>$_REQUEST</h3>
-        <div class="h3detalle">    
+        <h3 class="h3detalle">$_REQUEST</h3>
+        <div >    
         <?php
             foreach ($_REQUEST as $key => $value) {
                 echo $key." ";

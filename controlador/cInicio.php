@@ -1,30 +1,31 @@
   
 <?php
 
-    if(!isset($_SESSION['usuarioDAW207DBLoginLogoff'])){                        // si no se ha logueado le usuario
-        header('Location: index.php');                                          // redirige al login
+    if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
+        header('Location: index.php');                                          //Recarga el index
         exit;
     }
 
     if(isset($_REQUEST['detalles'])){                                           //Si se ha pulsado el boton de datalles
-        $_SESSION['paginaEnCurso'] = $controladores['detalle'];
+        $_SESSION['paginaEnCurso'] = $controladores['detalle'];                 //Pagina en curso cargara el controlador de detalle
         header('Location: index.php');
         exit;
     }
 
-    if (isset($_REQUEST['salir'])) {                                                // si se ha pulsado el boton de Cerrar Sesion
-        session_destroy();                                                          // destruye todos los datos asociados a la sesion
-        header("Location: index.php");                                              // redirige al login
+    if (isset($_REQUEST['salir'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
+        session_destroy();                                                      //Destruye todos los datos asociados a la sesion
+        header("Location: index.php");                                          //Redirige al login
         exit;
     }
-$oUsuarioActual = $_SESSION['usuarioDAW207DBLoginLogoff'];
+    
+$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //Cargo en la variable $oUsuarioActual el usuario que tenia en $_SESSION
 
-$numConexiones = $oUsuarioActual->getNumConexiones();                           // variable que tiene el numero de conexiones sacado de la base de datos
-$descUsuario = $oUsuarioActual->getDescUsuario();                               // variable que tiene la descripcion del usuario sacado de la base de datos
-$ultimaConexion = $oUsuarioActual->getFechaHoraUltimaConexion();                // variable que tiene la ultima hora de conexion del usuario
-$imagenUsuario = $oUsuarioActual->getImagenPerfil();                            // variable que tiene la imagen de perfil del usuario
+$numConexiones = $oUsuarioActual->getNumConexiones();                           //Guardo en la variable el numero de conexiones sacado del usuario de la base de datos
+$descUsuario = $oUsuarioActual->getDescUsuario();                               //Guardo en la variable la decripcion del usuario sacada de la base de datos
+$ultimaConexionAnterior = $_SESSION['fechaHoraUltimaConexionAnterior'];         //Guardo en la variable la fecha de conexion del usuario viejo
+$imagenUsuario = $oUsuarioActual->getImagenPerfil();                            //Guardo en la variable la imagen de perfil sacada de la base de datos
 
-$vistaEnCurso = $vistas['inicio'];                                              // guardamos en la variable vistaEnCurso la vista que queremos implementar
+$vistaEnCurso = $vistas['inicio'];                                              //Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice
 
 require_once $vistas['layout'];                                                 //Incluimos el layout
 

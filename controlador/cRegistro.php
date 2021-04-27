@@ -6,11 +6,10 @@ if(isset($_REQUEST['cancelar'])){                                               
     exit;
 }
 
-define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
+define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
+$entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
 
-$entradaOK = true;
-
-$aErrores = [ //declaro e inicializo el array de errores
+$aErrores = [                                                                   //Declaro un array de errores, para almacenar los posibles errores
     'CodUsuario' => null,
     'DescUsuario' => null,
     'Password' => null,
@@ -18,45 +17,43 @@ $aErrores = [ //declaro e inicializo el array de errores
 ];
 
 
-if (isset($_REQUEST["aceptar"])) {                                              //Si el usuario ya le ha dado a aceptar comprobaremos que todos los campos esten bien
-    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);   //Valido con la libreria que el CodUsuario sea correcto
-
-    if($aErrores['CodUsuario']==null && UsuarioPDO::validarCodNoExiste($_REQUEST['CodUsuario'])==false){    // Si no ha habido ningun error al validarlo con la libreria , pero compruebo en la tabla que el usuario ya existe
+if (isset($_REQUEST["aceptar"])) {                                              //Si el usuario le ah dado a aceptar
+    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);    //Valido que el CodUsuario esta bien escrito con la libreria, si da fallo se guarda en el array de errores
+    $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO); //Valido que la Descripcion esta bien con la libreria, si da fallo se guarda en el array de errores
+    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);            //Valido que el Password esta bien escrito con la libreria, si da fallo se guarda en el array de errores
+    $aErrores['PasswordConfirmacion'] = validacionFormularios::validarPassword($_REQUEST['PasswordConfirmacion'], 8, 1, 1, OBLIGATORIO);    //Valido que la segunda Password este bien con la libreria 
+    
+    if($aErrores['CodUsuario']==null && UsuarioPDO::validarCodNoExiste($_REQUEST['CodUsuario'])==false){    // Si no ha habido ningun error al validarlo con la libreria , pero compruebo en la tabla que el usuario ya existe con la funcion validarCodNoExiste 
         $aErrores['CodUsuario']="El nombre de usuario ya existe";               //Guardo el mensaje de error de que ese usuario ya existe
     }
-
-    $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO); //Compruebo que la descripcion de usuario sea correcta con la libreria
-    
-    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);            // Compruebo que la password sea correcta con la libreria
-    $aErrores['PasswordConfirmacion'] = validacionFormularios::validarPassword($_REQUEST['PasswordConfirmacion'], 8, 1, 1, OBLIGATORIO);    //Compruebo que la segunda password sea correcta 
     
     if($_REQUEST['Password'] != $_REQUEST['PasswordConfirmacion']){             //Si las contraseñas no son iguales
         $aErrores['PasswordConfirmacion'] = "Las contraseñas no coinciden";     //Guardamos en el array de errores el mensaje de error
     }
     
-    foreach ($aErrores as $campo => $error) {                                   // recorro el array de errores
-        if ($error != null) {                                                   // compruebo si hay algun mensaje de error en algun campo
-            $entradaOK = false;                                                 // le doy el valor false a $entradaOK
-            $_REQUEST[$campo] = "";                                             // si hay algun campo que tenga mensaje de error pongo $_REQUEST a null
+    foreach ($aErrores as $campo => $error) {                                   //Recorro el array de errores
+        if ($error != null) {                                                   //Compruebo si hay algun mensaje
+            $entradaOK = false;                                                 //Si habia mensajes, le soy valor false a entrdadaOk para que el usuario no pueda entrar
+            $_REQUEST[$campo] = "";                                             //Si hay algun campo que tenga mensaje de error pongo $_REQUEST a null
         }
     }
-} else {                                                                        //Si el usuario no le ha dado a enviar
-    $entradaOK = false;                                                         //$entradaOK sera false
+} else {                                                                        //Si el usuario no le ha dado a acepatr
+    $entradaOK = false;                                                         //$entradaOK sera false , para no dejarlo entrar
 }
 
-if ($entradaOK) {                                                               // Si todo estaba bien hemos llegado con entradaOK en true por lo que ya podremos entrar
+if ($entradaOK) {                                                               //Si en las validaciones no ha habido errores entradaOk seguira en true y dejaremos entrar al usaurio
     
-    $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['CodUsuario'],$_REQUEST['Password'],$_REQUEST['DescUsuario']); // guardamos en la variable el resultado de la funcion de dar de alta a un usuario
-    $_SESSION['usuarioDAW207DBLoginLogoff'] = $oUsuario;                        // Guarda en la session el objeto usuario
+    $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['CodUsuario'],$_REQUEST['Password'],$_REQUEST['DescUsuario']); //Guardo en $oUsuario el nuevo usuario que me devuelve la funcion altaUsuario
+    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;                // Guarda el nuevo $oUsuario en $_SESSION
     $_SESSION['paginaEnCurso'] = $controladores['inicio'];                      // Guardamos en la variable de sesion pagina en curso el controlador de inicio
 
-    header('Location: index.php');                                              // redirige al index.php
+    header('Location: index.php');                                              //Recargamso el index
     exit;
 
 }
 
-$vistaEnCurso = $vistas['registro'];                                            // Asignamos a vista en curso el registro que es donde estamos
+$vistaEnCurso = $vistas['registro'];                                            //Cargamos la vista de registro
 
-require_once $vistas['layout'];
+require_once $vistas['layout'];                                                 //Cargamos el layout
 
 ?> 
