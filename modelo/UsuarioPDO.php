@@ -24,29 +24,52 @@ class UsuarioPDO{
      * @return null|\Usuario Si existe,un objeto de tipo Usuario con los datos de la base de datos. Si no existe null.
      */
     public static function validarUsuario($codUsuario, $password){
-        $oUsuario = null; // inicializo la variable que tendrá el objeto de clase ususario en el casod e que se encuentre en la base de datos
+        $oUsuario = null; // inicializo la variable que tendra mi objeto usuario sacado de la tabla
+                                                                                        
+        $sentenciaSQL = "Select * from T01_Usuario where T01_CodUsuario=? and T01_Password=?"; ////Guardo la sentencia en una variable
+        $passwordEncriptado=hash("sha256", ($codUsuario.$password));            // enctripta el password pasado como parametro
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$codUsuario,$passwordEncriptado]); // guardo en la variable resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
         
-        // comprueba que el usuario y el password introducido existen en la base de datos
-        $consulta = "Select * from T01_Usuario where T01_CodUsuario=? and T01_Password=?";
-        $passwordEncriptado=hash("sha256", ($codUsuario.$password)); // enctripta el password pasado como parametro
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario,$passwordEncriptado]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
-        
-        if($resultado->rowCount()>0){ // si la consulta me devuleve algun resultado
-            $oUsuarioConsulta = $resultado->fetchObject(); // guardo en la variable el resultado de la consulta en forma de objeto
+        if($resultadoConsulta->rowCount()>0){                                   // si la consulta me devuleve algun resultado
+            $oUsuario = $resultadoConsulta->fetchObject();                      // guardo en la variable el resultado de la consulta en forma de objeto
             
-            
-            // actualiza la ultima fecha de conecion
-            $consultaActualizacionFechaConexion = "Update T01_Usuario set T01_NumConexiones = T01_NumConexiones+1, T01_FechaHoraUltimaConexion=? where T01_CodUsuario=?";
-            $resultadoActualizacionFechaConexion = DBPDO::ejecutaConsulta($consultaActualizacionFechaConexion, [time(),$codUsuario]);
-            
-            if($resultadoActualizacionFechaConexion){
-                // instanciacion de un objeto Usuario con los datos del usuario
-                $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones+1, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil, $oUsuarioConsulta->T01_ImagenUsuario);
-            }
         }
         
         return $oUsuario;
     }
+    
+    
+    public static function registrarUltimaConexion($codUsuario){
+        $oUsuario = null;                                                       // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+
+        $sentenciaSQLActualizacionFechaConexion = "Update T01_Usuario set T01_NumConexiones = T01_NumConexiones+1, T01_FechaHoraUltimaConexion=? where T01_CodUsuario=?";
+        $resultadoActualizacionFechaConexion = DBPDO::ejecutarConsulta($sentenciaSQLActualizacionFechaConexion, [time(),$codUsuario]);
+        
+        if($resultadoActualizacionFechaConexion){
+            $oUsuarioEncurso = self::buscarUsuarioPorCod($codUsuario);
+        }
+
+        return $oUsuario;
+    }
+    
+    public static function buscarUsuarioPorCod($codUsuario){
+        $oUsuario = null; // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+
+        $sentenciaSQLDatosUsuario = "Select * from T01_Usuario where T01_CodUsuario=?";
+        $resultadoDatosUsuario = DBPDO::ejecutarConsulta($sentenciaSQLDatosUsuario, [$codUsuario]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
+        
+        if($resultadoDatosUsuario->rowCount()>0){ // si la consulta me devuelve algun resultado
+            $oUsuarioConsulta = $resultadoDatosUsuario->fetchObject(); // guardo en la variable el resultado de la consulta en forma de objeto
+            // instanciacion de un objeto Usuario con los datos del usuario
+            $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil, $oUsuarioConsulta->T01_ImagenUsuario);
+        }
+
+        return $oUsuario;
+
+    }
+ 
+    
+    
 
     /**
      * Metodo altaUsuario()
@@ -100,3 +123,6 @@ class UsuarioPDO{
         return $usuarioNoExiste;
     }
 }
+
+
+   

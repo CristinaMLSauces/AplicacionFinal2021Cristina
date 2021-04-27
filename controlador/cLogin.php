@@ -35,10 +35,14 @@ if (isset($_REQUEST["IniciarSesion"])) { // comprueba que el usuario le ha dado 
     $entradaOK = false; // le doy el valor false a $entradaOK
 }
 
-if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
-    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']);
-    $_SESSION['usuarioDAW207DBLoginLogoff'] = $oUsuario; // guarda en la session el objeto usuario
-    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+if ($entradaOK) {   // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
+   
+    $_SESSION['fechaHoraUltimaConexionAnterior'] = $oUsuario -> T01_FechaHoraUltimaConexion;
+    $oUsuario = UsuarioPDO::registrarUltimaConexion($oUsuario -> T01_CodUsuario);
+    
+    
+    $_SESSION['usuarioDAW207DBLoginLogoff'] = $oUsuario;                        // guarda en la session el objeto usuario
+    $_SESSION['paginaEnCurso'] = $controladores['inicio'];                      // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
 
     header('Location: index.php'); // redirige al index.php
     exit;
