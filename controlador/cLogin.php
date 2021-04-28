@@ -36,8 +36,8 @@ if (isset($_REQUEST["IniciarSesion"])) {                                        
 
 if ($entradaOK) {                                                               //Si pasa todas las validaciones sin ningun error entradaOk seguira en true
    
-    $_SESSION['fechaHoraUltimaConexionAnterior'] = $oUsuario -> T01_FechaHoraUltimaConexion;    //Guardo en $_SESSION la fecha de ultima conexion del $oUsuario viejo
-    $oUsuario = UsuarioPDO::registrarUltimaConexion($oUsuario -> T01_CodUsuario);               //Llamo a la funcion registrarUltimaConexion para actualizar el usuario, y los guardo en $oUsuario que sera el nuevo con los datos actualizados
+    $_SESSION['fechaHoraUltimaConexionAnterior'] = $oUsuario ->getFechaHoraUltimaConexion();    //Guardo en $_SESSION la fecha de ultima conexion del $oUsuario viejo
+    $oUsuario = UsuarioPDO::registrarUltimaConexion($oUsuario ->getCodUsuario());               //Llamo a la funcion registrarUltimaConexion para actualizar el usuario, y los guardo en $oUsuario que sera el nuevo con los datos actualizados
     
     $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;                //Cargo el nuevo $oUsuario en $_SESSION
     

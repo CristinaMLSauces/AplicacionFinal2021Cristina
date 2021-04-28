@@ -44,6 +44,7 @@ if (isset($_REQUEST["aceptar"])) {                                              
 if ($entradaOK) {                                                               //Si en las validaciones no ha habido errores entradaOk seguira en true y dejaremos entrar al usaurio
     
     $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['CodUsuario'],$_REQUEST['Password'],$_REQUEST['DescUsuario']); //Guardo en $oUsuario el nuevo usuario que me devuelve la funcion altaUsuario
+    $_SESSION['fechaHoraUltimaConexionAnterior'] = null;
     $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;                // Guarda el nuevo $oUsuario en $_SESSION
     $_SESSION['paginaEnCurso'] = $controladores['inicio'];                      // Guardamos en la variable de sesion pagina en curso el controlador de inicio
 
