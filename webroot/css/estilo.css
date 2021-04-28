@@ -9,17 +9,18 @@ h1{
     color: white;
     font-family: 'Handlee', cursive;
 }
-img{
+.home{
     width: 30px;
 
-  }
+}
     /*---------------------Boton de home------------------------*/
 .home{
   position :absolute;
   top: 40px;
   left: 30px;
   }
-  
+ 
+     /*---------------------INICIO------------------------*/ 
 .info{
     margin-left: 30%;
     margin-top: 4%;
@@ -35,20 +36,31 @@ img{
     flex-direction:row;
     justify-content:space-around;
 }
-.cerrarSesion{
-    background-color:  #f2b2b2;
+.finicio{
+    display:flex;
+    align-items:baseline;
+
 }
-.cerrarSesion{
+.botones:nth-of-type(1){
+    background-color: #D6A37A;
+}
+.botones:nth-of-type(3){
+    background-color: #f2b2b2;
+}
+.botones:nth-of-type(2){
+    background-color: #c3d39f;
+}
+.botones{
     font-weight: bold;
-    margin-top: 20px;
+   margin-top: 20px;
     border: 2px solid #6B98A5;
     border-radius: 6px;
     font-size: 14px;
     font-family: 'Handlee', cursive;
     color: white;
-    padding: 30%;
+    padding: 8%;
 }
-.cerrarSesion{
+.botones:focus{
     border:0;
 }
 .finicio{
@@ -105,7 +117,7 @@ img{
     
 }
 
-/*-----------------------------footer------------------------*/
+/*-----------------------------login------------------------*/
 
 
 .box{
@@ -141,4 +153,86 @@ img{
 }
 .input-container input:focus{ 
   outline: none
+}
+
+
+/*-----------------------------detalles------------------------*/
+
+    
+.volver{
+    
+    background-color:#f2b2b2;
+    font-weight: bold;
+    margin-top: 20px;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 30%;
+    
+}
+
+.hdetalle{
+    background-color: #5FA0B3;
+    padding: 10px;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;  
+}
+
+.h1detalle{
+    font-size: 40px;
+    color: white;
+    font-family: 'Handlee', cursive;
+    margin-left: 25%;
+}
+
+.h3detalle{
+   padding: 6px;
+   
+   background-color: #B9DCD3;
+   border-radius: 50px 50px 50px 50px;
+}
+
+.h3detalle+div{
+    margin-left: 10%;
+     font-family: 'Comfortaa', cursive;
+}
+
+b{
+    color: #1B8376;
+       
+}
+/*-----------------------------REGISTRO------------------------*/
+
+.h3registro{
+    font-size: 50px;
+    font-family: 'Handlee', cursive;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+
+.aceptar{
+    background-color:#c3d39f ;
+    margin:4%;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 5%;
+    font-weight: bold;
+}
+
+.cancelar{
+    font-weight: bold;
+    background-color:#f2b2b2 ;
+    margin:4%;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 5%;
 }

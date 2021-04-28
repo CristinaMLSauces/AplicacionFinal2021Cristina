@@ -1,7 +1,7 @@
 <header>
     <h1>Login Logoff Tema 5</h1>
 </header>
-    <a class="home" href="../../proyectoDWES/index.php"><img src="./webroot/images/casa.png"/></a>
+    <a  href="../../proyectoDWES/index.php"><img class="home" src="./webroot/images/casa.png"/></a>
         <div class="box">   
             <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" >
                 <div class="input-container">   

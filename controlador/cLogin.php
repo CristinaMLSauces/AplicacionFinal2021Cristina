@@ -1,44 +1,53 @@
 <?php
-define("OBLIGATORIO", 1); // defino e inicializo la constante a 1 para los campos que son obligatorios
 
-$entradaOK = true;
+if (isset($_REQUEST["registrarse"])) {                                          //Si el usuario ha pulsado registrarse
+    $_SESSION["paginaEnCurso"] = $controladores['registro'];                    //Se carga en paginaEnCurso el controlador de registro
+    header('Location: index.php');                                              //Recargamos el index
+    exit();
+}
 
-$aErrores = [//declaro e inicializo el array de errores
+define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
+
+$entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
+
+$aErrores = [                                                                   //Declaro un array de errores, para almacenar los posibles errores
     'CodUsuario' => null,
     'Password' => null
 ];
 
-if (isset($_REQUEST["IniciarSesion"])) { // comprueba que el usuario le ha dado a al boton de IniciarSesion y valida la entrada de todos los campos
-    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO); // comprueba que la entrada del codigo de usuario es correcta
+if (isset($_REQUEST["IniciarSesion"])) {                                        //Si el usuario le ha dado a aceptar para iniciar sesion entonces
+    
+    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO); //Valido que el CodUsuario esta bien escrito con la libreria, si da fallo se guarda en el array de errores
+    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);        //Valido que el Password esta bien escrito con la libreria, si da fallo se guarda en el array de errores
+    //Validamos si el usuario existe en la base , para ello le pasamos a la funcion validar usuario el CodUsuario y el Password y lo guardamos en la variable $oUsuario
+    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']); 
 
-    $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);// comprueba que la entrada del password es correcta
-
-    $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password']); // guardamos en la variable el resultado de la funcion que valida si existe un usuario con el codigo y password introducido
-
-    if(!isset($oUsuario)){ // si es null 
-        $aErrores['CodUsuario'] = "El codigo de usuario no se encuentra en la base de datos"; // guardo en el array de errores el error de que no existe el codigo de usuario en la base de datos
+    if(!isset($oUsuario)){                                                      //Si la funcion de antes nos devolvio un null, significa que ese usuario no existe en la base
+        $aErrores['CodUsuario'] = "El codigo de usuario no se encuentra en la base de datos"; //Entonces guardamos un mensaje en el array de errores
     }
     
-
-    if ($aErrores['CodUsuario'] != null || $aErrores['Password']!=null) { // compruebo si hay algun mensaje de error en algun campo
-        $entradaOK = false; // le doy el valor false a $entradaOK
-        unset($_REQUEST);
+    if ($aErrores['CodUsuario'] != null || $aErrores['Password']!=null) {       //Si el array de errores contiene algun mensaje, ya sea de el CodUsuario o de la password
+        $entradaOK = false;                                                     // entradaOk sera false para no permitir al usuario entrar
+        unset($_REQUEST);                                                       //Vacio los campos 
     }
-} else { // si el usuario no le ha dado al boton de enviar
-    $entradaOK = false; // le doy el valor false a $entradaOK
+}else {                                                                        //Mientras el usuario no le haya dado al boton de enviar
+    $entradaOK = false;                                                         // entradaOk sera false para no permitir al usuario entrar
 }
 
-if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
-
-    $_SESSION['usuarioDAW207DBLoginLogoff'] = $oUsuario; // guarda en la session el objeto usuario
-    $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
-
-    header('Location: index.php'); // redirige al index.php
+if ($entradaOK) {                                                               //Si pasa todas las validaciones sin ningun error entradaOk seguira en true
+   
+    $_SESSION['fechaHoraUltimaConexionAnterior'] = $oUsuario ->getFechaHoraUltimaConexion();    //Guardo en $_SESSION la fecha de ultima conexion del $oUsuario viejo
+    $oUsuario = UsuarioPDO::registrarUltimaConexion($oUsuario ->getCodUsuario());               //Llamo a la funcion registrarUltimaConexion para actualizar el usuario, y los guardo en $oUsuario que sera el nuevo con los datos actualizados
+    
+    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario;                //Cargo el nuevo $oUsuario en $_SESSION
+    
+    $_SESSION['paginaEnCurso'] = $controladores['inicio'];                      //Cambio PaginaEnCurso a Incio para poder entrar
+    header('Location: index.php');                                              //Recargo el index
     exit;
 
 }
 
-$vistaEnCurso = $vistas['login']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
+$vistaEnCurso = $vistas['login'];                                               //Mientras el usuario no s ehaya validad VistaenCurso dera el login
 
-require_once $vistas['layout'];
+require_once $vistas['layout'];                                                 //Cargo el layout
 ?> 
