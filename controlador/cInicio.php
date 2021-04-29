@@ -1,4 +1,4 @@
-  <?php
+<?php
 
     if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
         header('Location: index.php');                                          //Recarga el index
