@@ -1,7 +1,6 @@
 <?php
-
 if(isset($_REQUEST['cancelar'])){                                               //Si el usuario pulsa cancelar
-    $_SESSION['paginaEnCurso'] = $controladores['login'];                       //La pagina en curso de session sera el login
+    $_SESSION['paginaEnCursoSinRegistro'] = $controladores['login'];                       //La pagina en curso de session sera el login
     header('Location: index.php');                                              //Volvemos a cargar el index
     exit;
 }
@@ -37,7 +36,7 @@ if (isset($_REQUEST["aceptar"])) {                                              
             $_REQUEST[$campo] = "";                                             //Si hay algun campo que tenga mensaje de error pongo $_REQUEST a null
         }
     }
-} else {                                                                        //Si el usuario no le ha dado a acepatr
+}else{                                                                        //Si el usuario no le ha dado a acepatr
     $entradaOK = false;                                                         //$entradaOK sera false , para no dejarlo entrar
 }
 
@@ -54,7 +53,5 @@ if ($entradaOK) {                                                               
 }
 
 $vistaEnCurso = $vistas['registro'];                                            //Cargamos la vista de registro
-
 require_once $vistas['layout'];                                                 //Cargamos el layout
-
-?> 
+?>

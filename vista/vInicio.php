@@ -1,12 +1,12 @@
 <header class="hinicio">
-            <?php
-                if($imagenUsuario==null){                                       //Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto
-                    echo '<img src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "140px"/>';
-                }else{
-                   echo '<img src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "140px"/>'; 
-                }
-                ?>
-    <h1>¡Estas dentro. Bienvenido/a!</h1>
+<?php
+    if($imagenUsuario==null){                                       //Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto
+        echo '<img src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "140px"/>';
+    }else{
+        echo '<img src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "140px"/>'; 
+    }
+?>
+    <h1>Login Logoff POO Multicapa</h1>
         <form class="finicio" name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
             <input class="botones" type="submit" value="DETALLES" name="detalles" id="detalles">
             <input class="botones" type="submit" value="EDITAR PERFIL" name="editarPerfil" id="editarPerfil">

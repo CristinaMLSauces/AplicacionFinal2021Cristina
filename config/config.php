@@ -10,7 +10,8 @@ $controladores = [                                                              
     "login" => "controlador/cLogin.php",                                        //Le damos nombre y le marcamos la ruta
     "inicio" => "controlador/cInicio.php",
     "detalle" => "controlador/cDetalle.php",
-    "registro" => "controlador/cRegistro.php"
+    "registro" => "controlador/cRegistro.php",
+    "wip" => "controlador/cWIP.php"
 ];
 
 $vistas = [                                                                     //Hacemos los mismo con las vistas
@@ -18,7 +19,8 @@ $vistas = [                                                                     
     "login" => "vista/vLogin.php",
     "inicio" => "vista/vInicio.php",
     "detalle" => "vista/vDetalle.php",
-    "registro" => "vista/vRegistro.php"
+    "registro" => "vista/vRegistro.php",
+    "wip" => "vista/vWIP.php"
 ];
 ?>
 

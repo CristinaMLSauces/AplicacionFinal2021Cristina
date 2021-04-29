@@ -19,4 +19,4 @@
             <p class="footer"> 2020-21 I.E.S. Los sauces. ©Todos los derechos reservados. <a href="https://daw207.ieslossauces.es/" target="_blank">Cristina Manjon Lacalle</a> <p> 
             <a href="https://github.com/CristinaMLSauces/LoginLogoffPOOMulticapa" target="_blank"> <img src="webroot/images/git.png" class="logogit" /> </a>
         </footer>
-</html
+</html>

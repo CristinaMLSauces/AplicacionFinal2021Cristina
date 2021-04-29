@@ -1,7 +1,6 @@
-  
 <?php
-
-    if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
+$_SESSION['paginaAnterior'] = $controladores['inicio'];
+if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
         header('Location: index.php');                                          //Recarga el index
         exit;
     }
@@ -12,6 +11,12 @@
         exit;
     }
 
+    if(isset($_REQUEST['editarPerfil'])){                                           //Si se ha pulsado el boton de datalles
+        $_SESSION['paginaEnCurso'] = $controladores['wip'];                 //Pagina en curso cargara el controlador de detalle
+        header('Location: index.php');
+        exit;
+    }
+    
     if (isset($_REQUEST['salir'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
         session_destroy();                                                      //Destruye todos los datos asociados a la sesion
         header("Location: index.php");                                          //Redirige al login
@@ -25,8 +30,6 @@ $descUsuario = $oUsuarioActual->getDescUsuario();                               
 $ultimaConexionAnterior = $_SESSION['fechaHoraUltimaConexionAnterior'];         //Guardo en la variable la fecha de conexion del usuario viejo
 $imagenUsuario = $oUsuarioActual->getImagenPerfil();                            //Guardo en la variable la imagen de perfil sacada de la base de datos
 
-$vistaEnCurso = $vistas['inicio'];                                              //Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice
-
-require_once $vistas['layout'];                                                 //Incluimos el layout
-
+$vistaEnCurso = $vistas['inicio'];                                             //Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice
+require_once $vistas['layout'];                                                //Incluimos el layout
 ?>
