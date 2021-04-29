@@ -5,7 +5,7 @@
     }
 
     if(isset($_REQUEST['volver'])){                                             //Si el usuario pulsa el boton de volver
-        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];                  //Cargamos el controlador de inicio en PaginaenCurso
+        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];               //Cargamos PaginaAnterior de inicio en PaginaenCurso
         header('Location: index.php');                                          //Redirigimos al usuario al programa de nuevo
         exit;
     }

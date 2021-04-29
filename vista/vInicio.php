@@ -13,6 +13,7 @@
             <input class="botones" type="submit" value="CERRAR SESION" name="salir" id="cerrarSesion">
         </form>
 </header>
+<div class="caja">
         <div class="info">
             <br><br>
                 <h3><?php echo "Hola ".$descUsuario;?></h3>                     
@@ -29,3 +30,13 @@
                         }
                     ?> 
         </div>
+    <div class="departamentos">
+            <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
+                <fieldset>
+                <legend>MTO. Departamentos</legend>
+                <input class="departamento" type="submit" value="DEPARTAMENTOS" name="MtoDepartamentos" id="detalles">
+                <img class="bdd" src="webroot/images/bdd.png" alt=""/>
+                </fieldset>
+            </form>
+        </div>
+</div>

@@ -5,7 +5,7 @@
     <h1 class="h1detalle">Login Logoff POO Multicapa</h1>
 
 </header>
-        <h2 class="h1detalle">Estas viendo las variables superglobales.</h2>
+        <h2 class="h2detalle">Estas viendo las variables superglobales.</h2>
         <h3 class="h3detalle">$_COOKIE</h3>
         <div>  
         <?php foreach ($_COOKIE as $parm => $value)  echo "<b>$parm </b> → '$value'<br>"; ?>
@@ -21,4 +21,8 @@
         <h3 class="h3detalle">$_SERVER</h3>
         <div>     
             <?php foreach ($_SERVER as $parm => $value)  echo "<b>$parm </b> → '$value'<br>"; ?>
+        </div>
+        <h3 class="h3detalle">$_FILES</h3>
+        <div>   
+         <?php print_r($_FILES);?>
         </div>

@@ -1,5 +1,4 @@
 <?php
-
 require_once "core/210322ValidacionFormularios.php";                            //Incluimos la libreria de usuarios
 
 require_once "modelo/Usuario.php";                                              //Incluimos la clase Usuario
@@ -11,7 +10,9 @@ $controladores = [                                                              
     "inicio" => "controlador/cInicio.php",
     "detalle" => "controlador/cDetalle.php",
     "registro" => "controlador/cRegistro.php",
-    "wip" => "controlador/cWIP.php"
+    "wip" => "controlador/cWIP.php",
+    "miCuenta" => "controlador/cMiCuenta.php",
+    "mtoDepartamentos" => "controlador/cMtoDepartamentos.php"
 ];
 
 $vistas = [                                                                     //Hacemos los mismo con las vistas
@@ -20,8 +21,8 @@ $vistas = [                                                                     
     "inicio" => "vista/vInicio.php",
     "detalle" => "vista/vDetalle.php",
     "registro" => "vista/vRegistro.php",
-    "wip" => "vista/vWIP.php"
+    "wip" => "vista/vWIP.php",
+    "miCuenta" => "vista/vMiCuenta.php",
+    "mtoDepartamentos" => "vista/vMtoDepartamentos.php"
 ];
 ?>
-
-

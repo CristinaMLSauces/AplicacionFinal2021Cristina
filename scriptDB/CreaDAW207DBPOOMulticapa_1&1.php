@@ -1,6 +1,5 @@
 <?php
-     
-       require_once "../config/configDBPDO.php"; //Cogemos el archivo con los parametros de conexion segun estemos en casa en desarollo o explotacion caragara un archivo diferente
+require_once "../config/configDBPDO.php"; //Cogemos el archivo con los parametros de conexion segun estemos en casa en desarollo o explotacion caragara un archivo diferente
         
             try {
                 //Establecer una conexión con la base de datos 

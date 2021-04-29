@@ -1,6 +1,6 @@
 <?php
 $_SESSION['paginaAnterior'] = $controladores['inicio'];
-if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
+    if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si el usuario no se ha logeado
         header('Location: index.php');                                          //Recarga el index
         exit;
     }
@@ -12,13 +12,19 @@ if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){                //Si
     }
 
     if(isset($_REQUEST['editarPerfil'])){                                           //Si se ha pulsado el boton de datalles
-        $_SESSION['paginaEnCurso'] = $controladores['wip'];                 //Pagina en curso cargara el controlador de detalle
+        $_SESSION['paginaEnCurso'] = $controladores['miCuenta'];                 //Pagina en curso cargara el controlador de detalle
         header('Location: index.php');
         exit;
     }
     
-    if (isset($_REQUEST['salir'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
+    if(isset($_REQUEST['salir'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
         session_destroy();                                                      //Destruye todos los datos asociados a la sesion
+        header("Location: index.php");                                          //Redirige al login
+        exit;
+    }
+    
+    if(isset($_REQUEST['MtoDepartamentos'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
+        $_SESSION['paginaEnCurso'] = $controladores['wip'];                                                //Destruye todos los datos asociados a la sesion
         header("Location: index.php");                                          //Redirige al login
         exit;
     }

@@ -4,7 +4,4 @@
         </form>
     <h1 class="h1detalle">LoginLogoff POO Multicapa</h1>
 </header>
-
-<img class="trabajando" src="webroot/images/trabajando.jpg" alt="" width="600px" height="600px"/>
-
-
+<img class="trabajando" src="webroot/images/wp.jpg" alt=""/>
