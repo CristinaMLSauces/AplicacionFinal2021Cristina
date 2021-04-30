@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Class UsuarioPDO
  *
@@ -131,7 +130,37 @@ class UsuarioPDO{
         
         return $usuarioNoExiste;
     }
+
+
+
+        /**
+     * Metodo modificarUsuario()
+     *
+     * Metodo que modifica el valor de la descripcion del usuarios. 
+     * Si el valor del parametro de la imagen no es null modifica tambien la imagen de perfil del usuario.
+     * 
+     * @param  string $codUsuario codigo del usuario que quremos modificar
+     * @param  string $descUsuario nueva descripcion del usuario
+     * @param  string $imagenPerfil nueva imagen de perfil
+     * @return null|\Usuario devuelve un objeto de tipo Usuario con los datos guardados en la base de datos y null si no se ha podido modificar
+     */
+    public static function modificarUsuario($codUsuario,$descUsuario,$imagenPerfil){
+        $oUsuario = null; // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+
+        $sentenciaSQL = "Update T01_Usuario set T01_DescUsuario=?". (($imagenPerfil!=null) ? ", T01_ImagenUsuario=?" : "") . " where T01_CodUsuario=?";
+
+
+        if($imagenPerfil!=null){
+            $parametros = [$descUsuario, $imagenPerfil, $codUsuario];
+        }else{
+            $parametros = [$descUsuario, $codUsuario];
+        }
+
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, $parametros); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
+        
+        $oUsuario = self::buscarUsuarioPorCod($codUsuario);
+
+        return $oUsuario;
+    } 
 }
 ?>
-
-   

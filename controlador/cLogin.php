@@ -1,7 +1,6 @@
 <?php
-
 if (isset($_REQUEST["registrarse"])) {                                          //Si el usuario ha pulsado registrarse
-    $_SESSION["paginaEnCurso"] = $controladores['registro'];                    //Se carga en paginaEnCurso el controlador de registro
+    $_SESSION["paginaEnCursoSinRegistro"] = $controladores['registro'];                    //Se carga en paginaEnCurso el controlador de registro
     header('Location: index.php');                                              //Recargamos el index
     exit();
 }
@@ -48,6 +47,5 @@ if ($entradaOK) {                                                               
 }
 
 $vistaEnCurso = $vistas['login'];                                               //Mientras el usuario no s ehaya validad VistaenCurso dera el login
-
 require_once $vistas['layout'];                                                 //Cargo el layout
-?> 
+?>

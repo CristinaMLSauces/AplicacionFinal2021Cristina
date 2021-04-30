@@ -1,20 +1,16 @@
 <?php
-
 class Usuario {
 
     private $codUsuario;
-    
-  
+
     private $password;
   
     private $descUsuario;
 
     private $numConexiones;
     
-
     private $fechaHoraUltimaConexion;
     
-
     private $perfil;
  
     private $imagenPerfil;
@@ -29,7 +25,6 @@ class Usuario {
         $this->imagenPerfil = $imagenPerfil;
     }
     
- 
     function getCodUsuario() {
         return $this->codUsuario;
     }

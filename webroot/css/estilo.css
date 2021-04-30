@@ -21,13 +21,43 @@ h1{
   }
  
      /*---------------------INICIO------------------------*/ 
+.caja{
+     display: flex;    
+     margin-top: 4%;
+     justify-content: space-around;
+}
 .info{
-    margin-left: 30%;
-    margin-top: 4%;
+    
     font-family: 'Indie Flower', cursive;
     display: inline-block;
     font-size: 30px;
     
+}
+
+fieldset{
+  width: 400px;
+    border: 4px solid grey;
+    border-radius: 10px;
+    font-family: 'Handlee', cursive;
+    font-size: 40px;
+    color:grey;
+}
+.bdd{
+    margin-left: 40px;
+    width: 300px;
+    height: 250px;
+}
+.departamento{
+    margin-left: 100px;
+    font-weight: bold;
+   margin-top: 20px;
+    border: 2px solid #9AB993;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 5%;
+    background-color: #9AB993;
 }
 .hinicio{
     background-color: #5FA0B3;
@@ -48,7 +78,7 @@ h1{
     background-color: #f2b2b2;
 }
 .botones:nth-of-type(2){
-    background-color: #c3d39f;
+    background-color: #e2bf7d;
 }
 .botones{
     font-weight: bold;
@@ -116,6 +146,39 @@ h1{
     display: flex;
     
 }
+/*-----------------------------EDITAR PERFIL------------------------*/
+
+.nomodificable{
+    background: #D3CAC4;
+    
+    
+}
+
+.eliminar{
+    margin-top: 15px;
+   
+    font-weight: bold;
+    background-color: #C06266;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 2%;
+}
+.contraseña{
+    width:50%;
+    background-color: #D6A37A;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    border: 2px solid #6B98A5;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Handlee', cursive;
+    color: white;
+    padding: 3%;
+    font-weight: bold;
+}
 
 /*-----------------------------login------------------------*/
 
@@ -124,10 +187,10 @@ h1{
         border:3px solid #555;  
 	position:absolute;
 	left:50%;
-	top:50%;
+	top:53%;
 	transform: translate(-50%,-50%);
 	border-radius:3px;
-	padding:70px 100px;
+	padding:65px 70px;
 }
 .input-container{
 	position:relative;
@@ -183,7 +246,13 @@ h1{
 
 .h1detalle{
     font-size: 40px;
-    color: white;
+    font-family: 'Handlee', cursive;
+    margin-left: 25%;
+}
+
+.h2detalle{
+    font-size: 40px;
+    color: grey;
     font-family: 'Handlee', cursive;
     margin-left: 25%;
 }
@@ -209,30 +278,39 @@ b{
 .h3registro{
     font-size: 50px;
     font-family: 'Handlee', cursive;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 15%;
 }
 
 .aceptar{
+    width: 150px;
     background-color:#c3d39f ;
-    margin:4%;
+   
     border: 2px solid #6B98A5;
     border-radius: 6px;
     font-size: 20px;
     font-family: 'Handlee', cursive;
     color: white;
-    padding: 5%;
+    padding: 4%;
     font-weight: bold;
 }
 
 .cancelar{
+    width: 150px;
     font-weight: bold;
     background-color:#f2b2b2 ;
-    margin:4%;
+   
     border: 2px solid #6B98A5;
     border-radius: 6px;
     font-size: 20px;
     font-family: 'Handlee', cursive;
     color: white;
-    padding: 5%;
+    padding: 4%;
 }
+/*-----------------------------WIP------------------------*/
+.trabajando{
+    margin-left: 20%;
+    width:1000px;
+    height:600px;
+}
+
