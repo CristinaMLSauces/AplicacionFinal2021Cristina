@@ -156,28 +156,27 @@ fieldset{
 
 .eliminar{
     margin-top: 15px;
-   
+   height: 80px;
     font-weight: bold;
     background-color: #C06266;
     border: 2px solid #6B98A5;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 18px;
     font-family: 'Handlee', cursive;
     color: white;
-    padding: 2%;
+   
 }
 .contraseña{
     width:50%;
-    background-color: #D6A37A;
     margin-left: 1%;
     margin-bottom: 3%;
-    border: 2px solid #6B98A5;
+    border: 2px solid #grey;
     border-radius: 6px;
     font-size: 15px;
     font-family: 'Handlee', cursive;
-    color: white;
     padding: 3%;
-    font-weight: bold;
+   
+    margin-bottom: 9%;
 }
 
 /*-----------------------------login------------------------*/
@@ -314,3 +313,23 @@ b{
     height:600px;
 }
 
+
+.h3borrar{
+    width: 80%;
+    font-size: 50px;
+    font-family: 'Handlee', cursive;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+
+#borrar{
+    font-family: 'Handlee', cursive;
+    width: 60%;
+    border-style: none;
+    margin-top: 5%;
+      margin-left: 25%;
+}
+
+#borrar form{
+margin-left: 25%;
+}

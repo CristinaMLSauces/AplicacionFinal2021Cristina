@@ -1,5 +1,8 @@
-<header>
+<header class="hinicio">
     <h1>Login Logoff POO Multicapa</h1>
+    <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post"  enctype="multipart/form-data">        
+        <input type="submit" value="ELIMINAR CUENTA" name="eliminarCuenta" class="eliminar">
+    </form>
 </header>
         <h3 class="h3registro">Editar perfil</h3>
         <div class="box">
@@ -49,8 +52,7 @@
                     <input type="submit" value="Aceptar" name="aceptar" class="aceptar">
                     <input type="submit" value="Cancelar" name="cancelar" class="cancelar">
                 </div>
-                    <hr><br>
-                    <input type="submit" value="ELIMINAR CUENTA" name="eliminarCuenta" class="eliminar">
-
+                 
+                   
             </form>
 </div>

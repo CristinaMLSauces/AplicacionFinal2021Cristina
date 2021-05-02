@@ -158,4 +158,47 @@ class UsuarioPDO{
 
         return $oUsuario;
     } 
+    
+    /**
+     * Metodo cambiarPassword()
+     * 
+     * Metodo que cambia el password del usuario pasado como parametro
+     *
+     * @param  string $codUsuario codigo de usuario del usuario al que queremos cambiar el password
+     * @param  string $passwordNueva nueva password que se quiere poner al usuario
+     * @return null|\Usuario devuelve un objeto de tipo Usuario con los datos guardados en la base de datos y null si no se ha podido modificar el password
+     */
+    public static function cambiarPassword($codUsuario, $passwordNueva){
+        $oUsuario = null; // inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+
+        $sentenciaSQL = "Update T01_Usuario set T01_Password=? where T01_CodUsuario=?";
+        $passwordEncriptado = hash("sha256", $codUsuario.$passwordNueva);       // encripta el password pasado como parametro
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$passwordEncriptado,$codUsuario]);
+
+        if($resultadoConsulta){
+            $oUsuario = self::buscarUsuarioPorCod($codUsuario);
+        }
+        return $oUsuario;
+    }
+        /**
+     * Método borrarUsuario()
+     * 
+     * Método que elimina un usuario de la base de datos
+     *
+     * @param  string $codUsuario código del usuario que queremos borrar
+     * @return boolean true si se ha borrado el usuario y false en caso contrario
+     */
+    public static function borrarUsuario($codUsuario){
+        //Inicializamos la variable usuarioEliminado a false
+        $usuarioEliminado = false; 
+
+        $sentenciaSQL = "Delete from T01_Usuario where T01_CodUsuario=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$codUsuario]);
+
+        if($resultadoConsulta){ 
+            $usuarioEliminado = true;
+        }
+
+        return $usuarioEliminado;
+    }
 }

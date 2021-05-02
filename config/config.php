@@ -12,6 +12,8 @@ $controladores = [                                                              
     "registro" => "controlador/cRegistro.php",
     "wip" => "controlador/cWIP.php",
     "miCuenta" => "controlador/cMiCuenta.php",
+    "password" => "controlador/cCambiarPassword.php",
+    "borrarcuenta" => "controlador/cBorrarCuenta.php",
     "mtoDepartamentos" => "controlador/cMtoDepartamentos.php"
 ];
 
@@ -23,6 +25,8 @@ $vistas = [                                                                     
     "registro" => "vista/vRegistro.php",
     "wip" => "vista/vWIP.php",
     "miCuenta" => "vista/vMiCuenta.php",
+    "password" => "vista/vCambiarPassword.php",
+    "borrarcuenta" => "vista/vBorrarCuenta.php",
     "mtoDepartamentos" => "vista/vMtoDepartamentos.php"
 ];
 ?>
