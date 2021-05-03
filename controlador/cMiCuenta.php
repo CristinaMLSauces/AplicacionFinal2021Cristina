@@ -1,18 +1,26 @@
 <?php
-if (isset($_REQUEST['cancelar'])) { // si se ha pulsado el boton de cancelar
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];               //Cargamos PaginaAnterior de inicio en PaginaenCurso
+if(isset($_REQUEST['cancelar'])) {                                             // si se ha pulsado el boton de cancelar
+    $_SESSION['paginaAnterior'] = $controladores['inicio'];                     //??????????????????????????? Si no no me funciona
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];                   //Cargamos PaginaAnterior de inicio en PaginaenCurso
     header('Location: index.php');
     exit;
 }
 
-//if (isset($_REQUEST['cambiarPassword'])) { // si se ha pulsado el boton de canelar
-//    $_SESSION['paginaEnCurso'] = $controladores['cambiarPassword']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
-//    header('Location: index.php');
-//    exit;
-//}
+if(isset($_REQUEST['cambiarPassword'])) { 
+    $_SESSION['paginaAnterior'] = $controladores['miCuenta'];                       //Ponerlo despues de camcelar por que si no te coge la misma ruta// si se ha pulsado el boton de canelar
+    $_SESSION['paginaEnCurso'] = $controladores['password'];             // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+    header('Location: index.php');
+    exit;
+}
+
+if(isset($_REQUEST['eliminarCuenta'])) { 
+    $_SESSION['paginaAnterior'] = $controladores['miCuenta'];                       //Ponerlo despues de camcelar por que si no te coge la misma ruta// si se ha pulsado el boton de canelar
+    $_SESSION['paginaEnCurso'] = $controladores['borrarcuenta'];             // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+    header('Location: index.php');
+    exit;
+}
 
 $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //almacenamiento de la variable se sesion en la variable
-
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
 $entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
 
