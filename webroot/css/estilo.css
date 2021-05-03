@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 /*---------------------Titulo------------------------*/
+body{
+    width: 100vw;
+}
 h1{
     background-color: #5FA0B3;
     padding: 20px;
