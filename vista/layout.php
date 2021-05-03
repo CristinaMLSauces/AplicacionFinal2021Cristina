@@ -2,7 +2,7 @@
 <html>      <!--  El layout sera como una plantilla para poder poner nuestro header o nuestro footer, que sera lo que salga en todas las paginas de la aplicacion-->
         <head>
             <meta charset="UTF-8">
-            <title>LoginLogoffMulticapaPOO</title>
+            <title>Aplicacion Final Cristina 2021</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="Cristina Manjon Lacalle">
             <meta name="robots" content="index, follow">      

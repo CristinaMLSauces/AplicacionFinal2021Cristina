@@ -3,12 +3,12 @@
 
 ## Autor: Cristina Manjon Lacalle
 
-#### Fecha Inicio: 21/04/2021
-#### Última Actualización: 26/04/2021
+#### Fecha Inicio: 3/05/2021
+#### Última Actualización: 3/05/2021
 
 **Descripción:**
 
-Aplicación con control de acceso con sesiones y utilización de cookies
+Aplicación Final Cristina 2021
 
 **Funcionalidades**
 - Login
@@ -17,6 +17,7 @@ Aplicación con control de acceso con sesiones y utilización de cookies
 - Detalles
 - Editar perfil
 - Cambiar password
+- Borrar Cuenta
 
 **Front End**
 - HTML

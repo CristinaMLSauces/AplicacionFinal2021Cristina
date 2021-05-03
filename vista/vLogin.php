@@ -1,5 +1,5 @@
 <header>
-    <h1>Login Logoff POO Multicapa</h1>
+    <h1>Aplicacion Final Cristina 2021</h1>
 </header>
     <a  href="../../proyectoDWES/index.php"><img class="home" src="./webroot/images/casa.png"/></a>
         <div class="box">   

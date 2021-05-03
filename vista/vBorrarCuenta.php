@@ -1,5 +1,5 @@
 <header class="hinicio">
-    <h1>Login Logoff POO Multicapa</h1>
+    <h1>Aplicacion Final Cristina 2021</h1>
 </header>
 <div id="borrar">
 <h3 class="h3borrar">¿Desea Borrar su cuenta?</h3>

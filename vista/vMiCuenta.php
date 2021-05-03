@@ -1,5 +1,5 @@
 <header class="hinicio">
-    <h1>Login Logoff POO Multicapa</h1>
+    <h1>Aplicacion Final Cristina 2021</h1>
     <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post"  enctype="multipart/form-data">        
         <input type="submit" value="ELIMINAR CUENTA" name="eliminarCuenta" class="eliminar">
     </form>

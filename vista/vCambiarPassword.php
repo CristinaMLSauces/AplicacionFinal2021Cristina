@@ -1,5 +1,5 @@
 <header>
-    <h1>Login Logoff Tema 5</h1>
+    <h1>Aplicacion Final Cristina 2021</h1>
 </header>
         <div class="box">
             <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="formularioAlta">

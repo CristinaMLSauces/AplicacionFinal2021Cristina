@@ -1,8 +1,8 @@
 -- CREACION BASE DE DATOS
 -- Creacion de la base de datos DAW215DBDepartamentos
-CREATE DATABASE if NOT EXISTS DAW207DBLoginLogoffPOOMulticapa;
+CREATE DATABASE if NOT EXISTS DAW207AplicacionFinal;
 -- Creacion de tablas de la base de datos
-CREATE TABLE IF NOT EXISTS DAW207DBLoginLogoffPOOMulticapa.T02_Departamento(
+CREATE TABLE IF NOT EXISTS DAW207AplicacionFinal.T02_Departamento(
     T02_CodDepartamento VARCHAR(3) PRIMARY KEY,
     T02_DescDepartamento VARCHAR(255) NOT NULL,
     T02_FechaCreacionDepartamento INT NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS DAW207DBLoginLogoffPOOMulticapa.T02_Departamento(
     T02_FechaBajaDepartamento INT DEFAULT NULL
 )ENGINE=INNODB;
 
-CREATE TABLE IF NOT EXISTS DAW207DBLoginLogoffPOOMulticapa.T01_Usuario(
+CREATE TABLE IF NOT EXISTS DAW207AplicacionFinal.T01_Usuario(
     T01_CodUsuario VARCHAR(10) PRIMARY KEY,
     T01_Password VARCHAR(64) NOT NULL,
     T01_DescUsuario VARCHAR(255) NOT NULL,
@@ -22,6 +22,6 @@ CREATE TABLE IF NOT EXISTS DAW207DBLoginLogoffPOOMulticapa.T01_Usuario(
 
 -- CREACION USUARIO ADMINISTRADOR
 -- Creacion de usuario administrador de la base de datos: usuarioDAW215DBDepartamentos / paso
-CREATE USER 'usuarioDAW207DBLoginLogoff'@'%' IDENTIFIED BY 'P@ssw0rd';
+CREATE USER 'usuarioDAW207AplicacionFinal'@'%' IDENTIFIED BY 'P@ssw0rd';
 -- Permisos para la base de datos
-GRANT ALL PRIVILEGES ON DAW207DBLoginLogoffPOOMulticapa.* TO 'usuarioDAW207DBLoginLogoff'@'%';
+GRANT ALL PRIVILEGES ON DAW207AplicacionFinal.* TO 'usuarioDAW207AplicacionFinal'@'%';
