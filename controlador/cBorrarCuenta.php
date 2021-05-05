@@ -1,6 +1,6 @@
 <?php
 if (isset($_REQUEST['cancelar'])) {                                             // si se ha pulsado el boton de cancelar
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];                   //Cargamos PaginaAnterior de inicio en PaginaenCurso
+    $_SESSION['paginaEnCurso'] = $controladores['inicio'];                     //Cargamos PaginaAnterior de inicio en PaginaenCurso
     header('Location: index.php');
     exit;
 }

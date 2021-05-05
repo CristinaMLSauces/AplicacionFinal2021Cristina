@@ -1,6 +1,6 @@
- <header>
-        <h1>Aplicacion Final Cristina 2021</h1>
-    </header>
+ <header class="h1login">
+     <h1 >Aplicacion Final Cristina 2021</h1>
+</header>
     <h3 class="h3registro">¡Registrate<br> ahora!</h3>
         <div class="box">
              <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" >

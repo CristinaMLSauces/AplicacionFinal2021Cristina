@@ -1,7 +1,6 @@
-<header>
-    <h1>Aplicacion Final Cristina 2021</h1>
+<header class="h1login">
+    <h1 >Aplicacion Final Cristina 2021</h1>
 </header>
-    <a  href="../../proyectoDWES/index.php"><img class="home" src="./webroot/images/casa.png"/></a>
         <div class="box">   
             <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" >
                 <div class="input-container">   

@@ -1,11 +1,10 @@
-<header class="hinicio">
-    <h1>Aplicacion Final Cristina 2021</h1>
-    <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post"  enctype="multipart/form-data">        
-        <input type="submit" value="ELIMINAR CUENTA" name="eliminarCuenta" class="eliminar">
-    </form>
+<header class="h1micuenta">
+    <img class="imgpreview" id="preview" alt="Inserta Nueva Imgen de perfil" width="100" height="90" />
+    <h1 >Aplicacion Final Cristina 2021</h1>
 </header>
-        <h3 class="h3registro">Editar perfil</h3>
+      <h3 class="h3registro">Editar perfil</h3>
         <div class="box">
+              
             <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post"  enctype="multipart/form-data">        
                 
                 <div class="input-container">   
@@ -39,20 +38,19 @@
                 ?>
                 <div class="imagen">           
                     <label for="imagen">Imagen de perfil</label>   
-                    <input type="file" id="imagen" name="imagen">
+                    <input type="file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" id="imagen" name="imagen">
                     <?php echo ($aErrores['ImagenUsuario']!=null) ? "<span class='error'>".$aErrores['ImagenUsuario']."</span>" : null; ?>
                     <br><br>
                 </div>
                 
                     <input type="submit"  value="CAMBIAR CONTRASEÑA" name="cambiarPassword" class="contraseña">
-                   
                     <br>
-        
                 <div>
                     <input type="submit" value="Aceptar" name="aceptar" class="aceptar">
                     <input type="submit" value="Cancelar" name="cancelar" class="cancelar">
                 </div>
-                 
-                   
+
+               
+
             </form>
 </div>

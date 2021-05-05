@@ -20,6 +20,7 @@ if(isset($_REQUEST['eliminarCuenta'])) {
     exit;
 }
 
+
 $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //almacenamiento de la variable se sesion en la variable
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
 $entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
@@ -33,7 +34,6 @@ $imagenUsuario = $oUsuarioActual->getImagenPerfil();
 $codUsuario = $oUsuarioActual->getCodUsuario();
 $numConexiones = $oUsuarioActual->getNumConexiones();
 $descUsuario = $oUsuarioActual->getDescUsuario();
-
 
 if(isset($_REQUEST["aceptar"])) { // comprueba que el usuario le ha dado a al boton de aceptar
     $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO); // comprueba que la entrada del codigo de usuario es correcta
@@ -51,8 +51,9 @@ if(isset($_REQUEST["aceptar"])) { // comprueba que el usuario le ha dado a al bo
     $entradaOK = false; // le doy el valor false a $entradaOK
 }
 
+
 if($entradaOK){
-   
+  
     $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = UsuarioPDO::modificarUsuario($codUsuario,$_REQUEST['DescUsuario'],$imagenUsuario);
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');

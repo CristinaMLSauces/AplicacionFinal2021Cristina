@@ -1,9 +1,10 @@
-<header>
+<header class="h1login">
     <h1>Aplicacion Final Cristina 2021</h1>
 </header>
+ <h3 class="h3registro">Cambiar<br>password</h3>
         <div class="box">
             <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="formularioAlta">
-                <h3 class="h3registro">Cambiar<br>password</h3>
+               
                 <br>
                 <div>
                     <div class="input-container">

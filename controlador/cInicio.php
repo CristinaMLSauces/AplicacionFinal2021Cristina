@@ -23,6 +23,13 @@ $_SESSION['paginaAnterior'] = $controladores['inicio'];
         exit;
     }
     
+    if(isset($_REQUEST['eliminarCuenta'])) { 
+    $_SESSION['paginaAnterior'] = $controladores['miCuenta'];                       //Ponerlo despues de camcelar por que si no te coge la misma ruta// si se ha pulsado el boton de canelar
+    $_SESSION['paginaEnCurso'] = $controladores['borrarcuenta'];             // guardamos en la variable de sesion 'pagina' la ruta del controlador del inicio
+    header('Location: index.php');
+    exit;
+}
+    
     if(isset($_REQUEST['MtoDepartamentos'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
         $_SESSION['paginaEnCurso'] = $controladores['wip'];                                                //Destruye todos los datos asociados a la sesion
         header("Location: index.php");                                          //Redirige al login

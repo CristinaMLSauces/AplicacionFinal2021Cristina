@@ -14,10 +14,10 @@
         <h3 class="h3detalle">$_SESSION</h3>
         <div>    
         <pre>
-            <?php print_r($_SESSION);?>
+           <?php echo print_r($_SESSION);?>
         </pre>
         </div>
-        
+               
         <h3 class="h3detalle">$_SERVER</h3>
         <div>     
             <?php foreach ($_SERVER as $parm => $value)  echo "<b>$parm </b> → '$value'<br>"; ?>

@@ -1,4 +1,4 @@
-<header class="hinicio">
+<header class="h1login">
     <h1>Aplicacion Final Cristina 2021</h1>
 </header>
 <div id="borrar">

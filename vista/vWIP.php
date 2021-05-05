@@ -4,4 +4,7 @@
         </form>
     <h1 class="h1detalle">Aplicacion Final Cristina 2021</h1>
 </header>
-<img class="trabajando" src="webroot/images/wp.jpg" alt=""/>
+<div class="wip">
+    <img class="trabajando" src="webroot/images/wipp.gif" alt=""/>
+    <img class="gato" src="webroot/images/wipp1.gif" />
+</div>
