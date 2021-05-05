@@ -182,8 +182,7 @@ fieldset{
     margin-left: 20%;
 }
 
-    /*-----------------------------footer------------------------*/
-
+/*-----------------------------footer------------------------*/
 .footer{
 
     font-family: 'Varela Round', sans-serif;
@@ -216,6 +215,7 @@ fieldset{
 }
 .imgpreview{
     margin-left: 20%;
+    height: 110px;
 }
 .contraseña{
     width:50%;

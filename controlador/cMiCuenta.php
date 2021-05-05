@@ -21,7 +21,7 @@ if(isset($_REQUEST['eliminarCuenta'])) {
 }
 
 
-$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //almacenamiento de la variable se sesion en la variable
+
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
 $entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
 
@@ -30,6 +30,7 @@ $aErrores = [                                                                   
     'ImagenUsuario' => null
 ];
 
+$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //almacenamiento de la variable se sesion en la variable
 $imagenUsuario = $oUsuarioActual->getImagenPerfil();
 $codUsuario = $oUsuarioActual->getCodUsuario();
 $numConexiones = $oUsuarioActual->getNumConexiones();

@@ -1,5 +1,11 @@
 <header class="h1micuenta">
-    <img class="imgpreview" id="preview" alt="Inserta Nueva Imgen de perfil" width="100" height="90" />
+    <?php
+        if($imagenUsuario==null){                                       //Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto
+            echo '<img class="imgpreview" id="preview" src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "120px"/>';
+        }else{
+            echo '<img class="imgpreview" id="preview" src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "120px"/>'; 
+        }
+    ?>
     <h1 >Aplicacion Final Cristina 2021</h1>
 </header>
       <h3 class="h3registro">Editar perfil</h3>
