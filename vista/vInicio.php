@@ -44,7 +44,7 @@
                 <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
                     <fieldset>
                     <legend>REST</legend>
-                    <input class="apis" type="submit" value="APIs REST" name="MtoDepartamentos" id="detalles">
+                    <input class="apis" type="submit" value="APIs REST" name="api" id="detalles">
                     <img class="bdd" src="webroot/images/api.png" alt=""/>
                     </fieldset>
                 </form>

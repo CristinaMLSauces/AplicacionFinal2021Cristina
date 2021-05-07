@@ -1,9 +1,9 @@
 <header class="h1micuenta">
     <?php
         if($imagenUsuario==null){                                       //Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto
-            echo '<img class="imgpreview" id="preview" src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "120px"/>';
+            echo '<img class="imgpreview" id="preview" src = "./webroot/images/user.svg' . base64_encode($imagenUsuario) . '" width = "120px" height="120px"/>';
         }else{
-            echo '<img class="imgpreview" id="preview" src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "120px"/>'; 
+            echo '<img class="imgpreview" id="preview" src = "data:image/png;base64,' . base64_encode($imagenUsuario) . '" width = "120px" height="120px"/>'; 
         }
     ?>
     <h1 >Aplicacion Final Cristina 2021</h1>

@@ -36,6 +36,13 @@ $_SESSION['paginaAnterior'] = $controladores['inicio'];
         exit;
     }
     
+        
+    if(isset($_REQUEST['api'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
+        $_SESSION['paginaEnCurso'] = $controladores['rest'];                                                //Destruye todos los datos asociados a la sesion
+        header("Location: index.php");                                          //Redirige al login
+        exit;
+    }
+    
 $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];              //Cargo en la variable $oUsuarioActual el usuario que tenia en $_SESSION
 
 $numConexiones = $oUsuarioActual->getNumConexiones();                           //Guardo en la variable el numero de conexiones sacado del usuario de la base de datos

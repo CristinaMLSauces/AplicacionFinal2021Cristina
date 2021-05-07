@@ -1,6 +1,6 @@
 <?php
 require_once "core/210322ValidacionFormularios.php";                            //Incluimos la libreria de usuarios
-
+require_once "modelo/REST.php";                                                 //Inluyo el modelo de la clase 
 require_once "modelo/Usuario.php";                                              //Incluimos la clase Usuario
 require_once "modelo/UsuarioPDO.php";                                           //Incluimos la clase UsuarioPDO
 require_once "modelo/DBPDO.php";                                                //Incluimos la clase DBPDO
@@ -14,6 +14,7 @@ $controladores = [                                                              
     "miCuenta" => "controlador/cMiCuenta.php",
     "password" => "controlador/cCambiarPassword.php",
     "borrarcuenta" => "controlador/cBorrarCuenta.php",
+    "rest" => "controlador/cREST.php",
     "mtoDepartamentos" => "controlador/cMtoDepartamentos.php"
 ];
 
@@ -27,6 +28,7 @@ $vistas = [                                                                     
     "miCuenta" => "vista/vMiCuenta.php",
     "password" => "vista/vCambiarPassword.php",
     "borrarcuenta" => "vista/vBorrarCuenta.php",
+    "rest" => "vista/vREST.php",
     "mtoDepartamentos" => "vista/vMtoDepartamentos.php"
 ];
 ?>

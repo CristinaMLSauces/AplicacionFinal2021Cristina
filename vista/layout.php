@@ -5,8 +5,10 @@
             <title>Aplicacion Final Cristina 2021</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="Cristina Manjon Lacalle">
-            <meta name="robots" content="index, follow">      
-           
+            <meta name="robots" content="index, follow"> 
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script> 
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
             <link href="./webroot/css/estilo.css" rel="stylesheet" type="text/css">
         </head>
         <body>
@@ -15,8 +17,24 @@
 
         </body>
     
-        <footer>                                                                <!--Le pongo mi footer que quiero que se vea en todas las paginas -->
-            <p class="footer"> 2020-21 I.E.S. Los sauces. ©Todos los derechos reservados. <a href="https://daw207.ieslossauces.es/" target="_blank">Cristina Manjon Lacalle</a> <p> 
-            <a href="https://github.com/CristinaMLSauces/LoginLogoffPOOMulticapa" target="_blank"> <img src="webroot/images/git.png" class="logogit" /> </a>
-        </footer>
+     <footer  class="footer">
+         <table>
+             <tr>
+                <td colspan="2"> 2020-21 ©Todos los derechos reservados</td>
+                <td><a href="core/2.pdf" target="_blank">Curriculum del autor</a></td>
+                <td><input type="submit" class="botonesWIP" value="Tecnologías Usadas" name="Tecnologias"></td>
+                <td><a href="https://github.com/CristinaMLSauces/LoginLogoffPOOMulticapa" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
+                <td><a href="" target="_blank"><img src="webroot/images/phpdoc.png" class="logo" /> </a></td>
+                <td><a href="https://daw207.ieslossauces.es/" target="_blank"><img src="webroot/images/1and1.png" class="logo" /> </a></td>
+                <td><a href="" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
+             </tr>
+            
+            
+         </table>
+  
+     </footer>
 </html>
+
+ 
+
+        
