@@ -22,9 +22,10 @@
     <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
         <fieldset class="nasa">
             <legend>Foto del dia de la nasa</legend>
+            <input type="date" name="fecha" max=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
             <input type="submit" value="Aceptar" name="nasa" >
             <p><b>Descripcion:</b> <?php echo $explicacion; ?></p>
-            <p><b>Titulo de la Imagen:</b> <?php echo $titulo; ?></p>
+            <p><b>Titulo de la Imagen:</b> <?php echo $title; ?></p>
             <img src="<?php echo $imagen; ?>" width="400px"/>
            
          </fieldset>   

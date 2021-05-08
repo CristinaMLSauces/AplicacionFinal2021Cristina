@@ -4,8 +4,11 @@ require_once "modelo/REST.php";                                                 
 require_once "modelo/Usuario.php";                                              //Incluimos la clase Usuario
 require_once "modelo/UsuarioPDO.php";                                           //Incluimos la clase UsuarioPDO
 require_once "modelo/DBPDO.php";                                                //Incluimos la clase DBPDO
+require_once "modelo/Departamento.php";                                         //Incluimos la clase departamento
+require_once "modelo/DepartamentoPDO.php";                                      //Incluimos la clase DepartamentoPDO
 
 $controladores = [                                                              //Creamos un array de controladores para cargarlos controladores mas adelante
+    "principal" => "controlador/cPrincipal.php",
     "login" => "controlador/cLogin.php",                                        //Le damos nombre y le marcamos la ruta
     "inicio" => "controlador/cInicio.php",
     "detalle" => "controlador/cDetalle.php",
@@ -19,6 +22,7 @@ $controladores = [                                                              
 ];
 
 $vistas = [                                                                     //Hacemos los mismo con las vistas
+    "principal" => "vista/vPrincipal.php",
     "layout" => "vista/layout.php",
     "login" => "vista/vLogin.php",
     "inicio" => "vista/vInicio.php",

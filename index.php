@@ -7,6 +7,6 @@ session_start(); // inicia una sesion o recupera una anterior
     } else if (isset($_SESSION['paginaEnCursoSinRegistro'])){ // si no se ha iniciado sesion pero esta inicializada la variable de sesion 'paginaEnCursoSinRegistro'
         require_once $_SESSION['paginaEnCursoSinRegistro']; // incluye el controlador de la pagina en curso de usuarios sin registrar
     }else{
-        require_once $controladores['login']; // incluye el controlador del login
+        require_once $controladores['principal']; // incluye el controlador del login
     }
 ?>

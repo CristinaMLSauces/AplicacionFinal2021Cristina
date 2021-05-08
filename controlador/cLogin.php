@@ -1,8 +1,14 @@
 <?php
 if (isset($_REQUEST["registrarse"])) {                                          //Si el usuario ha pulsado registrarse
-    $_SESSION["paginaEnCursoSinRegistro"] = $controladores['registro'];                    //Se carga en paginaEnCurso el controlador de registro
+    $_SESSION["paginaEnCursoSinRegistro"] = $controladores['registro'];         //Se carga en paginaEnCurso el controlador de registro
     header('Location: index.php');                                              //Recargamos el index
     exit();
+}
+
+if (isset($_REQUEST['volver'])) {                                               // si se ha pulsado el boton de volver
+    $_SESSION['paginaEnCursoSinRegistro'] = $controladores['principal'];        // guardamos en la variable de sesion 'pagina' la ruta del controlador de la pagina principal
+    header('Location: index.php');  
+    exit;
 }
 
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria

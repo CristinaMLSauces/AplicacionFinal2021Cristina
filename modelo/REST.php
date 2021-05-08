@@ -45,7 +45,7 @@ class REST {
         }       
     }
 
-        public static function nasaconfecha($fecha) {    
+    public static function nasaconfecha($fecha) {    
         try{
             $resultado = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=$fecha", true); // obtenemos el resultado del servidor del api rest
             

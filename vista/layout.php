@@ -6,10 +6,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="Cristina Manjon Lacalle">
             <meta name="robots" content="index, follow"> 
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script> 
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
-            <link href="./webroot/css/estilo.css" rel="stylesheet" type="text/css">
+           <link href="./webroot/css/estilo.css" rel="stylesheet" type="text/css">
+           <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         </head>
         <body>
 
