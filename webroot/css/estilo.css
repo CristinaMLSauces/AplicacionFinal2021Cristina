@@ -437,10 +437,10 @@ margin-left: 25%;
 .card {
     position: relative;
     top: 220px;
-    left: 300px;
+    left: 450px;
     transform: translate(-50%,-50%);
-    width: 360px;
-    height: 300px;
+    width: 280px;
+    height: 220px;
     background:  #cdcdced0;
     margin: -1px;
     padding: 2%;

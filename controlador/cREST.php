@@ -9,7 +9,7 @@
         header('Location: index.php');                                          //Redirigimos al usuario al programa de nuevo
         exit;
     }
-    
+    $numeropordefecto = null;
     $Personaje = null;
     $Nasa = null;
     $nombre = null;
@@ -19,10 +19,15 @@
     $explicacion = null;
     $imagen = null;
     $title = null;
+    $nombrePlaneta = null;
+    
+   
     
     if(isset($_REQUEST['personaje'])){
+        $_SESSION['numeropersonaje'] = $_REQUEST['numero'];
+        $numeropordefecto = $_SESSION['numeropersonaje'];
+        
         $Personaje = REST::starwars($_REQUEST['numero']);
-    
         $nombre = $Personaje['name'];
         $genero = $Personaje['gender'];
         $altura = $Personaje['height'];

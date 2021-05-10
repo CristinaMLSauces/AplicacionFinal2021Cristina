@@ -1,7 +1,5 @@
 <?php
-
 class REST {
-    
     /**
      * Llama al servicio API REST, que nos devuelve la información de un personaje
      * de la serie Rick and Morty.

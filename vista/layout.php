@@ -21,7 +21,7 @@
                 <td colspan="2"> 2020-21 ©Todos los derechos reservados</td>
                 <td><a href="core/2.pdf" target="_blank">Curriculum del autor</a></td>
                 <td><input type="submit" class="botonesWIP" value="Tecnologías Usadas" name="Tecnologias"></td>
-                <td><a href="https://github.com/CristinaMLSauces/LoginLogoffPOOMulticapa" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
+                <td><a href="https://github.com/CristinaMLSauces/AplicacionFinal2021Cristina" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
                 <td><a href="doc/phpdocumentor/index.html" target="_blank"><img src="webroot/images/phpdoc.png" class="logo" /> </a></td>
                 <td><a href="https://daw207.ieslossauces.es/" target="_blank"><img src="webroot/images/1and1.png" class="logo" /> </a></td>
                 <td><a href="" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
