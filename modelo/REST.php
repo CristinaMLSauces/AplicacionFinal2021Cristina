@@ -7,8 +7,7 @@ class REST {
      * de la serie Rick and Morty.
      * 
      * @param type $number nos devolverá la información de un personaje.
-     * @return type array que contiene información sobre el personaje.
-     * @package  Validacion 
+     * @return type array que contiene información sobre el personaje. 
      */
     public static function starwars($number) {    
     
