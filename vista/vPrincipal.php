@@ -77,14 +77,8 @@
             </div>
         </div>
     </a>
-    <a class="card" href="doc/Relaciondeficheros.JPG" target="_blank">
-        <div class="image">
-            <img src="doc/Relaciondeficheros.JPG"/>
-        </div>
-        <div class="details">
-            <div class="center">
-                <h1>Relacion de<br>ficheros</h1>
-            </div>
-        </div>
+    <a class="card" href="" target="_blank">
+        
+       
     </a>
 </div>
