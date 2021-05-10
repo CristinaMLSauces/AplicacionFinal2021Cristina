@@ -3,7 +3,6 @@
             <button type="submit" name='volver' value="volver" class="volver">VOLVER</button>
         </form>
     <h1 class="h1detalle">Aplicacion Final Cristina 2021</h1>
-
 </header>
 <div class="apisdescrip">
     <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
@@ -11,6 +10,7 @@
             <legend>Personajes de STAR WARS</legend>
             <label>Introduce numero de personaje</label>
             <input type="number" name="numero" value="<?php echo $numeropordefecto ?>"  min="1"/><br>
+             <?php if ($error != null) { echo "<p>  ⚠️".$error."</p>"; } ?> <br>
             <input type="submit" value="Aceptar" name="personaje" >
             <p><b>Nombre:</b> <?php echo $nombre; ?></p>
             <p><b>Genero:</b> <?php echo $genero; ?></p>

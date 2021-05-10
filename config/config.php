@@ -18,6 +18,7 @@ $controladores = [                                                              
     "password" => "controlador/cCambiarPassword.php",
     "borrarcuenta" => "controlador/cBorrarCuenta.php",
     "rest" => "controlador/cREST.php",
+    "error" => "controlador/cError.php",
     "mtoDepartamentos" => "controlador/cMtoDepartamentos.php"
 ];
 
@@ -33,6 +34,7 @@ $vistas = [                                                                     
     "password" => "vista/vCambiarPassword.php",
     "borrarcuenta" => "vista/vBorrarCuenta.php",
     "rest" => "vista/vREST.php",
+    "error" => "vista/vError.php",
     "mtoDepartamentos" => "vista/vMtoDepartamentos.php"
 ];
 ?>
