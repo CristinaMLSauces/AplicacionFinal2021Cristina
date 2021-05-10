@@ -9,6 +9,7 @@
  * @since 1.0
  * @copyright 16-01-2021
  * @version 1.0
+ * @package  Validacion
  */
 class UsuarioPDO{
     

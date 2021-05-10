@@ -1,4 +1,15 @@
 <?php
+/**
+ * Class Departamento
+ *
+ * Clase que se va a utilizar para ejecutar consultas contra la base de datos
+ * 
+ * @author Cristina Nuñez y Javier Nieto
+ * @since 1.1
+ * @copyright 2020-2021 Cristina Nuñez y Javier Nieto
+ * @version 1.1
+ * @package  Validacion
+ */
 class DBPDO {                                                                   //Nueva clase para lo conexion a la base de datos y ejecucion de consultas
     public static function ejecutarConsulta($sentenciaSQL, $parametros) {        //Creo un metodo que se llame ejecutar consulta y le pueda pasar una cosnulta y unos parametros
         try {                                                       

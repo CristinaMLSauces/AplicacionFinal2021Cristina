@@ -9,6 +9,7 @@
  * @since 1.1
  * @copyright 2020-2021 Cristina Nuñez y Javier Nieto
  * @version 1.1
+ * @package  Validacion
  */
 class DepartamentoPDO{
     /**
