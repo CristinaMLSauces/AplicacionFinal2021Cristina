@@ -12,16 +12,13 @@ if (isset($_REQUEST['volver'])) {                                               
 }
 
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
-
 $entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
-
 $aErrores = [                                                                   //Declaro un array de errores, para almacenar los posibles errores
     'CodUsuario' => null,
     'Password' => null
 ];
 
 if (isset($_REQUEST["IniciarSesion"])) {                                        //Si el usuario le ha dado a aceptar para iniciar sesion entonces
-    
     $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO); //Valido que el CodUsuario esta bien escrito con la libreria, si da fallo se guarda en el array de errores
     $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);        //Valido que el Password esta bien escrito con la libreria, si da fallo se guarda en el array de errores
     //Validamos si el usuario existe en la base , para ello le pasamos a la funcion validar usuario el CodUsuario y el Password y lo guardamos en la variable $oUsuario
@@ -40,7 +37,6 @@ if (isset($_REQUEST["IniciarSesion"])) {                                        
 }
 
 if ($entradaOK) {                                                               //Si pasa todas las validaciones sin ningun error entradaOk seguira en true
-   
     $_SESSION['fechaHoraUltimaConexionAnterior'] = $oUsuario ->getFechaHoraUltimaConexion();    //Guardo en $_SESSION la fecha de ultima conexion del $oUsuario viejo
     $oUsuario = UsuarioPDO::registrarUltimaConexion($oUsuario ->getCodUsuario());               //Llamo a la funcion registrarUltimaConexion para actualizar el usuario, y los guardo en $oUsuario que sera el nuevo con los datos actualizados
     
@@ -49,7 +45,6 @@ if ($entradaOK) {                                                               
     $_SESSION['paginaEnCurso'] = $controladores['inicio'];                      //Cambio PaginaEnCurso a Incio para poder entrar
     header('Location: index.php');                                              //Recargo el index
     exit;
-
 }
 
 $vistaEnCurso = $vistas['login'];                                               //Mientras el usuario no s ehaya validad VistaenCurso dera el login

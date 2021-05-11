@@ -15,7 +15,6 @@ $aErrores = [                                                                   
     'PasswordConfirmacion' => null
 ];
 
-
 if (isset($_REQUEST["aceptar"])) {                                              //Si el usuario le ah dado a aceptar
     $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 15, 3, OBLIGATORIO);    //Valido que el CodUsuario esta bien escrito con la libreria, si da fallo se guarda en el array de errores
     $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO); //Valido que la Descripcion esta bien con la libreria, si da fallo se guarda en el array de errores
@@ -49,7 +48,6 @@ if ($entradaOK) {                                                               
 
     header('Location: index.php');                                              //Recargamso el index
     exit;
-
 }
 
 $vistaEnCurso = $vistas['registro'];                                            //Cargamos la vista de registro

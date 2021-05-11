@@ -23,8 +23,6 @@
     $title = null;
     $nombrePlaneta = null;
     
-   
-    
     if(isset($_REQUEST['personaje'])){
         $_SESSION['numeropersonaje'] = $_REQUEST['numero'];
         $numeropordefecto = $_SESSION['numeropersonaje'];
@@ -42,9 +40,7 @@
             $nombrePlaneta = $Planeta['name'];
         }else{
             $error = $Personaje;
-        }
-        
-        
+        } 
     }
    
     if(isset($_REQUEST['nasa'])){
@@ -60,7 +56,6 @@
            $title  = $Nasa['title']; 
         }
     }
-
 
 $vistaEnCurso = $vistas['rest'];                                                //Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice
 require_once $vistas['layout'];                                                 //Incluimos el layout

@@ -10,6 +10,6 @@
         exit;
     }
   
-    $vistaEnCurso = $vistas['wip'];                                         //Cargamos la vista de detalles
-    require_once $vistas['layout'];                                             //Cargamos el layout
+$vistaEnCurso = $vistas['wip'];                                              //Cargamos la vista de detalles
+require_once $vistas['layout'];                                               //Cargamos el layout
 ?>

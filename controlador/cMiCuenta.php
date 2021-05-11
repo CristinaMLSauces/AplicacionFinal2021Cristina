@@ -20,8 +20,6 @@ if(isset($_REQUEST['eliminarCuenta'])) {
     exit;
 }
 
-
-
 define("OBLIGATORIO", 1);                                                       //Define una variable que nos servira para validar con la libreria
 $entradaOK = true;                                                              //Declaro una variable booleana para la validacion de datos
 
@@ -51,7 +49,6 @@ if(isset($_REQUEST["aceptar"])) { // comprueba que el usuario le ha dado a al bo
 } else { // si el usuario no le ha dado al boton de enviar
     $entradaOK = false; // le doy el valor false a $entradaOK
 }
-
 
 if($entradaOK){
   
