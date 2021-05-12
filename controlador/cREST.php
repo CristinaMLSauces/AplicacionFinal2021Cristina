@@ -11,6 +11,7 @@
     }
     
     $error = null;
+    $aError = null;
     $numeropordefecto = null;
     $Personaje = null;
     $Nasa = null;
@@ -27,20 +28,32 @@
         $_SESSION['numeropersonaje'] = $_REQUEST['numero'];
         $numeropordefecto = $_SESSION['numeropersonaje'];
         
-        $Personaje = REST::starwars($_REQUEST['numero']);
+        $error = null;
+        define("OBLIGATORIO", 1); 
+        $entradaOK = true;
         
-        if(is_array($Personaje)){
-            $nombre = $Personaje['name'];
-            $genero = $Personaje['gender'];
-            $altura = $Personaje['height'];
-            $planeta = $Personaje['homeworld'];
+        
+        $error = validacionFormularios::comprobarEntero($_REQUEST['numero'],83,1,OBLIGATORIO);
+        
+        if($error==null){
+            $aRepuesta = REST::starwars($_REQUEST['numero']);
+            if($aRepuesta[0]==true){
+                $nombre = $aRepuesta[1]['name'];
+                $genero = $aRepuesta[1]['gender'];
+                $altura = $aRepuesta[1]['height'];
+                $planeta = $aRepuesta[1]['homeworld'];
 
-            $buscarplaneta = file_get_contents($planeta, true);
-            $Planeta = json_decode($buscarplaneta, true);
-            $nombrePlaneta = $Planeta['name'];
+                $buscarplaneta = file_get_contents($planeta, true);
+                $Planeta = json_decode($buscarplaneta, true);
+                $nombrePlaneta = $Planeta['name'];
+            }else{
+                $aError = $aRepuesta;
+            }
         }else{
-            $error = $Personaje;
-        } 
+            $error = "El campo tiene que ser entre 1 y 83";
+        }
+       
+        
     }
    
     if(isset($_REQUEST['nasa'])){
