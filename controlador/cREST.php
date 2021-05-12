@@ -25,15 +25,13 @@
     $nombrePlaneta = null;
     
     if(isset($_REQUEST['personaje'])){
-        $_SESSION['numeropersonaje'] = $_REQUEST['numero'];
-        $numeropordefecto = $_SESSION['numeropersonaje'];
-        
-        $error = null;
+        $numeropordefecto = $_REQUEST['numero'];
+       
         define("OBLIGATORIO", 1); 
         $entradaOK = true;
         
         
-        $error = validacionFormularios::comprobarEntero($_REQUEST['numero'],83,1,OBLIGATORIO);
+        $error = validacionFormularios::comprobarEntero($_REQUEST['numero'],1000,1,OBLIGATORIO);            //He cambiado el numero max permitido por que el usuario enr ealidad no tiene por que saber cuntos personajes hay
         
         if($error==null){
             $aRepuesta = REST::starwars($_REQUEST['numero']);
@@ -50,7 +48,7 @@
                 $aError = $aRepuesta;
             }
         }else{
-            $error = "El campo tiene que ser entre 1 y 83";
+            $error = "El campo no es aceptado";
         }
        
         

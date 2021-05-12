@@ -2,7 +2,9 @@
 require_once "core/210322ValidacionFormularios.php";                            //Incluimos la libreria de usuarios
 require_once "modelo/REST.php";                                                 //Inluyo el modelo de la clase                        
 require_once "modelo/Usuario.php";
-require_once "modelo/UsuarioPDO.php";  
+require_once "modelo/UsuarioPDO.php";
+require_once "modelo/Departamento.php";
+require_once "modelo/DepartamentoPDO.php";
 require_once "modelo/DBPDO.php";
 $controladores = [                                                              //Creamos un array de controladores para cargarlos controladores mas adelante
     "principal" => "controlador/cPrincipal.php",
