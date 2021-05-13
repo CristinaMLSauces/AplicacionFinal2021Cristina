@@ -20,10 +20,10 @@ class DepartamentoPDO{
      */
     public static function obtenerTodosLosDepartamentos(){
         $oDepartamento = null;
-        $codDepartamento = null;
+//      $codDepartamento = null;
        
         $consulta = "SELECT * FROM T02_Departamento";
-        $resultadoConsulta = DBPDO::ejecutarConsulta($consulta, [$codDepartamento]); // almacenamos en la variable $resultadoConsulta el departamento obtenidos en la consulta
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consulta); // almacenamos en la variable $resultadoConsulta el departamento obtenidos en la consulta
         
         $numDepartamentos = $resultadoConsulta->rowCount();
         $departamento = $resultadoConsulta->fetchObject(); 
@@ -32,7 +32,6 @@ class DepartamentoPDO{
             $aDepartamentos[$i] =  $oDepartamento;
             $departamento = $resultadoConsulta->fetchObject();
         }
-        
         return $aDepartamentos;
         
     }

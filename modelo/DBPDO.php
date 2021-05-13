@@ -10,7 +10,7 @@
  * @version 1.1
  */
 class DBPDO {                                                                   //Nueva clase para lo conexion a la base de datos y ejecucion de consultas
-    public static function ejecutarConsulta($sentenciaSQL, $parametros) {        //Creo un metodo que se llame ejecutar consulta y le pueda pasar una cosnulta y unos parametros
+    public static function ejecutarConsulta($sentenciaSQL, $parametros=null) {        //Creo un metodo que se llame ejecutar consulta y le pueda pasar una cosnulta y unos parametros
         try {                                                       
             $miDB = new PDO(HOST,USER,PASSWORD);                                //Establecer una conexión con la base de datos 
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);     //La clase PDO permite definir la fórmula que usará cuando se produzca un error, utilizando el atributo PDO::ATTR_ERRMODE

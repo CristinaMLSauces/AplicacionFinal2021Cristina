@@ -16,14 +16,14 @@ class REST {
            $Respuesta[1] = "Error de peticion al servidor";
            return $Respuesta; // devolvemos el array con el mensaje de error
         
-           
         }else{    
             $resultado = file_get_contents("https://swapi.dev/api/people/".$number."/", true); // obtenemos el resultado del servidor del api rest
-            $Personaje = json_decode($resultado, true);                      // Almacenamos el array devuelto por json_decode    
+                               // Almacenamos el array devuelto por json_decode    
 
-           if($Personaje == null || $number == null){                         // si no obtenemos el resultado esperado
+           if($resultado == false || $number == null){                         // si no obtenemos el resultado esperado
                throw new Exception("Error en la introduccion de datos");       //Lanzamos una excepcion
             }else{
+                $Personaje = json_decode($resultado, true);  
                 $Respuesta[0] = true;
                 $Respuesta[1] = $Personaje;
                return $Respuesta;                                               //devolvemos un array con los datos que queremos devolver

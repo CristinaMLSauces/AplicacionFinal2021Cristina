@@ -48,10 +48,8 @@
                 $aError = $aRepuesta;
             }
         }else{
-            $error = "El campo no es aceptado";
+            $error = "El campo no es valido";
         }
-       
-        
     }
    
     if(isset($_REQUEST['nasa'])){
