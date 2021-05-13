@@ -48,15 +48,12 @@
                     <?php echo ($aErrores['ImagenUsuario']!=null) ? "<span class='error'>".$aErrores['ImagenUsuario']."</span>" : null; ?>
                     <br><br>
                 </div>
-                
                     <input type="submit"  value="CAMBIAR CONTRASEÑA" name="cambiarPassword" class="contraseña">
                     <br>
                 <div>
                     <input type="submit" value="Aceptar" name="aceptar" class="aceptar">
                     <input type="submit" value="Cancelar" name="cancelar" class="cancelar">
                 </div>
-
-               
 
             </form>
 </div>
