@@ -11,6 +11,7 @@
     }
     
     $error = null;
+    $aError = null;
     $numeropordefecto = null;
     $Personaje = null;
     $Nasa = null;
@@ -24,23 +25,31 @@
     $nombrePlaneta = null;
     
     if(isset($_REQUEST['personaje'])){
-        $_SESSION['numeropersonaje'] = $_REQUEST['numero'];
-        $numeropordefecto = $_SESSION['numeropersonaje'];
+        $numeropordefecto = $_REQUEST['numero'];
+       
+        define("OBLIGATORIO", 1); 
+        $entradaOK = true;
         
-        $Personaje = REST::starwars($_REQUEST['numero']);
         
-        if(is_array($Personaje)){
-            $nombre = $Personaje['name'];
-            $genero = $Personaje['gender'];
-            $altura = $Personaje['height'];
-            $planeta = $Personaje['homeworld'];
+        $error = validacionFormularios::comprobarEntero($_REQUEST['numero'],1000,1,OBLIGATORIO);            //He cambiado el numero max permitido por que el usuario enr ealidad no tiene por que saber cuntos personajes hay
+        
+        if($error==null){
+            $aRepuesta = REST::starwars($_REQUEST['numero']);
+            if($aRepuesta[0]==true){
+                $nombre = $aRepuesta[1]['name'];
+                $genero = $aRepuesta[1]['gender'];
+                $altura = $aRepuesta[1]['height'];
+                $planeta = $aRepuesta[1]['homeworld'];
 
-            $buscarplaneta = file_get_contents($planeta, true);
-            $Planeta = json_decode($buscarplaneta, true);
-            $nombrePlaneta = $Planeta['name'];
+                $buscarplaneta = file_get_contents($planeta, true);
+                $Planeta = json_decode($buscarplaneta, true);
+                $nombrePlaneta = $Planeta['name'];
+            }else{
+                $aError = $aRepuesta;
+            }
         }else{
-            $error = $Personaje;
-        } 
+            $error = "El campo no es valido";
+        }
     }
    
     if(isset($_REQUEST['nasa'])){

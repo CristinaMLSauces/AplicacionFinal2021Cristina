@@ -251,7 +251,6 @@ table td{
 	padding:40px 40px;
 }
 .input-container{
-	
 	margin-bottom:25px;
 }
 .input-container label{
@@ -504,3 +503,23 @@ margin-left: 25%;
     top: 30px;
 }
 
+/*----------------------------MTO DEPARTAMENTO------------------------*/
+
+.buscardepartamento{
+    font-family: 'Comfortaa', cursive;
+    margin-left: 10%;
+    margin-top: 1%;
+
+}
+.buscardepartamento input:nth-of-type(1){
+        border:0;
+     border-bottom:2px solid #555;
+}
+
+.mostrardepartamento td,th{
+    padding: 1%;
+}
+
+.mostrardepartamento tr:nth-of-type(odd) td{
+    background-color: #bbe3f0;
+}
