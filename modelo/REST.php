@@ -8,8 +8,8 @@ class REST {
      * @return type array que contiene información sobre el personaje. 
      */
     public static function starwars($number){    
-//        try{
-//          error_reporting(0);                                                 La manera facil hubiera sido desactivando el warning
+
+//      error_reporting(0);                                                 La manera facil hubiera sido desactivando el warning
         $url = "https://swapi.dev/api/people/".$number."/";                     //Guardo en la variable $url la url que voy a la que le voy a ahacer la peticion
         if(self::get_http_response_code($url) != "200"){                        //llamo a la funcion que me devuelve el codigo de respuesta http, si este es difrenete a 200
            $Respuesta[0] = false;                                               //Significa que no ha podido hacer la peticion y guardo y devuelvo el error
@@ -18,24 +18,14 @@ class REST {
         
         }else{    
             $resultado = file_get_contents("https://swapi.dev/api/people/".$number."/", true); // obtenemos el resultado del servidor del api rest
-                               // Almacenamos el array devuelto por json_decode    
-
-           if($resultado == false || $number == null){                         // si no obtenemos el resultado esperado
-               throw new Exception("Error en la introduccion de datos");       //Lanzamos una excepcion
-            }else{
+                                
+            if($resultado != false || $number != null){                         // si no obtenemos el resultado esperado
                 $Personaje = json_decode($resultado, true);  
                 $Respuesta[0] = true;
                 $Respuesta[1] = $Personaje;
-               return $Respuesta;                                               //devolvemos un array con los datos que queremos devolver
-           }
+               return $Respuesta; 
+            }
         }
-    
-//        }catch(Exception $excepcion){
-//            $Respuesta[0] = 'excepcion';
-//            $Respuesta[1]['code'] =$excepcion -> getCode();
-//            $Respuesta[1]['message'] = $excepcion -> getMessage(); //Asignamos a un array el mensaje de error de la excepcion
-//            return $Respuesta; // devolvemos el array con el mensaje de error
-//        }      
     }
     
     public static function get_http_response_code($url) {                       //Declaro una funcion para recoger el error de respuesta de http

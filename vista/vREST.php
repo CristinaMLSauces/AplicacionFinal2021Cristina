@@ -2,7 +2,7 @@
         <form  name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
             <button type="submit" name='volver' value="volver" class="volver">VOLVER</button>
         </form>
-    <h1 class="h1detalle">Aplicacion Final Cristina 2021</h1>
+    <h1 class="h1detalle">Aplicacion Final Cristina 2021<br>REST</h1>
 </header>
 <div class="apisdescrip">
     <form name="formulario1" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
@@ -17,7 +17,6 @@
             <p><b>Genero:</b><?php if ($genero != null) { echo $genero; } ?></p>
             <p><b>Altura:</b><?php if ($altura != null) { echo $altura; } ?>cm</p>
             <p><b>Planeta:</b><?php if ($nombrePlaneta != null) { echo $nombrePlaneta; } ?></p> 
-
          </fieldset>   
     </form>
 
