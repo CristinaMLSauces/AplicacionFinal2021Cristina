@@ -24,9 +24,9 @@
                 <td><a href="https://github.com/CristinaMLSauces/AplicacionFinal2021Cristina" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
                 <td><a href="doc/phpdocumentor/index.html" target="_blank"><img src="webroot/images/phpdoc.png" class="logo" /> </a></td>
                 <td><a href="https://daw207.ieslossauces.es/" target="_blank"><img src="webroot/images/1and1.png" class="logo" /> </a></td>
-                <td><a href="" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
+                <td><a href="webroot/rss/rss.xml" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
              </tr>
-     
+       
          </table>
      </footer>
 </html>

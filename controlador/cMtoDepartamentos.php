@@ -3,7 +3,6 @@ $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']; // almacenamo
 $_SESSION['paginaAnterior'] = $controladores['mtoDepartamentos'];
 
 if (isset($_REQUEST["volver"])){
-     $_SESSION['descDepartamento'] = "";
     $_SESSION['paginaEnCurso'] = $controladores['inicio']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del login
     header('Location: index.php');
     exit;
@@ -11,22 +10,30 @@ if (isset($_REQUEST["volver"])){
 
 if (isset($_REQUEST['modificarDepartamento'])) { // si se ha pulsado el botón de editar perfil
     $_SESSION['codDepartamento'] = $_REQUEST['modificarDepartamento'];
-    $_SESSION['paginaEnCurso'] = $controladores['wip']; //guardamos en la sesión el controlador que debe ejecutarse
+    $_SESSION['paginaEnCurso'] = $controladores['modificarDepartamento']; //guardamos en la sesión el controlador que debe ejecutarse
     header('Location: index.php'); //enviamos al usuario de vuelta al index
     exit;
 }
 if (isset($_REQUEST['eliminarDepartamento'])) { // si se ha pulsado el botón de editar perfil
     $_SESSION['codDepartamento'] = $_REQUEST['eliminarDepartamento'];
-    $_SESSION['paginaEnCurso'] = $controladores['wip']; //guardamos en la sesión el controlador que debe ejecutarse
+    $_SESSION['paginaEnCurso'] = $controladores['borrarDepartamento']; //guardamos en la sesión el controlador que debe ejecutarse
     header('Location: index.php'); //enviamos al usuario de vuelta al index
     exit;
 }
+
+if (isset($_REQUEST['altaDepartamento'])) { // si se ha pulsado el botón de editar perfil
+    $_SESSION['codDepartamento'] = $_REQUEST['eliminarDepartamento'];
+    $_SESSION['paginaEnCurso'] = $controladores['altaDepartamento']; //guardamos en la sesión el controlador que debe ejecutarse
+    header('Location: index.php'); //enviamos al usuario de vuelta al index
+    exit;
+}
+
 
 $entradaOK = true;
 define("OPCIONAL", 0);
 $ErrorDesc = null;
 
-    if (isset($_REQUEST['buscar'])) {
+    if(isset($_REQUEST['buscar'])) {
         $ErrorDesc = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descDepartamento'], 10, 1, OPCIONAL);
 
         if ($ErrorDesc != null) { // compruebo si hay algun mensaje de error en algun campo
