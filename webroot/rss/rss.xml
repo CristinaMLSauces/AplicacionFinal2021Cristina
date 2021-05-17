@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title><![CDATA[ Cristina Manjon Lacalle]]></title>
+        <copyright> 2020-2021. Cristina Manjon Lacalle. Todos los Derechos Reservados.</copyright>
+        <link>http://192.168.1.209/AplicacionFinal2021Cristina/</link>
+        <description>Aplicacion final Cristina Manjon Lacalle DWES</description>
+        <language>es</language>
+        <lastBuildDate>Sun, 16 May 2021 13:00:00 GMT</lastBuildDate>
+        <image>
+            <url>https://daw207.ieslossauces.es/images/logo.png</url>
+            <title>Cristina Manjon Lacalle</title>
+            <link>http://192.168.1.209/AplicacionFinal2021Cristina/</link>
+        </image>
+
+        <item>
+            <title>Login para todos los usuarios</title>
+            <link> http://192.168.1.209/AplicacionFinal2021Cristina/index.php</link>
+            <description>Funcionalidad de poder logearse con cualquier usuario de clase</description>
+            <guid>https://daw207.ieslossauces.es/AplicacionFinal2021Cristina/index.php</guid>
+            <pubDate>Sun, 16 May 2021 13:00:00 GMT</pubDate>
+        </item>
+        
+        <item>
+            <title>Api REST</title>
+            <link>  http://192.168.1.209/AplicacionFinal2021Cristina/index.php</link>
+            <description>Uso de Api Rest de un personaje de Star wars</description>
+            <guid>https://daw207.ieslossauces.es/AplicacionFinal2021Cristina/Rest</guid>
+            <pubDate>Sun, 16 May 2021 13:00:00 GMT</pubDate>
+        </item>
+        
+        <item>
+            <title>Mantenimiento de Departamentos</title>
+            <link>  http://192.168.1.209/AplicacionFinal2021Cristina/index.php</link>
+            <description>Nueva funcionalidad de mantenimiento de departamentos</description>
+            <guid>https://daw207.ieslossauces.es/AplicacionFinal2021Cristina/mtoDepartamentos</guid>
+            <pubDate>Sun, 16 May 2021 13:00:00 GMT</pubDate>
+        </item>
+
+        <item>
+            <title>Editar perfil </title>
+            <link> http://192.168.1.209/AplicacionFinal2021Cristina/index.php</link>
+            <description>Nueva funcionalidad para poder editar el perfil del usuario</description>
+            <guid>https://daw207.ieslossauces.es/AplicacionFinal2021Cristina/editarPerfil</guid>
+            <pubDate>Sun, 16 May 2021 13:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

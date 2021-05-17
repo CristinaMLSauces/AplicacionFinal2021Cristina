@@ -22,7 +22,7 @@
                 <div class="input-container">           
                     <label>Descripción del usuario</label>   
                     <input type="text" name="DescUsuario" value="<?php echo $descUsuario; ?>">
-                     <?php echo ($aErrores['DescUsuario']!=null) ? "<span class='error'>".$aErrores['DescUsuario']."</span>" : null; ?>     
+                     <?php echo ($aErrores['DescUsuario']!=null) ? "<span>  ⚠️".$aErrores['DescUsuario']."</span>" : null; ?>     
                     <br><br>
                 </div>
                 
@@ -45,7 +45,7 @@
                 <div class="imagen">           
                     <label for="imagen">Imagen de perfil</label>   
                     <input type="file" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" id="imagen" name="imagen">
-                    <?php echo ($aErrores['ImagenUsuario']!=null) ? "<span class='error'>".$aErrores['ImagenUsuario']."</span>" : null; ?>
+                    <?php echo ($aErrores['ImagenUsuario']!=null) ? "<span >  ⚠️".$aErrores['ImagenUsuario']."</span>" : null; ?>
                     <br><br>
                 </div>
                     <input type="submit"  value="CAMBIAR CONTRASEÑA" name="cambiarPassword" class="contraseña">

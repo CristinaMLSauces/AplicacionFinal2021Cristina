@@ -18,7 +18,10 @@ $controladores = [                                                              
     "borrarcuenta" => "controlador/cBorrarCuenta.php",
     "rest" => "controlador/cREST.php",
     "error" => "controlador/cError.php",
-    "mtoDepartamentos" => "controlador/cMtoDepartamentos.php"
+    "mtoDepartamentos" => "controlador/cMtoDepartamentos.php",
+    "modificarDepartamento" => "controlador/cConsultarModificarDepartamento.php",
+    "borrarDepartamento" => "controlador/cEliminarDepartamento.php",
+    "altaDepartamento" => "controlador/cAltaDepartamento.php"
 ];
 
 $vistas = [                                                                     //Hacemos los mismo con las vistas
@@ -34,6 +37,9 @@ $vistas = [                                                                     
     "borrarcuenta" => "vista/vBorrarCuenta.php",
     "rest" => "vista/vREST.php",
     "error" => "vista/vError.php",
-    "mtoDepartamentos" => "vista/vMtoDepartamentos.php"
+    "mtoDepartamentos" => "vista/vMtoDepartamentos.php",
+    "modificarDepartamento" => "vista/vConsultarModificarDepartamento.php",
+    "borrarDepartamento" => "vista/vEliminarDepartamento.php",
+    "altaDepartamento" => "vista/vAltaDepartamento.php"
 ];
 ?>

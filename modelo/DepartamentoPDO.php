@@ -4,7 +4,7 @@
  *
  * Clase cuyos metodos hacen consultas a la tabla T02_Departamento de la base de datos
  * 
- * @author Cristina Manjon
+ * @author Cristina Manjon y Beatriz Merino
  * @since 1.1
  * @copyright 2020-2021 Nerea Alvarez
  * @version 1.1
@@ -18,24 +18,124 @@ class DepartamentoPDO{
      * @param  string $codDepartamento codigo del departamento del que queremos obtener los datos
      * @return null|\Departamento devuelve un objeto de tipo Departamento con los datos guardados en la base de datos y null si no se ha podido encontrar
      */
-    public static function buscaDepartamentoPorDesc($busqueda) {
-        $aDepartamentos = null;
+    public static function buscaDepartamentoPorDesc($parametros) {
+        $aDepartamentos = [];
         $consulta = "SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE CONCAT('%', ?, '%')";
-        $resultado = DBPDO::ejecutarConsulta($consulta, [$busqueda]);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$parametros]);
 
         if ($resultado->rowCount() > 0) {
-            $departamento = $resultado->fetchObject();
-            $numDepartamento = 0; // declaramos e inicializamos el numero del departamento del array equivalente a la posicion del array
-
-            while ($departamento) { // mientras haya algun departamento
-                // Instanciamos un objeto Departamento con los datos devueltos por la consulta
+            for($i=0,$departamento = $resultado->fetchObject();$i<$resultado->rowCount();$i++,$departamento = $resultado->fetchObject()){
                 $oDepartamento = new Departamento($departamento->T02_CodDepartamento, $departamento->T02_DescDepartamento, $departamento->T02_FechaCreacionDepartamento, $departamento->T02_VolumenNegocio, $departamento->T02_FechaBajaDepartamento);
-                $aDepartamentos[$numDepartamento] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente
-                $numDepartamento++; // incrementamos el numero del departamento equivalente a la posicion el array
-                $departamento = $resultado->fetchObject(); // almacenamos el siguiente departamento devuelto por la consulta y avanzamos el puntero al siguiente departamento
+                $aDepartamentos[$i] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente 
             }
         }
         return $aDepartamentos;
     }
+    
+    /**
+     * Método buscaDepartamentoPorCod()
+     *
+     * Método que obtiene todos los datos de un departamento de la base de datos
+     * 
+     * @param  string $codigo código del departamento del que queremos obtener los datos
+     * @return null|\Departamento devuelve un objeto de tipo Departamento con los datos guardados en la base de datos y null si no se ha encontrado el departamento en la BBDD
+     */
+    public static function buscaDepartamentoPorCod($codigo) {
+        //Inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos
+        $oDepartamento = null; 
+        
+        $consulta = "SELECT * FROM T02_Departamento WHERE T02_CodDepartamento=?";
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codigo]);
 
+        //Si la consulta me devuelve algún resultado lo guardo en una variable para instanciar un nuevo objeto Departamento con esos datos
+        if ($resultado->rowCount() > 0) {
+            $oDepartamentoConsulta = $resultado->fetchObject();
+            $oDepartamento = new Departamento($oDepartamentoConsulta->T02_CodDepartamento, $oDepartamentoConsulta->T02_DescDepartamento, $oDepartamentoConsulta->T02_FechaCreacionDepartamento, $oDepartamentoConsulta->T02_VolumenNegocio, $oDepartamentoConsulta->T02_FechaBajaDepartamento);
+        }
+        
+        //Devuelvo el objeto
+        return $oDepartamento;
+    }
+    
+    /**
+     * Método modificarDepartamento()
+     *
+     * Método que modifica el valor de la descripción y el volumen del departamento.
+     * 
+     * @param  int $volumen nuevo volumen de negocio
+     * @param  string $descripcion nueva descripción del usuario
+     * @param  string $codigo codigo del departamento que queremos modificar
+     * @return boolean devuelve true si se ha podido modificar el departamento y false si no
+     */
+    public static function modificaDepartamento($volumen, $descripcion, $codigo) {
+        //Variable booleana inicializada a false
+        $departamentoModificado = false;
+
+        //Modifica el departamento en la base de datos ejecutando un query
+        $sentenciaSQL = "UPDATE T02_Departamento SET T02_DescDepartamento=?, T02_VolumenNegocio=? WHERE T02_CodDepartamento=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$descripcion, $volumen, $codigo]);
+
+        //Si la consulta me devuelve algún resultado cambiamos el valor de $departamentoModificado a true
+        if ($resultadoConsulta) {
+            $departamentoModificado = true;
+        }
+        
+        //Devuelvo la variable
+        return $departamentoModificado;
+    }
+    /**
+     * Método bajaFisicaDepartamento()
+     * 
+     * Método que elimina un departamento de la base de datos
+     *
+     * @param  string $codigo código del usuario que queremos borrar
+     * @return boolean true si se ha borrado el departamento y false en caso contrario
+     */
+    public static function bajaFisicaDepartamento($codDepartamento) {
+        $borrar = false;
+        
+        $consulta = "DELETE FROM T02_Departamento WHERE T02_CodDepartamento=?";
+        $resultadoConculta = DBPDO::ejecutarConsulta($consulta, [$codDepartamento]);
+
+        if ($resultadoConculta) {
+            $borrar = true;
+        }
+        
+        return $borrar;
+    }
+    /**
+     * Método altaDepartamentos()
+     * 
+     * Método que elimina un departamento de la base de datos
+     *
+     * @param  string $codigo código del usuario que queremos borrar
+     * @return boolean true si se ha borrado el departamento y false en caso contrario
+     */
+    
+    public static function altaDepartamentos($codDepartamento, $descDepartamento, $volDepartamento) {
+        $altaDepartamento = false;
+
+        $consulta = "Insert into T02_Departamento (T02_CodDepartamento, T02_DescDepartamento, T02_VolumenNegocio, T02_FechaCreacionDepartamento) values (?,?,?,?)";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consulta, [$codDepartamento, $descDepartamento, $volDepartamento, time()]);
+
+        if ($resultadoConsulta) {
+            $altaDepartamento = true;
+        }
+
+        return $alta;
+    }
+    
+    public static function validarCodNoExiste($codDepartamento) {
+        $departamentoNoExiste = true; // inicializo la variable booleana a true
+        // comprueba que el usuario introducido existen en la base de datos
+        $consulta = "Select * from T02_Departamento where T02_CodDepartamento=?";
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codDepartamento]); // guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro
+
+        if ($resultado->rowCount() > 0) { // si la consulta me devuleve algun resultado
+            $departamentoNoExiste = false; // inicializo la variable booleana a false
+        }
+
+        return $departamentoNoExiste;
+    }
+ 
 }

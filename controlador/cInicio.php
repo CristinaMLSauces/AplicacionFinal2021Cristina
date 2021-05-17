@@ -30,7 +30,8 @@ $_SESSION['paginaAnterior'] = $controladores['inicio'];
     exit;
 }
     
-    if(isset($_REQUEST['MtoDepartamentos'])) {                                            //Si se ha pulsado el boton de Cerrar Sesion
+    if(isset($_REQUEST['MtoDepartamentos'])) {
+        $_SESSION['descDepartamento'] = "";                                     
         $_SESSION['paginaEnCurso'] = $controladores['mtoDepartamentos'];                                                //Destruye todos los datos asociados a la sesion
         header("Location: index.php");                                          //Redirige al login
         exit;

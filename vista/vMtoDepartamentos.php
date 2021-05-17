@@ -1,8 +1,11 @@
-<header class="hdetalle">
-        <form  name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-            <button type="submit" name='volver' value="volver" class="volver">VOLVER</button>
-        </form>
-    <h1 class="h1detalle">Aplicacion Final Cristina 2021</h1>
+<header class="hinicio" style="justify-content: space-around;">
+    <form  name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <button type="submit" name='volver' value="volver" class="volver">VOLVER</button>
+    </form>
+    <h1>Aplicacion Final Cristina 2021<br>Mto Departamentos</h1>
+    <form class="finicio" name="formulario" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" ">
+        <input class="botones" type="submit" value="Añadir" name="altaDepartamento" id="detalles" style="width: 100px;font-size: 25px;">   
+    </form>
 </header>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -11,8 +14,7 @@
         <input type="search" name="descDepartamento" value="<?php if($descDepartamento != ""){echo $descDepartamento ;}?>"/>
         <input class="button" type="submit" name="buscar" value="Buscar">
         <?php if($ErrorDesc != null) { echo "<p>  ⚠️".$ErrorDesc."</p>"; } ?>    
-        <br><br>
-    </div> 
+    </div>
     <br><br>
     <table class="mostrardepartamento" style="text-align: center;">
             <thead>
@@ -53,8 +55,8 @@
                     ?>
             </tbody>
              <?php 
-                    }
-                    ?>
+               }
+               ?>
         </table>
 </form>
 
