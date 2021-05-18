@@ -31,12 +31,11 @@
                 <?php
                  if (count($aDepartamentos) > 0){ 
                     foreach ($aDepartamentos as $departamento => $oDepartamento) {
-                    $codigoDep = $oDepartamento->codDepartamento;
-                            
+                    $codigoDep = $oDepartamento->codDepartamento;  
                     if (is_null($oDepartamento->fechaBajaDepartamento)) {
                         $fechaBaja = "────";
                     } else {
-                        $fechaBaja = date('d/m/Y', $oDepartamento->fechaBaja);
+                        $fechaBaja = date('d/m/Y', $oDepartamento->fechaBajaDepartamento);
                     }
                     ?>
                     <tr>
@@ -46,8 +45,18 @@
                         <td><?php echo date('d/m/Y', $oDepartamento->fechaCreacionDepartamento); ?></td>
                         <td><?php echo $fechaBaja; ?></td>
                         <td>
-                            <button name="bajaLogica" value="<?php echo $codigoDep ?>"><img src="webroot/images/flecharoja.png" width="30"></button>
-                            <button name="rehabilitar" value="<?php echo $codigoDep ?>"><img src="webroot/images/flechaverde.png" width="30"></button>
+                            <?php
+                            if (is_null($oDepartamento->fechaBajaDepartamento)){
+                            ?>
+                           
+                           <button name="bajaLogica" value="<?php echo $codigoDep ?>"><img src="webroot/images/flecharoja.png" width="30"></button>
+                            <?php
+                            }else{
+                            ?>
+                              <button name="rehabilitar" value="<?php echo $codigoDep ?>"><img src="webroot/images/flechaverde.png" width="30"></button>
+                            <?php
+                            }
+                            ?>
                             <button name="modificarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/consulta.png" alt="imagen editar consultar departamento" width="30"></button>
                             <button name="eliminarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/eliminar.png" alt="imagen eliminar departamento" width="30"></button>                           
                         </td>
@@ -58,7 +67,7 @@
             </tbody>
              <?php 
                }
-           
+ 
                ?>
         </table>
 </form>

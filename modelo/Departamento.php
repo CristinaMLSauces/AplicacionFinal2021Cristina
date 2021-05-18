@@ -45,7 +45,7 @@ class Departamento
      * 
      * @var int 
      */
-    private $fechaBaja;
+    private $fechaBajaDepartamento;
 
 
     /**

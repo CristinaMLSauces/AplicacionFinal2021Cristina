@@ -146,11 +146,11 @@ class DepartamentoPDO{
      * @param  string $codDepartamento codigo del departamento que queremos dar de baja logica
      * @return boolean true si se ha dado de baja logica correctamente, false ne caso contrario
      */
-    public static function bajaLogicaDepartamento($codDepartamento)
-    {
+    public static function bajaLogicaDepartamento($codDepartamento){
         $bajaLogica = false; // Inicializamos la variable bajaLogica a false
-        $dateTimeBaja = new DateTime(); // Inicializamos la variable $dateTimeBaja con un objeto de tipo DateTime de la fechaBaja pasada como parametro
-
+        
+        $dateTimeBaja = new DateTime();
+       
         $sentenciaSQL = "Update T02_Departamento set T02_FechaBajaDepartamento=? WHERE T02_CodDepartamento=?";
         $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$dateTimeBaja->getTimestamp(), $codDepartamento]); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
 
@@ -159,5 +159,25 @@ class DepartamentoPDO{
         }
 
         return $bajaLogica;
+    }
+    /**
+     * Metodo rehabilitacionDepartamento()
+     *
+     * Metodo que rehabilita un departamento poniendo su fehca de baja a null
+     * 
+     * @param  string $codDepartamento codigo del departamento que queremos rehabilitar
+     * @return boolean true si se ha rehabilitado el departamento, false en caso contrario 
+     */
+    public static function rehabilitacionDepartamento($codDepartamento)
+    {
+        $rehabilitacion = false; // Inicializamos la variable rehabilitacion a false
+
+        $sentenciaSQL = "Update T02_Departamento set T02_FechaBajaDepartamento=null WHERE T02_CodDepartamento=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$codDepartamento]); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
+
+        if ($resultadoConsulta) { // Si se ha realizado la consulta correctamente
+            $rehabilitacion = true; // Cambiamos el valor de la variable rehabilitacion a true
+        }
+        return $rehabilitacion;
     }
 }

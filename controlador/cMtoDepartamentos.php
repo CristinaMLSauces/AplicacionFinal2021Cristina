@@ -30,24 +30,13 @@ if (isset($_REQUEST['altaDepartamento'])) { // si se ha pulsado el botón de edi
 
 if(isset($_REQUEST['bajaLogica'])){                                            // Baja Logica del Departamernto
     $_SESSION['codDepartamento'] = $_REQUEST['bajaLogica'];
-    $oDepartamento = DepartamentoPDO::buscaDepartamentoPorCod($_SESSION['codDepartamento']);
-    
-    if (DepartamentoPDO::bajaLogicaDepartamento($_SESSION['codDepartamento'])) { // si se ha dado de baja correctamente
-            $_SESSION['paginaEnCurso'] = $controladores['mtoDepartamentos']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del login
-        }
-        header('Location: index.php');
-        exit;
+    DepartamentoPDO::bajaLogicaDepartamento($_SESSION['codDepartamento']);
+
 }
 
 if(isset($_REQUEST['rehabilitar'])){                                            //Rehabilitar Departamento
     $_SESSION['codDepartamento'] = $_REQUEST['rehabilitar'];
-    $oDepartamento = DepartamentoPDO::buscaDepartamentoPorCod($_SESSION['codDepartamento']);
-    
-    if (DepartamentoPDO::bajaLogicaDepartamento($_SESSION['codDepartamento'])) { // si se ha dado de baja correctamente
-            $_SESSION['paginaEnCurso'] = $controladores['mtoDepartamentos']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del login
-        }
-        header('Location: index.php');
-        exit;
+    DepartamentoPDO::rehabilitacionDepartamento($_SESSION['codDepartamento']); 
 }
 
 $entradaOK = true;
