@@ -36,7 +36,7 @@
                     if (is_null($oDepartamento->fechaBajaDepartamento)) {
                         $fechaBaja = "────";
                     } else {
-                        $fechaBaja = date('d/m/Y', $oDepartamento->FechaBaja);
+                        $fechaBaja = date('d/m/Y', $oDepartamento->fechaBaja);
                     }
                     ?>
                     <tr>
@@ -46,8 +46,10 @@
                         <td><?php echo date('d/m/Y', $oDepartamento->fechaCreacionDepartamento); ?></td>
                         <td><?php echo $fechaBaja; ?></td>
                         <td>
-                            <button name="modificarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/consulta.png" alt="imagen editar consultar departamento" width="20"></button>
-                            <button name="eliminarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/eliminar.png" alt="imagen eliminar departamento" width="20"></button>                           
+                            <button name="bajaLogica" value="<?php echo $codigoDep ?>"><img src="webroot/images/flecharoja.png" width="30"></button>
+                            <button name="rehabilitar" value="<?php echo $codigoDep ?>"><img src="webroot/images/flechaverde.png" width="30"></button>
+                            <button name="modificarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/consulta.png" alt="imagen editar consultar departamento" width="30"></button>
+                            <button name="eliminarDepartamento" value="<?php echo $codigoDep ?>"><img src="webroot/images/eliminar.png" alt="imagen eliminar departamento" width="30"></button>                           
                         </td>
                     </tr>
                     <?php 
@@ -56,6 +58,7 @@
             </tbody>
              <?php 
                }
+           
                ?>
         </table>
 </form>

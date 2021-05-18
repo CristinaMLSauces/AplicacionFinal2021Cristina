@@ -138,4 +138,26 @@ class DepartamentoPDO{
         return $departamentoNoExiste;
     }
  
+    /**
+     * Metodo bajaLogicaDepartamento()
+     *
+     * Metodo que da de baja logica un departamento cuyo codigo es pasado por parametro
+     * 
+     * @param  string $codDepartamento codigo del departamento que queremos dar de baja logica
+     * @return boolean true si se ha dado de baja logica correctamente, false ne caso contrario
+     */
+    public static function bajaLogicaDepartamento($codDepartamento)
+    {
+        $bajaLogica = false; // Inicializamos la variable bajaLogica a false
+        $dateTimeBaja = new DateTime(); // Inicializamos la variable $dateTimeBaja con un objeto de tipo DateTime de la fechaBaja pasada como parametro
+
+        $sentenciaSQL = "Update T02_Departamento set T02_FechaBajaDepartamento=? WHERE T02_CodDepartamento=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$dateTimeBaja->getTimestamp(), $codDepartamento]); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
+
+        if ($resultadoConsulta) { // Si se ha realizado la consulta correctamente
+            $bajaLogica = true; // Cambiamos el valor de la variable bajaLogica a true
+        }
+
+        return $bajaLogica;
+    }
 }
