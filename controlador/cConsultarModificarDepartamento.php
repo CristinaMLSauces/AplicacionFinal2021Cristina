@@ -1,7 +1,4 @@
 <?php
-
-$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']; // almacenamos en la variable el usuario actual
-
 if (isset($_REQUEST["cancelar"])){
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];                   //Si se pulsa cancelar guardo en pagina en curso la pagina anterior
     header('Location: index.php');

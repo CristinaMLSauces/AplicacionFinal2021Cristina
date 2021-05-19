@@ -28,7 +28,8 @@
             <p><b>Descripcion:</b> <?php echo $explicacion; ?></p>
             <p><b>Titulo de la Imagen:</b> <?php echo $title; ?></p>
             <img src="<?php echo $imagen; ?>" width="400px"/>
-         </fieldset>   
+         </fieldset>
+         
     </form>
 </div>      
        

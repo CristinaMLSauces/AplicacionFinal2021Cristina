@@ -1,5 +1,4 @@
 <?php
-$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']; // almacenamos en la variable el usuario actual
 $_SESSION['paginaAnterior'] = $controladores['mtoDepartamentos'];
 
 if (isset($_REQUEST["volver"])){

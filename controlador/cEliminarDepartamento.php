@@ -14,7 +14,6 @@ if (isset($_REQUEST["aceptar"])) {
     exit; 
 }
 
-
 $vistaEnCurso = $vistas['borrarDepartamento']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
 require_once $vistas['layout'];
 ?>
