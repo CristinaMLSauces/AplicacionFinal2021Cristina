@@ -41,10 +41,13 @@ if(isset($_REQUEST['rehabilitar'])){                                            
 $entradaOK = true;
 define("OPCIONAL", 0);
 $ErrorDesc = null;
+$ErrorCriterio = null;
+$_SESSION['criteriodebusqueda'] = "todos";
 
     if(isset($_REQUEST['buscar'])) {
         $ErrorDesc = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descDepartamento'], 10, 1, OPCIONAL);
-
+        $ErrorCriterio = validacionFormularios::validarElementoEnLista($_REQUEST['criteriodebusqueda'], ['todos', 'baja', 'alta']);
+        
         if ($ErrorDesc != null) { // compruebo si hay algun mensaje de error en algun campo
                 $entradaOK = false; // le doy el valor false a $entradaOK
                 $_REQUEST['descDepartamento'] = ""; // si hay algun campo que tenga mensaje de error pongo $_REQUEST a null
@@ -55,10 +58,12 @@ $ErrorDesc = null;
         
     if($entradaOK){
        $_SESSION['descDepartamento'] = $_REQUEST['descDepartamento'];
+       $_SESSION['criteriodebusqueda'] = $_REQUEST['criteriodebusqueda'];
     }
 
-$aDepartamentos = DepartamentoPDO::buscaDepartamentoPorDesc($_SESSION['descDepartamento']);
+$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDescYEstado($_SESSION['descDepartamento'],$_SESSION['criteriodebusqueda']);
 $descDepartamento = $_SESSION['descDepartamento'];
+$criterioBusqueda = $_SESSION['criteriodebusqueda'];
 
 $vistaEnCurso = $vistas['mtoDepartamentos']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
 require_once $vistas['layout'];

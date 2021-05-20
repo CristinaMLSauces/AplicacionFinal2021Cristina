@@ -180,4 +180,32 @@ class DepartamentoPDO{
         }
         return $rehabilitacion;
     }
+    
+    
+    public static function buscaDepartamentosPorDescYEstado($descDepartamento, $estado){
+        $oDepartamento = null; 
+        $filtroConsulta = null;
+        
+        //Condiciones que se añadirán al query en función del estado del departamento
+        if ($estado == "baja") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is not null";
+        } else if ($estado == "alta") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is null";
+        }
+        
+        $consulta = "Select * FROM T02_Departamento where T02_DescDepartamento LIKE '%' ? '%' " . (($filtroConsulta != null) ? $filtroConsulta : NULL);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$descDepartamento]);
+
+       if ($resultado->rowCount() > 0) {
+            for($i=0,$departamento = $resultado->fetchObject();$i<$resultado->rowCount();$i++,$departamento = $resultado->fetchObject()){
+                $oDepartamento = new Departamento($departamento->T02_CodDepartamento, $departamento->T02_DescDepartamento, $departamento->T02_FechaCreacionDepartamento, $departamento->T02_VolumenNegocio, $departamento->T02_FechaBajaDepartamento);
+                $aDepartamentos[$i] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente 
+            }
+        }
+        
+        return $aDepartamentos;
+      
+    }
+    
+  
 }

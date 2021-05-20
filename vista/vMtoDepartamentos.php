@@ -13,8 +13,16 @@
         <label>Descripción: </label>
         <input type="search" name="descDepartamento" value="<?php if($descDepartamento != ""){echo $descDepartamento ;}?>"/>
         <input class="button" type="submit" name="buscar" value="Buscar">
-        <?php if($ErrorDesc != null) { echo "<p>  ⚠️".$ErrorDesc."</p>"; } ?>    
+        <?php if($ErrorDesc != null) { echo "<p>  ⚠️".$ErrorDesc."</p>"; } ?>
+        <br><br>
+        <input type="radio" id="Todos" name="criteriodebusqueda" value="todos" <?php echo!isset($criterioBusqueda) ? 'checked' : ($criterioBusqueda == 'todos' ? 'checked' : null) ?> >
+        <label for="todos">Todos</label>
+         <input type="radio" id="Todos" name="criteriodebusqueda" value="baja" <?php echo!isset($criterioBusqueda) ? 'checked' : ($criterioBusqueda == 'baja' ? 'checked' : null) ?> >
+        <label for="baja">Departamentos dados de baja</label>
+         <input type="radio" id="Todos" name="criteriodebusqueda" value="alta" <?php echo!isset($criterioBusqueda) ? 'checked' : ($criterioBusqueda == 'alta' ? 'checked' : null) ?> >
+        <label for="alta">Departamentos dados de alta</label>
     </div>
+    
     <br><br>
     <table class="mostrardepartamento" style="text-align: center;">
             <thead>
@@ -67,7 +75,7 @@
             </tbody>
              <?php 
                }
- 
+           
                ?>
         </table>
 </form>
