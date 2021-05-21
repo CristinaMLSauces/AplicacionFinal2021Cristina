@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/controlador/cPrincipal.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_48833427ab3b7dfa85176f15439ceb97.html">controlador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cPrincipal.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_principal_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="c_principal_8php.html#a11303696dbd18b4363456a961d8bd5a5">    2</a></span>&#160;<a class="code" href="c_principal_8php.html#a11303696dbd18b4363456a961d8bd5a5">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCursoSinRegistro&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;principal&#39;</span>];</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;iniciarsesion&#39;</span>])) { <span class="comment">// si se ha pulsado el boton de registrarse</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="c_principal_8php.html#a11303696dbd18b4363456a961d8bd5a5">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCursoSinRegistro&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;login&#39;</span>]; <span class="comment">// guardamos en la variable de sesion &#39;pagina&#39; la ruta del controlador del login</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    exit;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="c_principal_8php.html#afd0099a7b089002d6dff0881fa745ecc">   10</a></span>&#160;<a class="code" href="c_principal_8php.html#afd0099a7b089002d6dff0881fa745ecc">$vistaEnCurso</a> = <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;principal&#39;</span>]; <span class="comment">// guardamos en la variable vistaEnCurso la vista que queremos implementar</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   require_once <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;layout&#39;</span>]; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;?&gt;</div>
+<div class="ttc" id="ac_principal_8php_html_a11303696dbd18b4363456a961d8bd5a5"><div class="ttname"><a href="c_principal_8php.html#a11303696dbd18b4363456a961d8bd5a5">$_SESSION</a></div><div class="ttdeci">$_SESSION['paginaEnCursoSinRegistro']</div><div class="ttdef"><b>Definition:</b> <a href="c_principal_8php_source.html#l00002">cPrincipal.php:2</a></div></div>
+<div class="ttc" id="ac_principal_8php_html_afd0099a7b089002d6dff0881fa745ecc"><div class="ttname"><a href="c_principal_8php.html#afd0099a7b089002d6dff0881fa745ecc">$vistaEnCurso</a></div><div class="ttdeci">if(isset($_REQUEST['iniciarsesion'])) $vistaEnCurso</div><div class="ttdef"><b>Definition:</b> <a href="c_principal_8php_source.html#l00010">cPrincipal.php:10</a></div></div>
+<div class="ttc" id="aconfig_8php_html_a7b377110ccfc87475a8befad31a66194"><div class="ttname"><a href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a></div><div class="ttdeci">$vistas</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00027">config.php:27</a></div></div>
+<div class="ttc" id="aconfig_8php_html_ae63f7bfa21e2f7aceafc668544a17d00"><div class="ttname"><a href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a></div><div class="ttdeci">$controladores</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00009">config.php:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

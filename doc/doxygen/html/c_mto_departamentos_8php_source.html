@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/controlador/cMtoDepartamentos.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_48833427ab3b7dfa85176f15439ceb97.html">controlador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cMtoDepartamentos.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_mto_departamentos_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">    2</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;mtoDepartamentos&#39;</span>];</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&quot;volver&quot;</span>])){</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;inicio&#39;</span>]; <span class="comment">// guardamos en la variable de sesion &#39;pagina&#39; la ruta del controlador del login</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    exit;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;modificarDepartamento&#39;</span>])) { <span class="comment">// si se ha pulsado el botón de editar perfil</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;modificarDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;modificarDepartamento&#39;</span>]; <span class="comment">//guardamos en la sesión el controlador que debe ejecutarse</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>); <span class="comment">//enviamos al usuario de vuelta al index</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    exit;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;eliminarDepartamento&#39;</span>])) { <span class="comment">// si se ha pulsado el botón de editar perfil</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;eliminarDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;borrarDepartamento&#39;</span>]; <span class="comment">//guardamos en la sesión el controlador que debe ejecutarse</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>); <span class="comment">//enviamos al usuario de vuelta al index</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    exit;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&#39;altaDepartamento&#39;</span>])) { <span class="comment">// si se ha pulsado el botón de editar perfil</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;eliminarDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;altaDepartamento&#39;</span>]; <span class="comment">//guardamos en la sesión el controlador que debe ejecutarse</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>); <span class="comment">//enviamos al usuario de vuelta al index</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    exit;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;bajaLogica&#39;</span>])){                                            <span class="comment">// Baja Logica del Departamernto</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;bajaLogica&#39;</span>];</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_departamento_p_d_o.html#ab7d403045b3eb50ed146356bb4420a29">DepartamentoPDO::bajaLogicaDepartamento</a>(<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>]);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;rehabilitar&#39;</span>])){                                            <span class="comment">//Rehabilitar Departamento</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;rehabilitar&#39;</span>];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_departamento_p_d_o.html#a4746560a0eb7b86822e6d25b378b8bc4">DepartamentoPDO::rehabilitacionDepartamento</a>(<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>]); </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">   41</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">$entradaOK</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a1ba5f538c20fa2dbd367c36a79c0edb3">   42</a></span>&#160;define(<span class="stringliteral">&quot;OPCIONAL&quot;</span>, 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a6035c121073f75ceb5c1c448fb3aaee2">   43</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#a6035c121073f75ceb5c1c448fb3aaee2">$ErrorDesc</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#aa0668a1f0ff6a0f462feb441aecff5d5">   44</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#aa0668a1f0ff6a0f462feb441aecff5d5">$ErrorCriterio</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a63bd11a396932878ca48a1efdc90259a">   45</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>] = <span class="stringliteral">&quot;todos&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;buscar&#39;</span>])) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="c_mto_departamentos_8php.html#a6035c121073f75ceb5c1c448fb3aaee2">$ErrorDesc</a> = <a class="code" href="classvalidacion_formularios.html#a9cec4205d93c48bb5ef51bb5a7ccad22">validacionFormularios::comprobarAlfaNumerico</a>($_REQUEST[<span class="stringliteral">&#39;descDepartamento&#39;</span>], 10, 1, <a class="code" href="c_mto_departamentos_8php.html#a1ba5f538c20fa2dbd367c36a79c0edb3">OPCIONAL</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="c_mto_departamentos_8php.html#aa0668a1f0ff6a0f462feb441aecff5d5">$ErrorCriterio</a> = <a class="code" href="classvalidacion_formularios.html#ac062142050452a39309e2adb87ce5683">validacionFormularios::validarElementoEnLista</a>($_REQUEST[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>], [<span class="stringliteral">&#39;todos&#39;</span>, <span class="stringliteral">&#39;baja&#39;</span>, <span class="stringliteral">&#39;alta&#39;</span>]);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="c_mto_departamentos_8php.html#a6035c121073f75ceb5c1c448fb3aaee2">$ErrorDesc</a> != <span class="keyword">null</span>) { <span class="comment">// compruebo si hay algun mensaje de error en algun campo</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">$entradaOK</a> = <span class="keyword">false</span>; <span class="comment">// le doy el valor false a $entradaOK</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                $_REQUEST[<span class="stringliteral">&#39;descDepartamento&#39;</span>] = <span class="stringliteral">&quot;&quot;</span>; <span class="comment">// si hay algun campo que tenga mensaje de error pongo $_REQUEST a null</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a723517ede60e7d8d5eab3edde1a73f2b">   55</a></span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">$entradaOK</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">$entradaOK</a>){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;       <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;descDepartamento&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;descDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;       <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>] = $_REQUEST[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">   64</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a> = <a class="code" href="class_departamento_p_d_o.html#ae85007b3462842b422efbfd69e074ad5">DepartamentoPDO::buscaDepartamentosPorDescYEstado</a>(<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;descDepartamento&#39;</span>],<a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>]);</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">   65</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a> = <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;descDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#abbe9e7cf7f41839375f9fb7983ba61cb">   66</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#abbe9e7cf7f41839375f9fb7983ba61cb">$criterioBusqueda</a> = <a class="code" href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;criteriodebusqueda&#39;</span>];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="c_mto_departamentos_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">   68</a></span>&#160;<a class="code" href="c_mto_departamentos_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">$vistaEnCurso</a> = <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;mtoDepartamentos&#39;</span>]; <span class="comment">// guardamos en la variable vistaEnCurso la vista que queremos implementar</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;require_once <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;layout&#39;</span>];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;?&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a15f2f269e88419816ffb7a20a66b79b2"><div class="ttname"><a href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a></div><div class="ttdeci">$descDepartamento</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00065">cMtoDepartamentos.php:65</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a1ba5f538c20fa2dbd367c36a79c0edb3"><div class="ttname"><a href="c_mto_departamentos_8php.html#a1ba5f538c20fa2dbd367c36a79c0edb3">OPCIONAL</a></div><div class="ttdeci">const OPCIONAL</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00042">cMtoDepartamentos.php:42</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a6035c121073f75ceb5c1c448fb3aaee2"><div class="ttname"><a href="c_mto_departamentos_8php.html#a6035c121073f75ceb5c1c448fb3aaee2">$ErrorDesc</a></div><div class="ttdeci">$ErrorDesc</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00043">cMtoDepartamentos.php:43</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a8dbcd6af0ba4324f742a35bd369dc65e"><div class="ttname"><a href="c_mto_departamentos_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">$vistaEnCurso</a></div><div class="ttdeci">$vistaEnCurso</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00068">cMtoDepartamentos.php:68</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a9eea764df568cc3c783d599b920e52b7"><div class="ttname"><a href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a></div><div class="ttdeci">if($entradaOK) $aDepartamentos</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00064">cMtoDepartamentos.php:64</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_aa0668a1f0ff6a0f462feb441aecff5d5"><div class="ttname"><a href="c_mto_departamentos_8php.html#aa0668a1f0ff6a0f462feb441aecff5d5">$ErrorCriterio</a></div><div class="ttdeci">$ErrorCriterio</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00044">cMtoDepartamentos.php:44</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_abbe9e7cf7f41839375f9fb7983ba61cb"><div class="ttname"><a href="c_mto_departamentos_8php.html#abbe9e7cf7f41839375f9fb7983ba61cb">$criterioBusqueda</a></div><div class="ttdeci">$criterioBusqueda</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00066">cMtoDepartamentos.php:66</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_ac503a47d96a3a9287668832fa2b0509d"><div class="ttname"><a href="c_mto_departamentos_8php.html#ac503a47d96a3a9287668832fa2b0509d">$entradaOK</a></div><div class="ttdeci">if(isset($_REQUEST[&quot;volver&quot;])) if(isset($_REQUEST['modificarDepartamento'])) if(isset($_REQUEST['eliminarDepartamento'])) if(isset($_REQUEST['altaDepartamento'])) if(isset($_REQUEST['bajaLogica'])) if(isset($_REQUEST['rehabilitar'])) $entradaOK</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00041">cMtoDepartamentos.php:41</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_af61b7b4f8efff1edebac871759428e34"><div class="ttname"><a href="c_mto_departamentos_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a></div><div class="ttdeci">$_SESSION['paginaAnterior']</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00002">cMtoDepartamentos.php:2</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_a4746560a0eb7b86822e6d25b378b8bc4"><div class="ttname"><a href="class_departamento_p_d_o.html#a4746560a0eb7b86822e6d25b378b8bc4">DepartamentoPDO\rehabilitacionDepartamento</a></div><div class="ttdeci">static rehabilitacionDepartamento($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00171">DepartamentoPDO.php:171</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_ab7d403045b3eb50ed146356bb4420a29"><div class="ttname"><a href="class_departamento_p_d_o.html#ab7d403045b3eb50ed146356bb4420a29">DepartamentoPDO\bajaLogicaDepartamento</a></div><div class="ttdeci">static bajaLogicaDepartamento($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00149">DepartamentoPDO.php:149</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_ae85007b3462842b422efbfd69e074ad5"><div class="ttname"><a href="class_departamento_p_d_o.html#ae85007b3462842b422efbfd69e074ad5">DepartamentoPDO\buscaDepartamentosPorDescYEstado</a></div><div class="ttdeci">static buscaDepartamentosPorDescYEstado($descDepartamento, $estado)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00185">DepartamentoPDO.php:185</a></div></div>
+<div class="ttc" id="aclassvalidacion_formularios_html_a9cec4205d93c48bb5ef51bb5a7ccad22"><div class="ttname"><a href="classvalidacion_formularios.html#a9cec4205d93c48bb5ef51bb5a7ccad22">validacionFormularios\comprobarAlfaNumerico</a></div><div class="ttdeci">static comprobarAlfaNumerico($cadena, $maxTamanio=1000, $minTamanio=1, $obligatorio=0)</div><div class="ttdef"><b>Definition:</b> <a href="210322_validacion_formularios_8php_source.html#l00092">210322ValidacionFormularios.php:92</a></div></div>
+<div class="ttc" id="aclassvalidacion_formularios_html_ac062142050452a39309e2adb87ce5683"><div class="ttname"><a href="classvalidacion_formularios.html#ac062142050452a39309e2adb87ce5683">validacionFormularios\validarElementoEnLista</a></div><div class="ttdeci">static validarElementoEnLista($elementoElegido, $aOpciones)</div><div class="ttdef"><b>Definition:</b> <a href="210322_validacion_formularios_8php_source.html#l00449">210322ValidacionFormularios.php:449</a></div></div>
+<div class="ttc" id="aconfig_8php_html_a7b377110ccfc87475a8befad31a66194"><div class="ttname"><a href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a></div><div class="ttdeci">$vistas</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00027">config.php:27</a></div></div>
+<div class="ttc" id="aconfig_8php_html_ae63f7bfa21e2f7aceafc668544a17d00"><div class="ttname"><a href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a></div><div class="ttdeci">$controladores</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00009">config.php:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

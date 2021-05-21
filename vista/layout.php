@@ -14,7 +14,6 @@
             <?php require_once $vistaEnCurso ?>                                     <!--Cargamos la vista en curso que contiene la pagina que se debe ver -->
 
         </body>
-    
      <footer  class="footer">
          <table>
              <tr>
@@ -23,6 +22,7 @@
                 <td><input type="submit" class="botonesWIP" value="Tecnologías Usadas" name="Tecnologias"></td>
                 <td><a href="https://github.com/CristinaMLSauces/AplicacionFinal2021Cristina" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
                 <td><a href="doc/phpdocumentor/index.html" target="_blank"><img src="webroot/images/phpdoc.png" class="logo" /> </a></td>
+                <td><a href="doc/doxygen/html/index.html" target="_blank"><img src="webroot/images/doxygen.png" class="logo" /> </a></td>
                 <td><a href="https://daw207.ieslossauces.es/" target="_blank"><img src="webroot/images/1and1.png" class="logo" /> </a></td>
                 <td><a href="webroot/rss/rss.xml" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
              </tr>

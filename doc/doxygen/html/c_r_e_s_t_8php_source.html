@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/controlador/cREST.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_48833427ab3b7dfa85176f15439ceb97.html">controlador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cREST.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_r_e_s_t_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="keywordflow">if</span>(!isset(<a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;usuarioDAW2LoginLogoffMulticapaPOO&#39;</span>])){                <span class="comment">// Si el usuario no se ha logueado</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);                                          <span class="comment">//Recargamos el index</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        exit;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;volver&#39;</span>])){                                             <span class="comment">//Si el usuario pulsa el boton de volver</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];               <span class="comment">//Cargamos PaginaAnterior de inicio en PaginaenCurso</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);                                          <span class="comment">//Redirigimos al usuario al programa de nuevo</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        exit;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">   13</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#adba140c35a176ff98e1b06f3d5976fe1">   14</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#adba140c35a176ff98e1b06f3d5976fe1">$aError</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a2ae5917bfe847f9b5861acf1bccac785">   15</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a2ae5917bfe847f9b5861acf1bccac785">$numeropordefecto</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#aef0078913866056a96e49580202dc53f">   16</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#aef0078913866056a96e49580202dc53f">$Personaje</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">   17</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#aaa7b9d1ce32c1d2e32f7ad3e0b59aac2">   18</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#aaa7b9d1ce32c1d2e32f7ad3e0b59aac2">$nombre</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a7628e6b1504e026485a719b63a842e01">   19</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a7628e6b1504e026485a719b63a842e01">$genero</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a53f2e5e974e9704e66e38749c3ffe611">   20</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a53f2e5e974e9704e66e38749c3ffe611">$altura</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a11e2c4587de6b339118f58fa81630ff6">   21</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a11e2c4587de6b339118f58fa81630ff6">$planeta</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a206cc769e71885a160e087fbe2f9b070">   22</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a206cc769e71885a160e087fbe2f9b070">$explicacion</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a01e86372287eff88037762a78f348d19">   23</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a01e86372287eff88037762a78f348d19">$imagen</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#ada57e7bb7c152edad18fe2f166188691">   24</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#ada57e7bb7c152edad18fe2f166188691">$title</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a18be88c33f9794f079706a65315c413d">   25</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a18be88c33f9794f079706a65315c413d">$nombrePlaneta</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a7557056892a6dd574a1040d60d7091d9">   26</a></span>&#160;    <a class="code" href="c_r_e_s_t_8php.html#a7557056892a6dd574a1040d60d7091d9">$fechaNasa</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;personaje&#39;</span>])){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="c_r_e_s_t_8php.html#a2ae5917bfe847f9b5861acf1bccac785">$numeropordefecto</a> = $_REQUEST[<span class="stringliteral">&#39;numero&#39;</span>];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;       </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        define(<span class="stringliteral">&quot;OBLIGATORIO&quot;</span>, 1); </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="c_alta_departamento_8php.html#a0c2344fc0ec1520c912ea3d5793abd36">$entradaOK</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a> = <a class="code" href="classvalidacion_formularios.html#aa6ea0126c71ac63a4f330bc78e808975">validacionFormularios::comprobarEntero</a>($_REQUEST[<span class="stringliteral">&#39;numero&#39;</span>],1000,1,<a class="code" href="c_alta_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">OBLIGATORIO</a>);            <span class="comment">//He cambiado el numero max permitido por que el usuario enr ealidad no tiene por que saber cuntos personajes hay</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a>==<span class="keyword">null</span>){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            $aRepuesta = <a class="code" href="class_r_e_s_t.html#ad266a8f6a51f49e94488884bcdc1aaef">REST::starwars</a>($_REQUEST[<span class="stringliteral">&#39;numero&#39;</span>]);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span>($aRepuesta[0]==<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#aaa7b9d1ce32c1d2e32f7ad3e0b59aac2">$nombre</a> = $aRepuesta[1][<span class="stringliteral">&#39;name&#39;</span>];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#a7628e6b1504e026485a719b63a842e01">$genero</a> = $aRepuesta[1][<span class="stringliteral">&#39;gender&#39;</span>];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#a53f2e5e974e9704e66e38749c3ffe611">$altura</a> = $aRepuesta[1][<span class="stringliteral">&#39;height&#39;</span>];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#a11e2c4587de6b339118f58fa81630ff6">$planeta</a> = $aRepuesta[1][<span class="stringliteral">&#39;homeworld&#39;</span>];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                $buscarplaneta = file_get_contents(<a class="code" href="c_r_e_s_t_8php.html#a11e2c4587de6b339118f58fa81630ff6">$planeta</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                $Planeta = json_decode($buscarplaneta, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#a18be88c33f9794f079706a65315c413d">$nombrePlaneta</a> = $Planeta[<span class="stringliteral">&#39;name&#39;</span>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#adba140c35a176ff98e1b06f3d5976fe1">$aError</a> = $aRepuesta;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a> = <span class="stringliteral">&quot;El campo no es valido&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;nasa&#39;</span>])){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span>($_REQUEST[<span class="stringliteral">&#39;fecha&#39;</span>]!=<span class="keyword">null</span>){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a> = <a class="code" href="class_r_e_s_t.html#a379253fb94c23b410023acbeccc2fecb">REST::nasaconfecha</a>($_REQUEST[<span class="stringliteral">&#39;fecha&#39;</span>]);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a206cc769e71885a160e087fbe2f9b070">$explicacion</a> = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;explanation&#39;</span>];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a01e86372287eff88037762a78f348d19">$imagen</a> = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;hdurl&#39;</span>];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#ada57e7bb7c152edad18fe2f166188691">$title</a>  = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;title&#39;</span>];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a> = <a class="code" href="class_r_e_s_t.html#af79e9bce0ed9c2d2a4ea38e76a5245c4">REST::nasa</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a206cc769e71885a160e087fbe2f9b070">$explicacion</a> = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;explanation&#39;</span>];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#a01e86372287eff88037762a78f348d19">$imagen</a> = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;hdurl&#39;</span>];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;           <a class="code" href="c_r_e_s_t_8php.html#ada57e7bb7c152edad18fe2f166188691">$title</a>  = <a class="code" href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a>[<span class="stringliteral">&#39;title&#39;</span>]; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="c_r_e_s_t_8php.html#a3fe9fd07136a4303ec4c4515cd1348ed">   69</a></span>&#160;<a class="code" href="c_r_e_s_t_8php.html#a3fe9fd07136a4303ec4c4515cd1348ed">$vistaEnCurso</a> = <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;rest&#39;</span>];                                                <span class="comment">//Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;require_once <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;layout&#39;</span>];                                                 <span class="comment">//Incluimos el layout</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;?&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="ttc" id="ac_alta_departamento_8php_html_a0c2344fc0ec1520c912ea3d5793abd36"><div class="ttname"><a href="c_alta_departamento_8php.html#a0c2344fc0ec1520c912ea3d5793abd36">$entradaOK</a></div><div class="ttdeci">if(isset($_REQUEST[&quot;cancelar&quot;])) $entradaOK</div><div class="ttdef"><b>Definition:</b> <a href="c_alta_departamento_8php_source.html#l00010">cAltaDepartamento.php:10</a></div></div>
+<div class="ttc" id="ac_alta_departamento_8php_html_a61e6cf9c8a86417a9b196d26300d506a"><div class="ttname"><a href="c_alta_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">OBLIGATORIO</a></div><div class="ttdeci">const OBLIGATORIO</div><div class="ttdef"><b>Definition:</b> <a href="c_alta_departamento_8php_source.html#l00011">cAltaDepartamento.php:11</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_af61b7b4f8efff1edebac871759428e34"><div class="ttname"><a href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a></div><div class="ttdeci">$_SESSION['paginaAnterior']</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00002">cInicio.php:2</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a01e86372287eff88037762a78f348d19"><div class="ttname"><a href="c_r_e_s_t_8php.html#a01e86372287eff88037762a78f348d19">$imagen</a></div><div class="ttdeci">$imagen</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00023">cREST.php:23</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a11e2c4587de6b339118f58fa81630ff6"><div class="ttname"><a href="c_r_e_s_t_8php.html#a11e2c4587de6b339118f58fa81630ff6">$planeta</a></div><div class="ttdeci">$planeta</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00021">cREST.php:21</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a18be88c33f9794f079706a65315c413d"><div class="ttname"><a href="c_r_e_s_t_8php.html#a18be88c33f9794f079706a65315c413d">$nombrePlaneta</a></div><div class="ttdeci">$nombrePlaneta</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00025">cREST.php:25</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a206cc769e71885a160e087fbe2f9b070"><div class="ttname"><a href="c_r_e_s_t_8php.html#a206cc769e71885a160e087fbe2f9b070">$explicacion</a></div><div class="ttdeci">$explicacion</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00022">cREST.php:22</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a26f60cde8a0356aec11227c19939371d"><div class="ttname"><a href="c_r_e_s_t_8php.html#a26f60cde8a0356aec11227c19939371d">$Nasa</a></div><div class="ttdeci">$Nasa</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00017">cREST.php:17</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a2ae5917bfe847f9b5861acf1bccac785"><div class="ttname"><a href="c_r_e_s_t_8php.html#a2ae5917bfe847f9b5861acf1bccac785">$numeropordefecto</a></div><div class="ttdeci">$numeropordefecto</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00015">cREST.php:15</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a3fe9fd07136a4303ec4c4515cd1348ed"><div class="ttname"><a href="c_r_e_s_t_8php.html#a3fe9fd07136a4303ec4c4515cd1348ed">$vistaEnCurso</a></div><div class="ttdeci">if(isset($_REQUEST['personaje'])) if(isset($_REQUEST['nasa'])) $vistaEnCurso</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00069">cREST.php:69</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a53f2e5e974e9704e66e38749c3ffe611"><div class="ttname"><a href="c_r_e_s_t_8php.html#a53f2e5e974e9704e66e38749c3ffe611">$altura</a></div><div class="ttdeci">$altura</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00020">cREST.php:20</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a7557056892a6dd574a1040d60d7091d9"><div class="ttname"><a href="c_r_e_s_t_8php.html#a7557056892a6dd574a1040d60d7091d9">$fechaNasa</a></div><div class="ttdeci">$fechaNasa</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00026">cREST.php:26</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a7628e6b1504e026485a719b63a842e01"><div class="ttname"><a href="c_r_e_s_t_8php.html#a7628e6b1504e026485a719b63a842e01">$genero</a></div><div class="ttdeci">$genero</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00019">cREST.php:19</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a764bf3b6e4d4993681be5069e95f22ab"><div class="ttname"><a href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a></div><div class="ttdeci">if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) if(isset($_REQUEST['volver'])) $error</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00013">cREST.php:13</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_aaa7b9d1ce32c1d2e32f7ad3e0b59aac2"><div class="ttname"><a href="c_r_e_s_t_8php.html#aaa7b9d1ce32c1d2e32f7ad3e0b59aac2">$nombre</a></div><div class="ttdeci">$nombre</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00018">cREST.php:18</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_ada57e7bb7c152edad18fe2f166188691"><div class="ttname"><a href="c_r_e_s_t_8php.html#ada57e7bb7c152edad18fe2f166188691">$title</a></div><div class="ttdeci">$title</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00024">cREST.php:24</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_adba140c35a176ff98e1b06f3d5976fe1"><div class="ttname"><a href="c_r_e_s_t_8php.html#adba140c35a176ff98e1b06f3d5976fe1">$aError</a></div><div class="ttdeci">$aError</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00014">cREST.php:14</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_aef0078913866056a96e49580202dc53f"><div class="ttname"><a href="c_r_e_s_t_8php.html#aef0078913866056a96e49580202dc53f">$Personaje</a></div><div class="ttdeci">$Personaje</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00016">cREST.php:16</a></div></div>
+<div class="ttc" id="aclass_r_e_s_t_html_a379253fb94c23b410023acbeccc2fecb"><div class="ttname"><a href="class_r_e_s_t.html#a379253fb94c23b410023acbeccc2fecb">REST\nasaconfecha</a></div><div class="ttdeci">static nasaconfecha($fecha)</div><div class="ttdef"><b>Definition:</b> <a href="_r_e_s_t_8php_source.html#l00054">REST.php:54</a></div></div>
+<div class="ttc" id="aclass_r_e_s_t_html_ad266a8f6a51f49e94488884bcdc1aaef"><div class="ttname"><a href="class_r_e_s_t.html#ad266a8f6a51f49e94488884bcdc1aaef">REST\starwars</a></div><div class="ttdeci">static starwars($number)</div><div class="ttdef"><b>Definition:</b> <a href="_r_e_s_t_8php_source.html#l00010">REST.php:10</a></div></div>
+<div class="ttc" id="aclass_r_e_s_t_html_af79e9bce0ed9c2d2a4ea38e76a5245c4"><div class="ttname"><a href="class_r_e_s_t.html#af79e9bce0ed9c2d2a4ea38e76a5245c4">REST\nasa</a></div><div class="ttdeci">static nasa()</div><div class="ttdef"><b>Definition:</b> <a href="_r_e_s_t_8php_source.html#l00037">REST.php:37</a></div></div>
+<div class="ttc" id="aclassvalidacion_formularios_html_aa6ea0126c71ac63a4f330bc78e808975"><div class="ttname"><a href="classvalidacion_formularios.html#aa6ea0126c71ac63a4f330bc78e808975">validacionFormularios\comprobarEntero</a></div><div class="ttdeci">static comprobarEntero($integer, $max=PHP_INT_MAX, $min=-PHP_INT_MAX, $obligatorio=0)</div><div class="ttdef"><b>Definition:</b> <a href="210322_validacion_formularios_8php_source.html#l00122">210322ValidacionFormularios.php:122</a></div></div>
+<div class="ttc" id="aconfig_8php_html_a7b377110ccfc87475a8befad31a66194"><div class="ttname"><a href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a></div><div class="ttdeci">$vistas</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00027">config.php:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

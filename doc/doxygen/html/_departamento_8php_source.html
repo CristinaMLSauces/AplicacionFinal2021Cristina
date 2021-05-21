@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/modelo/Departamento.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a7da07b74eec811e219ae3d113023b99.html">modelo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Departamento.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_departamento_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_departamento.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_departamento.html">Departamento</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span> $codDepartamento;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span> $descDepartamento;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> $fechaCreacionDepartamento;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">private</span> $volumenDeNegocio;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">private</span> $fechaBajaDepartamento;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_departamento.html#acfce11bc8e7538cdee236bd3079d8f28">   62</a></span>&#160;    <span class="keyword">function</span> <a class="code" href="class_departamento.html#acfce11bc8e7538cdee236bd3079d8f28">__construct</a>($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBaja = <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        $this-&gt;codDepartamento = $codDepartamento;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        $this-&gt;descDepartamento = $descDepartamento;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        $this-&gt;fechaCreacionDepartamento = $fechaCreacionDepartamento;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        $this-&gt;volumenDeNegocio = $volumenDeNegocio;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        $this-&gt;fechaBajaDepartamento = $fechaBaja;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_departamento.html#af51d1f26af5002eaee5c3cf036221e94">   79</a></span>&#160;    <span class="keyword">function</span> <a class="code" href="class_departamento.html#af51d1f26af5002eaee5c3cf036221e94">__get</a>($atributo)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> $this-&gt;$atributo;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_departamento.html#a1ade9a4410e97068ec62253eea55afb8">   92</a></span>&#160;    <span class="keyword">function</span> <a class="code" href="class_departamento.html#a1ade9a4410e97068ec62253eea55afb8">__set</a>($atributo, $nuevoValor)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        $this-&gt;$atributo = $nuevoValor;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="ttc" id="aclass_departamento_html"><div class="ttname"><a href="class_departamento.html">Departamento</a></div><div class="ttdef"><b>Definition:</b> <a href="_departamento_8php_source.html#l00012">Departamento.php:13</a></div></div>
+<div class="ttc" id="aclass_departamento_html_a1ade9a4410e97068ec62253eea55afb8"><div class="ttname"><a href="class_departamento.html#a1ade9a4410e97068ec62253eea55afb8">Departamento\__set</a></div><div class="ttdeci">__set($atributo, $nuevoValor)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_8php_source.html#l00092">Departamento.php:92</a></div></div>
+<div class="ttc" id="aclass_departamento_html_acfce11bc8e7538cdee236bd3079d8f28"><div class="ttname"><a href="class_departamento.html#acfce11bc8e7538cdee236bd3079d8f28">Departamento\__construct</a></div><div class="ttdeci">__construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBaja=null)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_8php_source.html#l00062">Departamento.php:62</a></div></div>
+<div class="ttc" id="aclass_departamento_html_af51d1f26af5002eaee5c3cf036221e94"><div class="ttname"><a href="class_departamento.html#af51d1f26af5002eaee5c3cf036221e94">Departamento\__get</a></div><div class="ttdeci">__get($atributo)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_8php_source.html#l00079">Departamento.php:79</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
