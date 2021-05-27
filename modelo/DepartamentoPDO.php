@@ -185,6 +185,7 @@ class DepartamentoPDO{
     public static function buscaDepartamentosPorDescYEstado($descDepartamento, $estado){
         $oDepartamento = null; 
         $filtroConsulta = null;
+        $aDepartamentos = [];
         
         //Condiciones que se añadirán al query en función del estado del departamento
         if ($estado == "baja") {
@@ -204,7 +205,53 @@ class DepartamentoPDO{
         }
         
         return $aDepartamentos;
-      
+    }
+    
+    /**
+     * Método buscaDepartamentosPorDescEstadoYPagina()
+     *
+     * Método que obtiene todos los datos departamentos de la base de datos basándose en su descripción y estado(alta o baja)
+     * 
+     * @param  string $descDepartamento descripción del departamento a buscar
+     * @param  string $estado estado del departamento a buscar(alta o baja)
+     * @param  string $numPaginaActual página de resultados en la que nos encontramos
+     * @param  string $numMaxDepartamentos número de departamentos por página que vamos a mostrar
+     * @return null|\array devuelve un array de objetos de tipo Departamento con los datos guardados en la base de datos y null si no se ha encontrado ninguno
+     */
+    public static function buscaDepartamentosPorDescEstadoYPagina($descDepartamento, $estado,  $numPaginaActual, $numMaxDepartamentos) {
+        $aDepartamentos = [];
+        $filtroConsulta = null;
+        $numPaginasTotal = 1;
+
+        if ($estado == "baja") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is not null";
+        } else if ($estado == "alta") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is null";
+        }
+        
+        $consulta = "SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%' ? '%' " . $filtroConsulta . " LIMIT " . (($numPaginaActual - 1) * $numMaxDepartamentos) . ',' . $numMaxDepartamentos;
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$descDepartamento]);
+
+        if ($resultado->rowCount() > 0) {
+            for($i=0,$departamento = $resultado->fetchObject();$i<$resultado->rowCount();$i++,$departamento = $resultado->fetchObject()){
+                $oDepartamento = new Departamento($departamento->T02_CodDepartamento, $departamento->T02_DescDepartamento, $departamento->T02_FechaCreacionDepartamento, $departamento->T02_VolumenNegocio, $departamento->T02_FechaBajaDepartamento);
+                $aDepartamentos[$i] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente 
+            }
+        }
+        
+        $resultadoConsultaNumDepartamentos = self::buscaDepartamentosPorDescYEstado($descDepartamento,$estado);
+        $numDepartamentos = count($resultadoConsultaNumDepartamentos);
+
+        if ($numDepartamentos % $numMaxDepartamentos == 0) {
+            $numPaginasTotal = ($numDepartamentos / $numMaxDepartamentos); 
+        } else { //Si no lo es se redondea a la baja y se le suma uno
+            $numPaginasTotal = (floor($numDepartamentos / $numMaxDepartamentos) + 1);
+        }
+
+        settype($numPaginasTotal, "integer");
+        
+        return [$aDepartamentos, $numPaginasTotal];
+
     }
     
   

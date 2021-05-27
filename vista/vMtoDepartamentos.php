@@ -73,10 +73,24 @@
                     }
                     ?>
             </tbody>
-             <?php 
-               }
-           
-               ?>
+             <?php } ?>
         </table>
 </form>
+    <form id="formularioPaginacion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <table>
+                <tr>
+                    <?php if($paginasTotales==0){
+                        $paginaActual =0;
+                    }
+                    ?>
+                    
+                    <td><button <?php echo ($paginaActual == 1 || $paginaActual == 0 ? "hidden" : null); ?> type="submit" value="1" name="paginaInicial"><i class="fas fa-angle-double-left"></i></button></td>
+                    <td><button <?php echo ($paginaActual == 1 || $paginaActual == 0 ? "hidden" : null); ?> type="submit" value="<?php echo $paginaActual - 1; ?>" name="retrocederPagina"><i class="fas fa-angle-left"></i></button></td>
+                    <td><?php echo $paginaActual . " de " . $paginasTotales; ?></td>
+                    
+                    <td><button <?php echo ($paginaActual >= $paginasTotales ? "hidden" : null); ?> type="submit" value="<?php echo $paginaActual + 1; ?>" name="avanzarPagina"><i class="fas fa-angle-right"></i></button></td>
+                    <td><button <?php echo ($paginaActual >= $paginasTotales ? "hidden" : null); ?> type="submit" value="<?php echo $paginasTotales ?>" name="paginaFinal"><i class="fas fa-angle-double-right"></i></button></td>
+                </tr>
+           </table>
+    </form>
 

@@ -38,6 +38,22 @@ if(isset($_REQUEST['rehabilitar'])){                                            
     DepartamentoPDO::rehabilitacionDepartamento($_SESSION['codDepartamento']); 
 }
 
+if (!isset($_SESSION['PaginaActual'])) {
+    $_SESSION['PaginaActual'] = 1;
+}
+
+//Botones para navegar entre las páginas
+if (isset($_REQUEST['avanzarPagina'])) {
+    $_SESSION['PaginaActual'] = $_REQUEST['avanzarPagina'];
+} else if (isset($_REQUEST['retrocederPagina'])) {
+    $_SESSION['PaginaActual'] = $_REQUEST['retrocederPagina'];
+} else if (isset($_REQUEST['paginaInicial'])) {
+    $_SESSION['PaginaActual'] = $_REQUEST['paginaInicial'];
+} else if (isset($_REQUEST['paginaFinal'])) {
+    $_SESSION['PaginaActual'] = $_REQUEST['paginaFinal'];
+}
+
+
 $entradaOK = true;
 define("OPCIONAL", 0);
 $ErrorDesc = null;
@@ -59,11 +75,17 @@ $_SESSION['criteriodebusqueda'] = "todos";
     if($entradaOK){
        $_SESSION['descDepartamento'] = $_REQUEST['descDepartamento'];
        $_SESSION['criteriodebusqueda'] = $_REQUEST['criteriodebusqueda'];
+       $_SESSION['PaginaActual'] = 1;
     }
 
-$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDescYEstado($_SESSION['descDepartamento'],$_SESSION['criteriodebusqueda']);
+$aResultadoBusqueda = DepartamentoPDO::buscaDepartamentosPorDescEstadoYPagina($_SESSION['descDepartamento'],$_SESSION['criteriodebusqueda'],$_SESSION['PaginaActual'], 5);
 $descDepartamento = $_SESSION['descDepartamento'];
 $criterioBusqueda = $_SESSION['criteriodebusqueda'];
+$paginaActual = $_SESSION['PaginaActual'];
+
+
+$aDepartamentos = $aResultadoBusqueda[0];
+$paginasTotales = $aResultadoBusqueda[1];
 
 $vistaEnCurso = $vistas['mtoDepartamentos']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
 require_once $vistas['layout'];

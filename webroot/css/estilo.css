@@ -523,3 +523,9 @@ margin-left: 25%;
 .mostrardepartamento tr:nth-of-type(odd) td{
     background-color: #bbe3f0;
 }
+
+#formularioPaginacion table{
+    margin-top: 2%;
+    margin-left: 45%;
+    width: 8%;
+}
