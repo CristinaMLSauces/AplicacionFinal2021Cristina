@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/modelo/UsuarioPDO.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a7da07b74eec811e219ae3d113023b99.html">modelo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UsuarioPDO.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_usuario_p_d_o_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_usuario_p_d_o.html">UsuarioPDO</a>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#ae85b032587e9e5fa8844d0431f32578e">   25</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#ae85b032587e9e5fa8844d0431f32578e">validarUsuario</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>, <a class="code" href="c_cambiar_password_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        $oUsuario = <span class="keyword">null</span>; <span class="comment">// inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Select * from T01_Usuario where T01_CodUsuario=? and T01_Password=?&quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        $passwordEncriptado=hash(<span class="stringliteral">&quot;sha256&quot;</span>, (<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>.$password)); <span class="comment">// enctripta el password pasado como parametro</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>,$passwordEncriptado]); <span class="comment">// guardo en la variable resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;rowCount()&gt;0){ <span class="comment">// si la consulta me devuleve algun resultado</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            $oRegistroUsuario = <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;fetchObject(); <span class="comment">// guardo en la variable el resultado de la consulta en forma de objeto</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            $oUsuario = <span class="keyword">new</span> <a class="code" href="class_usuario.html">Usuario</a>($oRegistroUsuario-&gt;T01_CodUsuario, $oRegistroUsuario-&gt;T01_Password, $oRegistroUsuario-&gt;T01_DescUsuario, $oRegistroUsuario-&gt;T01_NumConexiones, $oRegistroUsuario-&gt;T01_FechaHoraUltimaConexion, $oRegistroUsuario-&gt;T01_Perfil, $oRegistroUsuario-&gt;T01_ImagenUsuario); </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#ac8124814105beb061ff75b5acf763b63">   49</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#ac8124814105beb061ff75b5acf763b63">registrarUltimaConexion</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        $oUsuario = <span class="keyword">null</span>;                                                       <span class="comment">// inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $sentenciaSQLActualizacionFechaConexion = <span class="stringliteral">&quot;Update T01_Usuario set T01_NumConexiones = T01_NumConexiones+1, T01_FechaHoraUltimaConexion=? where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        $resultadoActualizacionFechaConexion = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQLActualizacionFechaConexion, [time(),<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>]);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span>($resultadoActualizacionFechaConexion){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            $oUsuario = <a class="code" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">self::buscarUsuarioPorCod</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">   72</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">buscarUsuarioPorCod</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        $oUsuario = <span class="keyword">null</span>; <span class="comment">// inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        $sentenciaSQLDatosUsuario = <span class="stringliteral">&quot;Select * from T01_Usuario where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        $resultadoDatosUsuario = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQLDatosUsuario, [<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>]); <span class="comment">// guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span>($resultadoDatosUsuario-&gt;rowCount()&gt;0){ <span class="comment">// si la consulta me devuelve algun resultado</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            $oRegistroUsuario = $resultadoDatosUsuario-&gt;fetchObject(); <span class="comment">// guardo en la variable el resultado de la consulta en forma de objeto</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// instanciacion de un objeto Usuario con los datos del usuario</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            $oUsuario = <span class="keyword">new</span> <a class="code" href="class_usuario.html">Usuario</a>($oRegistroUsuario-&gt;T01_CodUsuario, $oRegistroUsuario-&gt;T01_Password, $oRegistroUsuario-&gt;T01_DescUsuario, $oRegistroUsuario-&gt;T01_NumConexiones, $oRegistroUsuario-&gt;T01_FechaHoraUltimaConexion, $oRegistroUsuario-&gt;T01_Perfil, $oRegistroUsuario-&gt;T01_ImagenUsuario);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#a0f4dea8bd0cf0563ac39bc0187dfc068">   98</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#a0f4dea8bd0cf0563ac39bc0187dfc068">altaUsuario</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>, <a class="code" href="c_cambiar_password_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a>, $descripcion){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        $oUsuario = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;Insert into T01_Usuario (T01_CodUsuario, T01_DescUsuario, T01_Password , T01_NumConexiones, T01_FechaHoraUltimaConexion) values (?,?,?,1,?)&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        $passwordEncriptado=hash(<span class="stringliteral">&quot;sha256&quot;</span>, (<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>.$password)); <span class="comment">// enctripta el password pasado como parametro</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>, $descripcion, $passwordEncriptado,  time()]);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;       $oUsuario = <a class="code" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">self::buscarUsuarioPorCod</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#a52fa586fecf82d3f4df7ff5dac39afc8">  119</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#a52fa586fecf82d3f4df7ff5dac39afc8">validarCodNoExiste</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        $usuarioNoExiste = <span class="keyword">true</span>; <span class="comment">// inicializo la variable booleana a true</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">// comprueba que el usuario introducido existen en la base de datos</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;Select * from T01_Usuario where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>]); <span class="comment">// guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span>($resultado-&gt;rowCount()&gt;0){ <span class="comment">// si la consulta me devuleve algun resultado</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            $usuarioNoExiste = <span class="keyword">false</span>; <span class="comment">// inicializo la variable booleana a false</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> $usuarioNoExiste;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#a61b6180a245c2c4f17d5780989ff1c6e">  143</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#a61b6180a245c2c4f17d5780989ff1c6e">modificarUsuario</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>,<a class="code" href="c_borrar_cuenta_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a>,$imagenPerfil){</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        $oUsuario = <span class="keyword">null</span>; <span class="comment">// inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Update T01_Usuario set T01_DescUsuario=?&quot;</span>. (($imagenPerfil!=<span class="keyword">null</span>) ? <span class="stringliteral">&quot;, T01_ImagenUsuario=?&quot;</span> : <span class="stringliteral">&quot;&quot;</span>) . <span class="stringliteral">&quot; where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span>($imagenPerfil!=<span class="keyword">null</span>){</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            $parametros = [<a class="code" href="c_borrar_cuenta_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a>, $imagenPerfil, <a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            $parametros = [<a class="code" href="c_borrar_cuenta_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a>, <a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>];</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, $parametros); <span class="comment">// Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        $oUsuario = <a class="code" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">self::buscarUsuarioPorCod</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    } </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#a22b6e8430b017ddbda961845fc5243c0">  170</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#a22b6e8430b017ddbda961845fc5243c0">cambiarPassword</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>, $passwordNueva){</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        $oUsuario = <span class="keyword">null</span>; <span class="comment">// inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Update T01_Usuario set T01_Password=? where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        $passwordEncriptado = hash(<span class="stringliteral">&quot;sha256&quot;</span>, <a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>.$passwordNueva);       <span class="comment">// encripta el password pasado como parametro</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [$passwordEncriptado,<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>]);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>){</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            $oUsuario = <a class="code" href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">self::buscarUsuarioPorCod</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> $oUsuario;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">  190</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">borrarUsuario</a>(<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>){</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">//Inicializamos la variable usuarioEliminado a false</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        $usuarioEliminado = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Delete from T01_Usuario where T01_CodUsuario=?&quot;</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [<a class="code" href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a>]);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>){ </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            $usuarioEliminado = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> $usuarioEliminado;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="ttc" id="a_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php_html_a8b1625884d3b429a31ff07be097b7083"><div class="ttname"><a href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a></div><div class="ttdeci">$consulta</div><div class="ttdef"><b>Definition:</b> <a href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php_source.html#l00013">CargaInicialDAW207DBPOOMulticapa_1&1.php:13</a></div></div>
+<div class="ttc" id="ac_borrar_cuenta_8php_html_a128d2cdcace850d9c61238f00c660bc6"><div class="ttname"><a href="c_borrar_cuenta_8php.html#a128d2cdcace850d9c61238f00c660bc6">$codUsuario</a></div><div class="ttdeci">$codUsuario</div><div class="ttdef"><b>Definition:</b> <a href="c_borrar_cuenta_8php_source.html#l00012">cBorrarCuenta.php:12</a></div></div>
+<div class="ttc" id="ac_borrar_cuenta_8php_html_ac077249f5727727e9c890fd6556f7ffe"><div class="ttname"><a href="c_borrar_cuenta_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a></div><div class="ttdeci">$descUsuario</div><div class="ttdef"><b>Definition:</b> <a href="c_borrar_cuenta_8php_source.html#l00013">cBorrarCuenta.php:13</a></div></div>
+<div class="ttc" id="ac_cambiar_password_8php_html_a607686ef9f99ea7c42f4f3dd3dbb2b0d"><div class="ttname"><a href="c_cambiar_password_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a></div><div class="ttdeci">$password</div><div class="ttdef"><b>Definition:</b> <a href="c_cambiar_password_8php_source.html#l00019">cCambiarPassword.php:19</a></div></div>
+<div class="ttc" id="aclass_d_b_p_d_o_html_a420d83808be5b9d3ac7b155dc8393375"><div class="ttname"><a href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO\ejecutarConsulta</a></div><div class="ttdeci">static ejecutarConsulta($sentenciaSQL, $parametros=null)</div><div class="ttdef"><b>Definition:</b> <a href="_d_b_p_d_o_8php_source.html#l00013">DBPDO.php:13</a></div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> <a href="_usuario_8php_source.html#l00012">Usuario.php:12</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html"><div class="ttname"><a href="class_usuario_p_d_o.html">UsuarioPDO</a></div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00013">UsuarioPDO.php:13</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_a0f4dea8bd0cf0563ac39bc0187dfc068"><div class="ttname"><a href="class_usuario_p_d_o.html#a0f4dea8bd0cf0563ac39bc0187dfc068">UsuarioPDO\altaUsuario</a></div><div class="ttdeci">static altaUsuario($codUsuario, $password, $descripcion)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00098">UsuarioPDO.php:98</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_a22b6e8430b017ddbda961845fc5243c0"><div class="ttname"><a href="class_usuario_p_d_o.html#a22b6e8430b017ddbda961845fc5243c0">UsuarioPDO\cambiarPassword</a></div><div class="ttdeci">static cambiarPassword($codUsuario, $passwordNueva)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00170">UsuarioPDO.php:170</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_a52fa586fecf82d3f4df7ff5dac39afc8"><div class="ttname"><a href="class_usuario_p_d_o.html#a52fa586fecf82d3f4df7ff5dac39afc8">UsuarioPDO\validarCodNoExiste</a></div><div class="ttdeci">static validarCodNoExiste($codUsuario)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00119">UsuarioPDO.php:119</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_a61b6180a245c2c4f17d5780989ff1c6e"><div class="ttname"><a href="class_usuario_p_d_o.html#a61b6180a245c2c4f17d5780989ff1c6e">UsuarioPDO\modificarUsuario</a></div><div class="ttdeci">static modificarUsuario($codUsuario, $descUsuario, $imagenPerfil)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00143">UsuarioPDO.php:143</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_a73b3a77c92f0c2b53d5dacf4eb63486a"><div class="ttname"><a href="class_usuario_p_d_o.html#a73b3a77c92f0c2b53d5dacf4eb63486a">UsuarioPDO\buscarUsuarioPorCod</a></div><div class="ttdeci">static buscarUsuarioPorCod($codUsuario)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00072">UsuarioPDO.php:72</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_ac08be54eb31f194fb1bdd1457a2c008e"><div class="ttname"><a href="class_usuario_p_d_o.html#ac08be54eb31f194fb1bdd1457a2c008e">UsuarioPDO\borrarUsuario</a></div><div class="ttdeci">static borrarUsuario($codUsuario)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00190">UsuarioPDO.php:190</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_ac8124814105beb061ff75b5acf763b63"><div class="ttname"><a href="class_usuario_p_d_o.html#ac8124814105beb061ff75b5acf763b63">UsuarioPDO\registrarUltimaConexion</a></div><div class="ttdeci">static registrarUltimaConexion($codUsuario)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00049">UsuarioPDO.php:49</a></div></div>
+<div class="ttc" id="aclass_usuario_p_d_o_html_ae85b032587e9e5fa8844d0431f32578e"><div class="ttname"><a href="class_usuario_p_d_o.html#ae85b032587e9e5fa8844d0431f32578e">UsuarioPDO\validarUsuario</a></div><div class="ttdeci">static validarUsuario($codUsuario, $password)</div><div class="ttdef"><b>Definition:</b> <a href="_usuario_p_d_o_8php_source.html#l00025">UsuarioPDO.php:25</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_a6beb9ce8e944b00e23bd452f2c87af7a"><div class="ttname"><a href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a></div><div class="ttdeci">$resultadoConsulta</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00014">mostrartablas.php:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

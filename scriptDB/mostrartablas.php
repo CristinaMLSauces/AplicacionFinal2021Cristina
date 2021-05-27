@@ -56,8 +56,8 @@
             
             }
             catch (PDOException $excepcion) {
-                $error = $e->getCode();                                         //guardamos en la variable error el error que salta
-                $mensaje = $e->getMessage();                                    //guardamos en la variable mensaje el mensaje del error que salta
+                $error = $excepcion->getCode();                                         //guardamos en la variable error el error que salta
+                $mensaje = $excepcion->getMessage();                                    //guardamos en la variable mensaje el mensaje del error que salta
                 
                 echo "ERROR $error";                                            //Mostramos el error
                 echo "<p style='background-color: coral>Se ha producido un error! .$mensaje</p>"; //Mostramos el mensaje de error

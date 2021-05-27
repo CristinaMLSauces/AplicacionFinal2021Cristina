@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/controlador/cConsultarModificarDepartamento.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_48833427ab3b7dfa85176f15439ceb97.html">controlador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cConsultarModificarDepartamento.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_consultar_modificar_departamento_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&quot;cancelar&quot;</span>])){</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaAnterior&#39;</span>];                   <span class="comment">//Si se pulsa cancelar guardo en pagina en curso la pagina anterior</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    exit;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">    8</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <a class="code" href="class_departamento_p_d_o.html#aaac21d70b7a66ce06902178c3b6e603f">DepartamentoPDO::buscaDepartamentoPorCod</a>(<a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>]); <span class="comment">//Llamo a la funcion de buscar departamento por cod y me devuelve un objeto departamento</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a81e5c951353f4f9d54c792a2c5e4909d">   10</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a81e5c951353f4f9d54c792a2c5e4909d">$codDep</a> = <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>];</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#aacb1fb4049eae79e1b86890c088a3be5">   11</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#aacb1fb4049eae79e1b86890c088a3be5">$descDep</a> = <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>-&gt;descDepartamento;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">   12</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">$volumen</a> = <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>-&gt;volumenDeNegocio;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a30b059578046ad4a96cb10eaa03bd102">   13</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a30b059578046ad4a96cb10eaa03bd102">$fechaCreacion</a> = <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>-&gt;fechaCreacionDepartamento;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">   16</a></span>&#160;define(<span class="stringliteral">&quot;OBLIGATORIO&quot;</span>, 1);</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">   17</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">   18</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a> = [</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="stringliteral">&#39;DescDepartamento&#39;</span> =&gt; <span class="keyword">null</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&#39;VolumenNegocio&#39;</span> =&gt; null</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordflow">if</span> (isset($_REQUEST[<span class="stringliteral">&quot;aceptar&quot;</span>])) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a>[<span class="stringliteral">&#39;DescDepartamento&#39;</span>] = <a class="code" href="classvalidacion_formularios.html#a9cec4205d93c48bb5ef51bb5a7ccad22">validacionFormularios::comprobarAlfaNumerico</a>($_REQUEST[<span class="stringliteral">&#39;DescDepartamento&#39;</span>], 35, 3, <a class="code" href="c_consultar_modificar_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">OBLIGATORIO</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a>[<span class="stringliteral">&#39;VolumenNegocio&#39;</span>] = <a class="code" href="classvalidacion_formularios.html#aa6ea0126c71ac63a4f330bc78e808975">validacionFormularios::comprobarEntero</a>($_REQUEST[<span class="stringliteral">&#39;VolumenNegocio&#39;</span>], PHP_INT_MAX, 1, <a class="code" href="c_consultar_modificar_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">OBLIGATORIO</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">foreach</span> (<a class="code" href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a> as $campo =&gt; <a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a>) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a> != <span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            $_REQUEST[$campo] = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a8118215ad50c75e2f49319a832c831fb">   35</a></span>&#160;} <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordflow">if</span> (<a class="code" href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_departamento_p_d_o.html#abfc4238dd98b7b0dac56401beb06c2d0">DepartamentoPDO::modificaDepartamento</a>($_REQUEST[<span class="stringliteral">&#39;VolumenNegocio&#39;</span>], $_REQUEST[<span class="stringliteral">&#39;DescDepartamento&#39;</span>], <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;codDepartamento&#39;</span>]);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;mtoDepartamentos&#39;</span>];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    exit;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="c_consultar_modificar_departamento_8php.html#a95cb3801ace7e4998a330675fc16ad85">   46</a></span>&#160;<a class="code" href="c_consultar_modificar_departamento_8php.html#a95cb3801ace7e4998a330675fc16ad85">$vistaEnCurso</a> = <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;modificarDepartamento&#39;</span>]; <span class="comment">// guardamos en la variable vistaEnCurso la vista que queremos implementar</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;require_once <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;layout&#39;</span>];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;?&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a1323b996c118890d331cabfa3375a10b"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a></div><div class="ttdeci">if(isset($_REQUEST[&quot;cancelar&quot;])) $oDepartamento</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00008">cConsultarModificarDepartamento.php:8</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a30b059578046ad4a96cb10eaa03bd102"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a30b059578046ad4a96cb10eaa03bd102">$fechaCreacion</a></div><div class="ttdeci">$fechaCreacion</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00013">cConsultarModificarDepartamento.php:13</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a3ee9b7e725aed4543dce113d0a6b4ead"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">$volumen</a></div><div class="ttdeci">$volumen</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00012">cConsultarModificarDepartamento.php:12</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a61e6cf9c8a86417a9b196d26300d506a"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a61e6cf9c8a86417a9b196d26300d506a">OBLIGATORIO</a></div><div class="ttdeci">const OBLIGATORIO</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00016">cConsultarModificarDepartamento.php:16</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a6f63c5a0557f7da205d6d99f947d58b8"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a6f63c5a0557f7da205d6d99f947d58b8">$aErrores</a></div><div class="ttdeci">$aErrores</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00018">cConsultarModificarDepartamento.php:18</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a81e5c951353f4f9d54c792a2c5e4909d"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a81e5c951353f4f9d54c792a2c5e4909d">$codDep</a></div><div class="ttdeci">$codDep</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00010">cConsultarModificarDepartamento.php:10</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a95cb3801ace7e4998a330675fc16ad85"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a95cb3801ace7e4998a330675fc16ad85">$vistaEnCurso</a></div><div class="ttdeci">if($entradaOK) $vistaEnCurso</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00046">cConsultarModificarDepartamento.php:46</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_aacb1fb4049eae79e1b86890c088a3be5"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#aacb1fb4049eae79e1b86890c088a3be5">$descDep</a></div><div class="ttdeci">$descDep</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00011">cConsultarModificarDepartamento.php:11</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_ab0dcac058225ef7a9871cdb707b90364"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#ab0dcac058225ef7a9871cdb707b90364">$entradaOK</a></div><div class="ttdeci">$entradaOK</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00017">cConsultarModificarDepartamento.php:17</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_af61b7b4f8efff1edebac871759428e34"><div class="ttname"><a href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a></div><div class="ttdeci">$_SESSION['paginaAnterior']</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00002">cInicio.php:2</a></div></div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a764bf3b6e4d4993681be5069e95f22ab"><div class="ttname"><a href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a></div><div class="ttdeci">if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) if(isset($_REQUEST['volver'])) $error</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00013">cREST.php:13</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_aaac21d70b7a66ce06902178c3b6e603f"><div class="ttname"><a href="class_departamento_p_d_o.html#aaac21d70b7a66ce06902178c3b6e603f">DepartamentoPDO\buscaDepartamentoPorCod</a></div><div class="ttdeci">static buscaDepartamentoPorCod($codigo)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00043">DepartamentoPDO.php:43</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_abfc4238dd98b7b0dac56401beb06c2d0"><div class="ttname"><a href="class_departamento_p_d_o.html#abfc4238dd98b7b0dac56401beb06c2d0">DepartamentoPDO\modificaDepartamento</a></div><div class="ttdeci">static modificaDepartamento($volumen, $descripcion, $codigo)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00070">DepartamentoPDO.php:70</a></div></div>
+<div class="ttc" id="aclassvalidacion_formularios_html_a9cec4205d93c48bb5ef51bb5a7ccad22"><div class="ttname"><a href="classvalidacion_formularios.html#a9cec4205d93c48bb5ef51bb5a7ccad22">validacionFormularios\comprobarAlfaNumerico</a></div><div class="ttdeci">static comprobarAlfaNumerico($cadena, $maxTamanio=1000, $minTamanio=1, $obligatorio=0)</div><div class="ttdef"><b>Definition:</b> <a href="210322_validacion_formularios_8php_source.html#l00092">210322ValidacionFormularios.php:92</a></div></div>
+<div class="ttc" id="aclassvalidacion_formularios_html_aa6ea0126c71ac63a4f330bc78e808975"><div class="ttname"><a href="classvalidacion_formularios.html#aa6ea0126c71ac63a4f330bc78e808975">validacionFormularios\comprobarEntero</a></div><div class="ttdeci">static comprobarEntero($integer, $max=PHP_INT_MAX, $min=-PHP_INT_MAX, $obligatorio=0)</div><div class="ttdef"><b>Definition:</b> <a href="210322_validacion_formularios_8php_source.html#l00122">210322ValidacionFormularios.php:122</a></div></div>
+<div class="ttc" id="aconfig_8php_html_a7b377110ccfc87475a8befad31a66194"><div class="ttname"><a href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a></div><div class="ttdeci">$vistas</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00027">config.php:27</a></div></div>
+<div class="ttc" id="aconfig_8php_html_ae63f7bfa21e2f7aceafc668544a17d00"><div class="ttname"><a href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a></div><div class="ttdeci">$controladores</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00009">config.php:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

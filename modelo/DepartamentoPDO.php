@@ -138,4 +138,120 @@ class DepartamentoPDO{
         return $departamentoNoExiste;
     }
  
+    /**
+     * Metodo bajaLogicaDepartamento()
+     *
+     * Metodo que da de baja logica un departamento cuyo codigo es pasado por parametro
+     * 
+     * @param  string $codDepartamento codigo del departamento que queremos dar de baja logica
+     * @return boolean true si se ha dado de baja logica correctamente, false ne caso contrario
+     */
+    public static function bajaLogicaDepartamento($codDepartamento){
+        $bajaLogica = false; // Inicializamos la variable bajaLogica a false
+        
+        $dateTimeBaja = new DateTime();
+       
+        $sentenciaSQL = "Update T02_Departamento set T02_FechaBajaDepartamento=? WHERE T02_CodDepartamento=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$dateTimeBaja->getTimestamp(), $codDepartamento]); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
+
+        if ($resultadoConsulta) { // Si se ha realizado la consulta correctamente
+            $bajaLogica = true; // Cambiamos el valor de la variable bajaLogica a true
+        }
+
+        return $bajaLogica;
+    }
+    /**
+     * Metodo rehabilitacionDepartamento()
+     *
+     * Metodo que rehabilita un departamento poniendo su fehca de baja a null
+     * 
+     * @param  string $codDepartamento codigo del departamento que queremos rehabilitar
+     * @return boolean true si se ha rehabilitado el departamento, false en caso contrario 
+     */
+    public static function rehabilitacionDepartamento($codDepartamento)
+    {
+        $rehabilitacion = false; // Inicializamos la variable rehabilitacion a false
+
+        $sentenciaSQL = "Update T02_Departamento set T02_FechaBajaDepartamento=null WHERE T02_CodDepartamento=?";
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sentenciaSQL, [$codDepartamento]); // Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta
+
+        if ($resultadoConsulta) { // Si se ha realizado la consulta correctamente
+            $rehabilitacion = true; // Cambiamos el valor de la variable rehabilitacion a true
+        }
+        return $rehabilitacion;
+    }
+    
+    public static function buscaDepartamentosPorDescYEstado($descDepartamento, $estado){
+        $oDepartamento = null; 
+        $filtroConsulta = null;
+        $aDepartamentos = [];
+        
+        //Condiciones que se añadirán al query en función del estado del departamento
+        if ($estado == "baja") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is not null";
+        } else if ($estado == "alta") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is null";
+        }
+        
+        $consulta = "Select * FROM T02_Departamento where T02_DescDepartamento LIKE '%' ? '%' " . (($filtroConsulta != null) ? $filtroConsulta : NULL);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$descDepartamento]);
+
+       if ($resultado->rowCount() > 0) {
+            for($i=0,$departamento = $resultado->fetchObject();$i<$resultado->rowCount();$i++,$departamento = $resultado->fetchObject()){
+                $oDepartamento = new Departamento($departamento->T02_CodDepartamento, $departamento->T02_DescDepartamento, $departamento->T02_FechaCreacionDepartamento, $departamento->T02_VolumenNegocio, $departamento->T02_FechaBajaDepartamento);
+                $aDepartamentos[$i] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente 
+            }
+        }
+        
+        return $aDepartamentos;
+    }
+    
+    /**
+     * Método buscaDepartamentosPorDescEstadoYPagina()
+     *
+     * Método que obtiene todos los datos departamentos de la base de datos basándose en su descripción y estado(alta o baja)
+     * 
+     * @param  string $descDepartamento descripción del departamento a buscar
+     * @param  string $estado estado del departamento a buscar(alta o baja)
+     * @param  string $numPaginaActual página de resultados en la que nos encontramos
+     * @param  string $numMaxDepartamentos número de departamentos por página que vamos a mostrar
+     * @return null|\array devuelve un array de objetos de tipo Departamento con los datos guardados en la base de datos y null si no se ha encontrado ninguno
+     */
+    public static function buscaDepartamentosPorDescEstadoYPagina($descDepartamento, $estado,  $numPaginaActual, $numMaxDepartamentos) {
+        $aDepartamentos = [];
+        $filtroConsulta = null;
+        $numPaginasTotal = 1;
+
+        if ($estado == "baja") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is not null";
+        } else if ($estado == "alta") {
+            $filtroConsulta = "and T02_FechaBajaDepartamento is null";
+        }
+        
+        $consulta = "SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%' ? '%' " . $filtroConsulta . " LIMIT " . (($numPaginaActual - 1) * $numMaxDepartamentos) . ',' . $numMaxDepartamentos;
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$descDepartamento]);
+
+        if ($resultado->rowCount() > 0) {
+            for($i=0,$departamento = $resultado->fetchObject();$i<$resultado->rowCount();$i++,$departamento = $resultado->fetchObject()){
+                $oDepartamento = new Departamento($departamento->T02_CodDepartamento, $departamento->T02_DescDepartamento, $departamento->T02_FechaCreacionDepartamento, $departamento->T02_VolumenNegocio, $departamento->T02_FechaBajaDepartamento);
+                $aDepartamentos[$i] = $oDepartamento; // añadimos el objeto departamento en la posicion del array correspondiente 
+            }
+        }
+        
+        $resultadoConsultaNumDepartamentos = self::buscaDepartamentosPorDescYEstado($descDepartamento,$estado);
+        $numDepartamentos = count($resultadoConsultaNumDepartamentos);
+
+        if ($numDepartamentos % $numMaxDepartamentos == 0) {
+            $numPaginasTotal = ($numDepartamentos / $numMaxDepartamentos); 
+        } else { //Si no lo es se redondea a la baja y se le suma uno
+            $numPaginasTotal = (floor($numDepartamentos / $numMaxDepartamentos) + 1);
+        }
+
+        settype($numPaginasTotal, "integer");
+        
+        return [$aDepartamentos, $numPaginasTotal];
+
+    }
+    
+  
 }

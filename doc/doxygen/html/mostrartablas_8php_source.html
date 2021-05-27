@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/scriptDB/mostrartablas.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3ff29fd0c602300f3528b2bd89595c07.html">scriptDB</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mostrartablas.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mostrartablas_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;     </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;       require_once <span class="stringliteral">&quot;../config/configDBPDO.php&quot;</span>; <span class="comment">//Cogemos el archivo con los parametros de conexion segun estemos en casa en desarollo o explotacion caragara un archivo diferente</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#abe4cc9788f52e49485473dc699537388">    5</a></span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                <span class="comment">//Establecer una conexión con la base de datos </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                $miDB = <span class="keyword">new</span> PDO(<a class="code" href="config_d_b_p_d_o_8php.html#a6768772c01f2d4f111fabd25012e8259">HOST</a>,<a class="code" href="config_d_b_p_d_o_8php.html#a1bbff5b87a1e3a8d402d50c9fdb4e6e9">USER</a>,<a class="code" href="config_d_b_p_d_o_8php.html#a627633cf1f3c4ee60fcc7d025a4039ed">PASSWORD</a>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <span class="comment">//La clase PDO permite definir la fórmula que usará cuando se produzca un error, utilizando el atributo PDO::ATTR_ERRMODE</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <span class="comment">//Le ponemos de parametro - &gt; PDO::ERRMODE_EXCEPTION. Cuando se produce un error lanza una excepción utilizando el manejador propio PDOException.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                $miDB-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#a047170d6020a882807665812a27e2525">   13</a></span>&#160;               <a class="code" href="mostrartablas_8php.html#a047170d6020a882807665812a27e2525">$sql</a> = <span class="stringliteral">&quot;SHOW TABLES FROM db771560824&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">   14</a></span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = $miDB-&gt;prepare(<a class="code" href="mostrartablas_8php.html#a047170d6020a882807665812a27e2525">$sql</a>);     <span class="comment">//Con consulta preparada</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;execute();                 <span class="comment">//Ejecutamos la consulta</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                echo <span class="stringliteral">&quot;Número de tablas: &quot;</span> .$resultadoConsulta-&gt;rowCount();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#afe172836ca3d0c604d5bf0378508f614">   21</a></span>&#160;               <a class="code" href="mostrartablas_8php.html#afe172836ca3d0c604d5bf0378508f614">$sql1</a> = <span class="stringliteral">&quot;SELECT * FROM T02_Departamento&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = $miDB-&gt;prepare(<a class="code" href="mostrartablas_8php.html#afe172836ca3d0c604d5bf0378508f614">$sql1</a>);     <span class="comment">//Con consulta preparada</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;execute();                 <span class="comment">//Ejecutamos la consulta</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            echo <span class="stringliteral">&quot;&lt;br&gt;Número de registros en la tabla T02_Departamento: &quot;</span> .$resultadoConsulta-&gt;rowCount();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">   27</a></span>&#160;            <a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a> = <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;fetchObject(); </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a>) {                                            <span class="comment">//El fetchObject obtiene la siguiente fila y la devuelve como objeto.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                echo <span class="stringliteral">&quot;&lt;p&gt;$oDepartamento-&gt;T02_CodDepartamento     |  &quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                echo <span class="stringliteral">&quot;&lt;$oDepartamento-&gt;T02_DescDepartamento     |  &quot;</span>;              <span class="comment">//Mostramos el reguistro de la fila de CodDepartamento</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T02_FechaCreacionDepartamento      |  &quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T02_VolumenNegocio      |  &quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T02_FechaBajaDepartamento    &lt;/p&gt;&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a> = <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;fetchObject();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#ab46c7798da87c99916e7d647a525f1b0">   37</a></span>&#160;            <a class="code" href="mostrartablas_8php.html#ab46c7798da87c99916e7d647a525f1b0">$sql2</a> = <span class="stringliteral">&quot;SELECT * FROM T01_Usuario&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = $miDB-&gt;prepare(<a class="code" href="mostrartablas_8php.html#ab46c7798da87c99916e7d647a525f1b0">$sql2</a>);     <span class="comment">//Con consulta preparada</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;execute();                 <span class="comment">//Ejecutamos la consulta</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            echo <span class="stringliteral">&quot;&lt;br&gt;Número de registros en la tabla T01_Usuario: &quot;</span> .$resultadoConsulta-&gt;rowCount();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;             </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a> = <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;fetchObject(); </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a>) {                                            <span class="comment">//El fetchObject obtiene la siguiente fila y la devuelve como objeto.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                echo <span class="stringliteral">&quot;&lt;p&gt;$oDepartamento-&gt;T01_CodUsuario     |  &quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                echo <span class="stringliteral">&quot;&lt;$oDepartamento-&gt;T01_Password     |  &quot;</span>;           <span class="comment">//Mostramos el reguistro de la fila de CodDepartamento</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T01_DescUsuario      |  &quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T01_NumConexiones      |  &quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T01_FechaHoraUltimaConexion    |  &quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T01_Perfil    |  &quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                echo <span class="stringliteral">&quot; $oDepartamento-&gt;T01_ImagenUsuario    &lt;/p&gt;&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a> = <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>-&gt;fetchObject();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">catch</span> (PDOException $excepcion) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a> = $excepcion-&gt;getCode();                                         <span class="comment">//guardamos en la variable error el error que salta</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                $mensaje = $excepcion-&gt;getMessage();                                    <span class="comment">//guardamos en la variable mensaje el mensaje del error que salta</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                echo <span class="stringliteral">&quot;ERROR $error&quot;</span>;                                            <span class="comment">//Mostramos el error</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                echo <span class="stringliteral">&quot;&lt;p style=&#39;background-color: coral&gt;Se ha producido un error! .$mensaje&lt;/p&gt;&quot;</span>; <span class="comment">//Mostramos el mensaje de error</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="mostrartablas_8php.html#ae737344441356cb531a9ffd80d01cac0">   64</a></span>&#160;            } <span class="keywordflow">finally</span> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                unset($miDB);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;?&gt;</div>
+<div class="ttc" id="ac_r_e_s_t_8php_html_a764bf3b6e4d4993681be5069e95f22ab"><div class="ttname"><a href="c_r_e_s_t_8php.html#a764bf3b6e4d4993681be5069e95f22ab">$error</a></div><div class="ttdeci">if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) if(isset($_REQUEST['volver'])) $error</div><div class="ttdef"><b>Definition:</b> <a href="c_r_e_s_t_8php_source.html#l00013">cREST.php:13</a></div></div>
+<div class="ttc" id="aconfig_d_b_p_d_o_8php_html_a1bbff5b87a1e3a8d402d50c9fdb4e6e9"><div class="ttname"><a href="config_d_b_p_d_o_8php.html#a1bbff5b87a1e3a8d402d50c9fdb4e6e9">USER</a></div><div class="ttdeci">const USER</div><div class="ttdef"><b>Definition:</b> <a href="config_d_b_p_d_o_8php_source.html#l00011">configDBPDO.php:11</a></div></div>
+<div class="ttc" id="aconfig_d_b_p_d_o_8php_html_a627633cf1f3c4ee60fcc7d025a4039ed"><div class="ttname"><a href="config_d_b_p_d_o_8php.html#a627633cf1f3c4ee60fcc7d025a4039ed">PASSWORD</a></div><div class="ttdeci">const PASSWORD</div><div class="ttdef"><b>Definition:</b> <a href="config_d_b_p_d_o_8php_source.html#l00012">configDBPDO.php:12</a></div></div>
+<div class="ttc" id="aconfig_d_b_p_d_o_8php_html_a6768772c01f2d4f111fabd25012e8259"><div class="ttname"><a href="config_d_b_p_d_o_8php.html#a6768772c01f2d4f111fabd25012e8259">HOST</a></div><div class="ttdeci">const HOST</div><div class="ttdef"><b>Definition:</b> <a href="config_d_b_p_d_o_8php_source.html#l00010">configDBPDO.php:10</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_a047170d6020a882807665812a27e2525"><div class="ttname"><a href="mostrartablas_8php.html#a047170d6020a882807665812a27e2525">$sql</a></div><div class="ttdeci">$sql</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00013">mostrartablas.php:13</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_a6beb9ce8e944b00e23bd452f2c87af7a"><div class="ttname"><a href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a></div><div class="ttdeci">$resultadoConsulta</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00014">mostrartablas.php:14</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_ab3c098650e2d47345b140e5e98844b0c"><div class="ttname"><a href="mostrartablas_8php.html#ab3c098650e2d47345b140e5e98844b0c">$oDepartamento</a></div><div class="ttdeci">$oDepartamento</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00027">mostrartablas.php:27</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_ab46c7798da87c99916e7d647a525f1b0"><div class="ttname"><a href="mostrartablas_8php.html#ab46c7798da87c99916e7d647a525f1b0">$sql2</a></div><div class="ttdeci">while($oDepartamento) $sql2</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00037">mostrartablas.php:37</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_afe172836ca3d0c604d5bf0378508f614"><div class="ttname"><a href="mostrartablas_8php.html#afe172836ca3d0c604d5bf0378508f614">$sql1</a></div><div class="ttdeci">$sql1</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00021">mostrartablas.php:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

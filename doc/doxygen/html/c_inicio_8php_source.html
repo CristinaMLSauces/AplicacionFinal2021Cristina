@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/controlador/cInicio.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_48833427ab3b7dfa85176f15439ceb97.html">controlador</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cInicio.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="c_inicio_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">    2</a></span>&#160;<a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;inicio&#39;</span>];</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordflow">if</span>(!isset(<a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;usuarioDAW2LoginLogoffMulticapaPOO&#39;</span>])){                <span class="comment">//Si el usuario no se ha logeado</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);                                          <span class="comment">//Recarga el index</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        exit;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;detalles&#39;</span>])){                                           <span class="comment">//Si se ha pulsado el boton de datalles</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;detalle&#39;</span>];                 <span class="comment">//Pagina en curso cargara el controlador de detalle</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        exit;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;editarPerfil&#39;</span>])){                                           <span class="comment">//Si se ha pulsado el boton de datalles</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;miCuenta&#39;</span>];                 <span class="comment">//Pagina en curso cargara el controlador de detalle</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        exit;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;salir&#39;</span>])) {                                            <span class="comment">//Si se ha pulsado el boton de Cerrar Sesion</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        session_destroy();                                                      <span class="comment">//Destruye todos los datos asociados a la sesion</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        header(<span class="stringliteral">&quot;Location: index.php&quot;</span>);                                          <span class="comment">//Redirige al login</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        exit;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;eliminarCuenta&#39;</span>])) { </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaAnterior&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;miCuenta&#39;</span>];                       <span class="comment">//Ponerlo despues de camcelar por que si no te coge la misma ruta// si se ha pulsado el boton de canelar</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;borrarcuenta&#39;</span>];             <span class="comment">// guardamos en la variable de sesion &#39;pagina&#39; la ruta del controlador del inicio</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    header(<span class="stringliteral">&#39;Location: index.php&#39;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    exit;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;MtoDepartamentos&#39;</span>])) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;descDepartamento&#39;</span>] = <span class="stringliteral">&quot;&quot;</span>;                                     </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;mtoDepartamentos&#39;</span>];                                                <span class="comment">//Destruye todos los datos asociados a la sesion</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        header(<span class="stringliteral">&quot;Location: index.php&quot;</span>);                                          <span class="comment">//Redirige al login</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        exit;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(isset($_REQUEST[<span class="stringliteral">&#39;api&#39;</span>])) {                                            <span class="comment">//Si se ha pulsado el boton de Cerrar Sesion</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;paginaEnCurso&#39;</span>] = <a class="code" href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a>[<span class="stringliteral">&#39;rest&#39;</span>];                                                <span class="comment">//Destruye todos los datos asociados a la sesion</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        header(<span class="stringliteral">&quot;Location: index.php&quot;</span>);                                          <span class="comment">//Redirige al login</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        exit;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">   46</a></span>&#160;<a class="code" href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">$oUsuarioActual</a> = <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;usuarioDAW2LoginLogoffMulticapaPOO&#39;</span>];              <span class="comment">//Cargo en la variable $oUsuarioActual el usuario que tenia en $_SESSION</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#a46739459d70422aaa3c3d151111fed4c">   48</a></span>&#160;<a class="code" href="c_inicio_8php.html#a46739459d70422aaa3c3d151111fed4c">$numConexiones</a> = <a class="code" href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">$oUsuarioActual</a>-&gt;getNumConexiones();                           <span class="comment">//Guardo en la variable el numero de conexiones sacado del usuario de la base de datos</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#ac077249f5727727e9c890fd6556f7ffe">   49</a></span>&#160;<a class="code" href="c_inicio_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a> = <a class="code" href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">$oUsuarioActual</a>-&gt;getDescUsuario();                               <span class="comment">//Guardo en la variable la decripcion del usuario sacada de la base de datos</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#a5cde57b556b8857ac44efcb164f62934">   50</a></span>&#160;<a class="code" href="c_inicio_8php.html#a5cde57b556b8857ac44efcb164f62934">$ultimaConexionAnterior</a> = <a class="code" href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a>[<span class="stringliteral">&#39;fechaHoraUltimaConexionAnterior&#39;</span>];         <span class="comment">//Guardo en la variable la fecha de conexion del usuario viejo</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">   51</a></span>&#160;<a class="code" href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a> = <a class="code" href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">$oUsuarioActual</a>-&gt;getImagenPerfil();                            <span class="comment">//Guardo en la variable la imagen de perfil sacada de la base de datos</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="c_inicio_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">   53</a></span>&#160;<a class="code" href="c_inicio_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">$vistaEnCurso</a> = <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;inicio&#39;</span>];                                             <span class="comment">//Guardamos en la variable vistaEnCurso la vista de inicio por que es lo que quiero que se visualice</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;require_once <a class="code" href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a>[<span class="stringliteral">&#39;layout&#39;</span>];                                                <span class="comment">//Incluimos el layout</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;?&gt;</div>
+<div class="ttc" id="ac_inicio_8php_html_a1da2b7cbe01afd65aa207d6089a4bf10"><div class="ttname"><a href="c_inicio_8php.html#a1da2b7cbe01afd65aa207d6089a4bf10">$oUsuarioActual</a></div><div class="ttdeci">if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) if(isset($_REQUEST['detalles'])) if(isset($_REQUEST['editarPerfil'])) if(isset($_REQUEST['salir'])) if(isset($_REQUEST['eliminarCuenta'])) if(isset($_REQUEST['MtoDepartamentos'])) if(isset($_REQUEST['api'])) $oUsuarioActual</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00046">cInicio.php:46</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_a46739459d70422aaa3c3d151111fed4c"><div class="ttname"><a href="c_inicio_8php.html#a46739459d70422aaa3c3d151111fed4c">$numConexiones</a></div><div class="ttdeci">$numConexiones</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00048">cInicio.php:48</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_a5cde57b556b8857ac44efcb164f62934"><div class="ttname"><a href="c_inicio_8php.html#a5cde57b556b8857ac44efcb164f62934">$ultimaConexionAnterior</a></div><div class="ttdeci">$ultimaConexionAnterior</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00050">cInicio.php:50</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_a7ad3735ad9b22297d4ae9db6835d53c9"><div class="ttname"><a href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a></div><div class="ttdeci">$imagenUsuario</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00051">cInicio.php:51</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_a8dbcd6af0ba4324f742a35bd369dc65e"><div class="ttname"><a href="c_inicio_8php.html#a8dbcd6af0ba4324f742a35bd369dc65e">$vistaEnCurso</a></div><div class="ttdeci">$vistaEnCurso</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00053">cInicio.php:53</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_ac077249f5727727e9c890fd6556f7ffe"><div class="ttname"><a href="c_inicio_8php.html#ac077249f5727727e9c890fd6556f7ffe">$descUsuario</a></div><div class="ttdeci">$descUsuario</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00049">cInicio.php:49</a></div></div>
+<div class="ttc" id="ac_inicio_8php_html_af61b7b4f8efff1edebac871759428e34"><div class="ttname"><a href="c_inicio_8php.html#af61b7b4f8efff1edebac871759428e34">$_SESSION</a></div><div class="ttdeci">$_SESSION['paginaAnterior']</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00002">cInicio.php:2</a></div></div>
+<div class="ttc" id="aconfig_8php_html_a7b377110ccfc87475a8befad31a66194"><div class="ttname"><a href="config_8php.html#a7b377110ccfc87475a8befad31a66194">$vistas</a></div><div class="ttdeci">$vistas</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00027">config.php:27</a></div></div>
+<div class="ttc" id="aconfig_8php_html_ae63f7bfa21e2f7aceafc668544a17d00"><div class="ttname"><a href="config_8php.html#ae63f7bfa21e2f7aceafc668544a17d00">$controladores</a></div><div class="ttdeci">$controladores</div><div class="ttdef"><b>Definition:</b> <a href="config_8php_source.html#l00009">config.php:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

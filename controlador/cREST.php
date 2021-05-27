@@ -23,13 +23,13 @@
     $imagen = null;
     $title = null;
     $nombrePlaneta = null;
+    $fechaNasa = null;
     
     if(isset($_REQUEST['personaje'])){
         $numeropordefecto = $_REQUEST['numero'];
        
         define("OBLIGATORIO", 1); 
         $entradaOK = true;
-        
         
         $error = validacionFormularios::comprobarEntero($_REQUEST['numero'],1000,1,OBLIGATORIO);            //He cambiado el numero max permitido por que el usuario enr ealidad no tiene por que saber cuntos personajes hay
         

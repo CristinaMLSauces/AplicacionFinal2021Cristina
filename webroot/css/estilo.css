@@ -388,15 +388,15 @@ b{
     font-size: 50px;
     font-family: 'Handlee', cursive;
     margin-left: 15%;
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 #borrar{
     font-family: 'Handlee', cursive;
     width: 60%;
     border-style: none;
-    margin-top: 5%;
-      margin-left: 25%;
+    margin-top: 4%;
+    margin-left: 25%;
 }
 
 #borrar form{
@@ -522,4 +522,10 @@ margin-left: 25%;
 
 .mostrardepartamento tr:nth-of-type(odd) td{
     background-color: #bbe3f0;
+}
+
+#formularioPaginacion table{
+    margin-top: 2%;
+    margin-left: 45%;
+    width: 8%;
 }

@@ -8,13 +8,13 @@
             <meta name="robots" content="index, follow"> 
            <link href="./webroot/css/estilo.css" rel="stylesheet" type="text/css">
            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         </head>
         <body>
 
             <?php require_once $vistaEnCurso ?>                                     <!--Cargamos la vista en curso que contiene la pagina que se debe ver -->
 
         </body>
-    
      <footer  class="footer">
          <table>
              <tr>
@@ -23,6 +23,7 @@
                 <td><input type="submit" class="botonesWIP" value="Tecnologías Usadas" name="Tecnologias"></td>
                 <td><a href="https://github.com/CristinaMLSauces/AplicacionFinal2021Cristina" target="_blank"> <img src="webroot/images/git.png" class="logo" /> </a></td>
                 <td><a href="doc/phpdocumentor/index.html" target="_blank"><img src="webroot/images/phpdoc.png" class="logo" /> </a></td>
+                <td><a href="doc/doxygen/html/index.html" target="_blank"><img src="webroot/images/doxygen.png" class="logo" /> </a></td>
                 <td><a href="https://daw207.ieslossauces.es/" target="_blank"><img src="webroot/images/1and1.png" class="logo" /> </a></td>
                 <td><a href="webroot/rss/rss.xml" target="_blank"><img src="webroot/images/rss.png" class="logo" /> </a></td>
              </tr>

@@ -57,15 +57,15 @@ class Departamento
      * @param  string $descDepartamento
      * @param  int $fechaCreacionDepartamento
      * @param  float $volumenDeNegocio
-     * @param  int $fechaBajaDepartamento
+     * @param  int $fechaBaja
      */
-    function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento = null)
+    function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBaja = null)
     {
         $this->codDepartamento = $codDepartamento;
         $this->descDepartamento = $descDepartamento;
         $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
         $this->volumenDeNegocio = $volumenDeNegocio;
-        $this->fechaBajaDepartamento = $fechaBajaDepartamento;
+        $this->fechaBajaDepartamento = $fechaBaja;
     }
 
     /**

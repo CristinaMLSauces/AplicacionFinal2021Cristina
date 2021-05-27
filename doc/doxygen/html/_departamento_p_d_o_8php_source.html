@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/modelo/DepartamentoPDO.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a7da07b74eec811e219ae3d113023b99.html">modelo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DepartamentoPDO.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_departamento_p_d_o_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_departamento_p_d_o.html">DepartamentoPDO</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#a58467a92f7e7de9db3c2addad15a0779">   21</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#a58467a92f7e7de9db3c2addad15a0779">buscaDepartamentoPorDesc</a>($parametros) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a> = [];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE CONCAT(&#39;%&#39;, ?, &#39;%&#39;)&quot;</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [$parametros]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> ($resultado-&gt;rowCount() &gt; 0) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">for</span>($i=0,$departamento = $resultado-&gt;fetchObject();$i&lt;$resultado-&gt;rowCount();$i++,$departamento = $resultado-&gt;fetchObject()){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <span class="keyword">new</span> <a class="code" href="class_departamento.html">Departamento</a>($departamento-&gt;T02_CodDepartamento, $departamento-&gt;T02_DescDepartamento, $departamento-&gt;T02_FechaCreacionDepartamento, $departamento-&gt;T02_VolumenNegocio, $departamento-&gt;T02_FechaBajaDepartamento);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a>[$i] = <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>; <span class="comment">// añadimos el objeto departamento en la posicion del array correspondiente </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#aaac21d70b7a66ce06902178c3b6e603f">   43</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#aaac21d70b7a66ce06902178c3b6e603f">buscaDepartamentoPorCod</a>($codigo) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//Inicializo la variable que tendrá el objeto de clase usuario en el caso de que se encuentre en la base de datos</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <span class="keyword">null</span>; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;SELECT * FROM T02_Departamento WHERE T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [$codigo]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">//Si la consulta me devuelve algún resultado lo guardo en una variable para instanciar un nuevo objeto Departamento con esos datos</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> ($resultado-&gt;rowCount() &gt; 0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            $oDepartamentoConsulta = $resultado-&gt;fetchObject();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <span class="keyword">new</span> <a class="code" href="class_departamento.html">Departamento</a>($oDepartamentoConsulta-&gt;T02_CodDepartamento, $oDepartamentoConsulta-&gt;T02_DescDepartamento, $oDepartamentoConsulta-&gt;T02_FechaCreacionDepartamento, $oDepartamentoConsulta-&gt;T02_VolumenNegocio, $oDepartamentoConsulta-&gt;T02_FechaBajaDepartamento);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//Devuelvo el objeto</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#abfc4238dd98b7b0dac56401beb06c2d0">   70</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#abfc4238dd98b7b0dac56401beb06c2d0">modificaDepartamento</a>(<a class="code" href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">$volumen</a>, $descripcion, $codigo) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">//Variable booleana inicializada a false</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        $departamentoModificado = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//Modifica el departamento en la base de datos ejecutando un query</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;UPDATE T02_Departamento SET T02_DescDepartamento=?, T02_VolumenNegocio=? WHERE T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [$descripcion, <a class="code" href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">$volumen</a>, $codigo]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">//Si la consulta me devuelve algún resultado cambiamos el valor de $departamentoModificado a true</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            $departamentoModificado = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//Devuelvo la variable</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> $departamentoModificado;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#a8169902b45ca6353d8299a993e82adcc">   94</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#a8169902b45ca6353d8299a993e82adcc">bajaFisicaDepartamento</a>($codDepartamento) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        $borrar = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;DELETE FROM T02_Departamento WHERE T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        $resultadoConculta = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [$codDepartamento]);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> ($resultadoConculta) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            $borrar = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> $borrar;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#a198630e30fa0036abae2d1b15aa2865d">  115</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#a198630e30fa0036abae2d1b15aa2865d">altaDepartamentos</a>($codDepartamento, <a class="code" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a>, $volDepartamento) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        $altaDepartamento = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;Insert into T02_Departamento (T02_CodDepartamento, T02_DescDepartamento, T02_VolumenNegocio, T02_FechaCreacionDepartamento) values (?,?,?,?)&quot;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [$codDepartamento, <a class="code" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a>, $volDepartamento, time()]);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            $altaDepartamento = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> $alta;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#adfb5ad7954e765df4d079715481478cc">  128</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#adfb5ad7954e765df4d079715481478cc">validarCodNoExiste</a>($codDepartamento) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        $departamentoNoExiste = <span class="keyword">true</span>; <span class="comment">// inicializo la variable booleana a true</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// comprueba que el usuario introducido existen en la base de datos</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;Select * from T02_Departamento where T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [$codDepartamento]); <span class="comment">// guardo en la variabnle resultado el resultado que me devuelve la funcion que ejecuta la consulta con los paramtros pasados por parmetro</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> ($resultado-&gt;rowCount() &gt; 0) { <span class="comment">// si la consulta me devuleve algun resultado</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            $departamentoNoExiste = <span class="keyword">false</span>; <span class="comment">// inicializo la variable booleana a false</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> $departamentoNoExiste;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#ab7d403045b3eb50ed146356bb4420a29">  149</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#ab7d403045b3eb50ed146356bb4420a29">bajaLogicaDepartamento</a>($codDepartamento){</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        $bajaLogica = <span class="keyword">false</span>; <span class="comment">// Inicializamos la variable bajaLogica a false</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        $dateTimeBaja = <span class="keyword">new</span> DateTime();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;       </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Update T02_Departamento set T02_FechaBajaDepartamento=? WHERE T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [$dateTimeBaja-&gt;getTimestamp(), $codDepartamento]); <span class="comment">// Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>) { <span class="comment">// Si se ha realizado la consulta correctamente</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            $bajaLogica = <span class="keyword">true</span>; <span class="comment">// Cambiamos el valor de la variable bajaLogica a true</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> $bajaLogica;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#a4746560a0eb7b86822e6d25b378b8bc4">  171</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#a4746560a0eb7b86822e6d25b378b8bc4">rehabilitacionDepartamento</a>($codDepartamento)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        $rehabilitacion = <span class="keyword">false</span>; <span class="comment">// Inicializamos la variable rehabilitacion a false</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        $sentenciaSQL = <span class="stringliteral">&quot;Update T02_Departamento set T02_FechaBajaDepartamento=null WHERE T02_CodDepartamento=?&quot;</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a> = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>($sentenciaSQL, [$codDepartamento]); <span class="comment">// Ejecutamos la consulta y almacenamos el resultado en la variable resultadoConsulta</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a>) { <span class="comment">// Si se ha realizado la consulta correctamente</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            $rehabilitacion = <span class="keyword">true</span>; <span class="comment">// Cambiamos el valor de la variable rehabilitacion a true</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> $rehabilitacion;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="class_departamento_p_d_o.html#ae85007b3462842b422efbfd69e074ad5">  185</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <a class="code" href="class_departamento_p_d_o.html#ae85007b3462842b422efbfd69e074ad5">buscaDepartamentosPorDescYEstado</a>(<a class="code" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a>, $estado){</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <span class="keyword">null</span>; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        $filtroConsulta = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">//Condiciones que se añadirán al query en función del estado del departamento</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> ($estado == <span class="stringliteral">&quot;baja&quot;</span>) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            $filtroConsulta = <span class="stringliteral">&quot;and T02_FechaBajaDepartamento is not null&quot;</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ($estado == <span class="stringliteral">&quot;alta&quot;</span>) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            $filtroConsulta = <span class="stringliteral">&quot;and T02_FechaBajaDepartamento is null&quot;</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a> = <span class="stringliteral">&quot;Select * FROM T02_Departamento where T02_DescDepartamento LIKE &#39;%&#39; ? &#39;%&#39; &quot;</span> . (($filtroConsulta != <span class="keyword">null</span>) ? $filtroConsulta : NULL);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        $resultado = <a class="code" href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO::ejecutarConsulta</a>(<a class="code" href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a>, [<a class="code" href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a>]);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;       <span class="keywordflow">if</span> ($resultado-&gt;rowCount() &gt; 0) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordflow">for</span>($i=0,$departamento = $resultado-&gt;fetchObject();$i&lt;$resultado-&gt;rowCount();$i++,$departamento = $resultado-&gt;fetchObject()){</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a> = <span class="keyword">new</span> <a class="code" href="class_departamento.html">Departamento</a>($departamento-&gt;T02_CodDepartamento, $departamento-&gt;T02_DescDepartamento, $departamento-&gt;T02_FechaCreacionDepartamento, $departamento-&gt;T02_VolumenNegocio, $departamento-&gt;T02_FechaBajaDepartamento);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a>[$i] = <a class="code" href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a>; <span class="comment">// añadimos el objeto departamento en la posicion del array correspondiente </span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="ttc" id="a_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php_html_a8b1625884d3b429a31ff07be097b7083"><div class="ttname"><a href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php.html#a8b1625884d3b429a31ff07be097b7083">$consulta</a></div><div class="ttdeci">$consulta</div><div class="ttdef"><b>Definition:</b> <a href="_carga_inicial_d_a_w207_d_b_p_o_o_multicapa__1_61_8php_source.html#l00013">CargaInicialDAW207DBPOOMulticapa_1&1.php:13</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a1323b996c118890d331cabfa3375a10b"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a1323b996c118890d331cabfa3375a10b">$oDepartamento</a></div><div class="ttdeci">if(isset($_REQUEST[&quot;cancelar&quot;])) $oDepartamento</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00008">cConsultarModificarDepartamento.php:8</a></div></div>
+<div class="ttc" id="ac_consultar_modificar_departamento_8php_html_a3ee9b7e725aed4543dce113d0a6b4ead"><div class="ttname"><a href="c_consultar_modificar_departamento_8php.html#a3ee9b7e725aed4543dce113d0a6b4ead">$volumen</a></div><div class="ttdeci">$volumen</div><div class="ttdef"><b>Definition:</b> <a href="c_consultar_modificar_departamento_8php_source.html#l00012">cConsultarModificarDepartamento.php:12</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a15f2f269e88419816ffb7a20a66b79b2"><div class="ttname"><a href="c_mto_departamentos_8php.html#a15f2f269e88419816ffb7a20a66b79b2">$descDepartamento</a></div><div class="ttdeci">$descDepartamento</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00065">cMtoDepartamentos.php:65</a></div></div>
+<div class="ttc" id="ac_mto_departamentos_8php_html_a9eea764df568cc3c783d599b920e52b7"><div class="ttname"><a href="c_mto_departamentos_8php.html#a9eea764df568cc3c783d599b920e52b7">$aDepartamentos</a></div><div class="ttdeci">if($entradaOK) $aDepartamentos</div><div class="ttdef"><b>Definition:</b> <a href="c_mto_departamentos_8php_source.html#l00064">cMtoDepartamentos.php:64</a></div></div>
+<div class="ttc" id="aclass_d_b_p_d_o_html_a420d83808be5b9d3ac7b155dc8393375"><div class="ttname"><a href="class_d_b_p_d_o.html#a420d83808be5b9d3ac7b155dc8393375">DBPDO\ejecutarConsulta</a></div><div class="ttdeci">static ejecutarConsulta($sentenciaSQL, $parametros=null)</div><div class="ttdef"><b>Definition:</b> <a href="_d_b_p_d_o_8php_source.html#l00013">DBPDO.php:13</a></div></div>
+<div class="ttc" id="aclass_departamento_html"><div class="ttname"><a href="class_departamento.html">Departamento</a></div><div class="ttdef"><b>Definition:</b> <a href="_departamento_8php_source.html#l00012">Departamento.php:13</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html"><div class="ttname"><a href="class_departamento_p_d_o.html">DepartamentoPDO</a></div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00012">DepartamentoPDO.php:12</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_a198630e30fa0036abae2d1b15aa2865d"><div class="ttname"><a href="class_departamento_p_d_o.html#a198630e30fa0036abae2d1b15aa2865d">DepartamentoPDO\altaDepartamentos</a></div><div class="ttdeci">static altaDepartamentos($codDepartamento, $descDepartamento, $volDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00115">DepartamentoPDO.php:115</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_a4746560a0eb7b86822e6d25b378b8bc4"><div class="ttname"><a href="class_departamento_p_d_o.html#a4746560a0eb7b86822e6d25b378b8bc4">DepartamentoPDO\rehabilitacionDepartamento</a></div><div class="ttdeci">static rehabilitacionDepartamento($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00171">DepartamentoPDO.php:171</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_a58467a92f7e7de9db3c2addad15a0779"><div class="ttname"><a href="class_departamento_p_d_o.html#a58467a92f7e7de9db3c2addad15a0779">DepartamentoPDO\buscaDepartamentoPorDesc</a></div><div class="ttdeci">static buscaDepartamentoPorDesc($parametros)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00021">DepartamentoPDO.php:21</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_a8169902b45ca6353d8299a993e82adcc"><div class="ttname"><a href="class_departamento_p_d_o.html#a8169902b45ca6353d8299a993e82adcc">DepartamentoPDO\bajaFisicaDepartamento</a></div><div class="ttdeci">static bajaFisicaDepartamento($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00094">DepartamentoPDO.php:94</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_aaac21d70b7a66ce06902178c3b6e603f"><div class="ttname"><a href="class_departamento_p_d_o.html#aaac21d70b7a66ce06902178c3b6e603f">DepartamentoPDO\buscaDepartamentoPorCod</a></div><div class="ttdeci">static buscaDepartamentoPorCod($codigo)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00043">DepartamentoPDO.php:43</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_ab7d403045b3eb50ed146356bb4420a29"><div class="ttname"><a href="class_departamento_p_d_o.html#ab7d403045b3eb50ed146356bb4420a29">DepartamentoPDO\bajaLogicaDepartamento</a></div><div class="ttdeci">static bajaLogicaDepartamento($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00149">DepartamentoPDO.php:149</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_abfc4238dd98b7b0dac56401beb06c2d0"><div class="ttname"><a href="class_departamento_p_d_o.html#abfc4238dd98b7b0dac56401beb06c2d0">DepartamentoPDO\modificaDepartamento</a></div><div class="ttdeci">static modificaDepartamento($volumen, $descripcion, $codigo)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00070">DepartamentoPDO.php:70</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_adfb5ad7954e765df4d079715481478cc"><div class="ttname"><a href="class_departamento_p_d_o.html#adfb5ad7954e765df4d079715481478cc">DepartamentoPDO\validarCodNoExiste</a></div><div class="ttdeci">static validarCodNoExiste($codDepartamento)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00128">DepartamentoPDO.php:128</a></div></div>
+<div class="ttc" id="aclass_departamento_p_d_o_html_ae85007b3462842b422efbfd69e074ad5"><div class="ttname"><a href="class_departamento_p_d_o.html#ae85007b3462842b422efbfd69e074ad5">DepartamentoPDO\buscaDepartamentosPorDescYEstado</a></div><div class="ttdeci">static buscaDepartamentosPorDescYEstado($descDepartamento, $estado)</div><div class="ttdef"><b>Definition:</b> <a href="_departamento_p_d_o_8php_source.html#l00185">DepartamentoPDO.php:185</a></div></div>
+<div class="ttc" id="amostrartablas_8php_html_a6beb9ce8e944b00e23bd452f2c87af7a"><div class="ttname"><a href="mostrartablas_8php.html#a6beb9ce8e944b00e23bd452f2c87af7a">$resultadoConsulta</a></div><div class="ttdeci">$resultadoConsulta</div><div class="ttdef"><b>Definition:</b> <a href="mostrartablas_8php_source.html#l00014">mostrartablas.php:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

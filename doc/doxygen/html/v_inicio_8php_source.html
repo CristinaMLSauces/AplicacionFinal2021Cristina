@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AplicacionCristina2021: Fichero Fuente C:/Users/petal/Documents/proyectoDAW/AplicacionFinal2021Cristina/vista/vInicio.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AplicacionCristina2021
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Despliegue de aplicacion final DWES</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c3c226eaff1699e1d26945b7d3db2bd1.html">vista</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vInicio.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="v_inicio_8php.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;header <span class="keyword">class</span>=<span class="stringliteral">&quot;hinicio&quot;</span>&gt;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;&lt;?php</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a>==<span class="keyword">null</span>){                                       <span class="comment">//Si la imagende usuario en la tabla esta vacia le digo que me ponga una por defecto</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        echo <span class="stringliteral">&#39;&lt;img class=&quot;imgperfil&quot; src = &quot;./webroot/images/user.svg&#39;</span> . base64_encode(<a class="code" href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a>) . <span class="stringliteral">&#39;&quot; width = &quot;120px&quot;/&gt;&#39;</span>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="v_inicio_8php.html#a271eccba4f1c7728e484d0dde5513973">    5</a></span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        echo <span class="stringliteral">&#39;&lt;img class=&quot;imgperfil&quot; src = &quot;data:image/png;base64,&#39;</span> . base64_encode(<a class="code" href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a>) . <span class="stringliteral">&#39;&quot; width = &quot;120px&quot;/&gt;&#39;</span>; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    }</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;?&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    &lt;h1&gt;Aplicacion Final Cristina 2021&lt;/h1&gt;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        &lt;form <span class="keyword">class</span>=<span class="stringliteral">&quot;finicio&quot;</span> name=<span class="stringliteral">&quot;formulario&quot;</span> action=<span class="stringliteral">&quot;&lt;?php echo $_SERVER[&#39;PHP_SELF&#39;];?&gt;&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> <span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">            &lt;input class=&quot;</span>botones<span class="stringliteral">&quot; type=&quot;</span>submit<span class="stringliteral">&quot; value=&quot;</span>DETALLES<span class="stringliteral">&quot; name=&quot;</span>detalles<span class="stringliteral">&quot; id=&quot;</span>detalles<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">            &lt;input class=&quot;</span>botones<span class="stringliteral">&quot; type=&quot;</span>submit<span class="stringliteral">&quot; value=&quot;</span>EDITAR PERFIL<span class="stringliteral">&quot; name=&quot;</span>editarPerfil<span class="stringliteral">&quot; id=&quot;</span>editarPerfil<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">            &lt;input class=&quot;</span>botones<span class="stringliteral">&quot; type=&quot;</span>submit<span class="stringliteral">&quot; value=&quot;</span>CERRAR SESION<span class="stringliteral">&quot; name=&quot;</span>salir<span class="stringliteral">&quot; id=&quot;</span>cerrarSesion<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">            &lt;input type=&quot;</span>submit<span class="stringliteral">&quot; value=&quot;</span>ELIMINAR CUENTA<span class="stringliteral">&quot; name=&quot;</span>eliminarCuenta<span class="stringliteral">&quot; class=&quot;</span>eliminar<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">        &lt;/form&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">&lt;/header&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">&lt;div class=&quot;</span>caja<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">        &lt;div class=&quot;</span>info<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">            &lt;br&gt;&lt;br&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">                &lt;h3&gt;&lt;?php echo &quot;</span>Hola <span class="stringliteral">&quot;.$descUsuario;?&gt;&lt;/h3&gt;                     </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">                    &lt;?php</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">                        if($numConexiones==1){                                    //Si es la primera vez que inicia sesion</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">                    ?&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">                            &lt;h3&gt;&lt;?php echo &quot;</span>Bienvenido! Es tu primera vez por aqui.<span class="stringliteral">&quot; ?&gt;&lt;/h3&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">                    &lt;?php</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">                        }else{                                                  //Si no es la prinera vez que inicias sesion</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">                    ?&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">                            &lt;h3&gt;&lt;?php echo &quot;</span>Te has conectado <span class="stringliteral">&quot;.$numConexiones.&quot;</span> veces<span class="stringliteral">&quot; ?&gt;&lt;/h3&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral">                            &lt;h3&gt;&lt;?php echo &quot;</span>Tu ultima visita ha sido&lt;br&gt; el <span class="stringliteral">&quot;.date(&#39;d/m/Y H:i:s&#39;,$ultimaConexionAnterior);?&gt; &lt;/h3&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">                    &lt;?php   </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral">                        }</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral">                    ?&gt; </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">        &lt;div &gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">                &lt;form name=&quot;</span>formulario1<span class="stringliteral">&quot; action=&quot;</span>&lt;?php echo $_SERVER[<span class="stringliteral">&#39;PHP_SELF&#39;</span>];?&gt;<span class="stringliteral">&quot; method=&quot;</span>post<span class="stringliteral">&quot; &quot;</span>&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    &lt;fieldset&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    &lt;legend&gt;MTO. Departamentos&lt;/legend&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    &lt;input <span class="keyword">class</span>=<span class="stringliteral">&quot;departamento&quot;</span> type=<span class="stringliteral">&quot;submit&quot;</span> value=<span class="stringliteral">&quot;DEPARTAMENTOS&quot;</span> name=<span class="stringliteral">&quot;MtoDepartamentos&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;detalles&quot;</span>&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    &lt;img <span class="keyword">class</span>=<span class="stringliteral">&quot;bdd&quot;</span> src=<span class="stringliteral">&quot;webroot/images/bdd.png&quot;</span> alt=<span class="stringliteral">&quot;&quot;</span>/&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    &lt;/fieldset&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                &lt;/form&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        &lt;/div&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &lt;div&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                &lt;form name=<span class="stringliteral">&quot;formulario1&quot;</span> action=<span class="stringliteral">&quot;&lt;?php echo $_SERVER[&#39;PHP_SELF&#39;];?&gt;&quot;</span> method=<span class="stringliteral">&quot;post&quot;</span> <span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">                    &lt;fieldset&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">                    &lt;legend&gt;REST&lt;/legend&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">                    &lt;input class=&quot;</span>apis<span class="stringliteral">&quot; type=&quot;</span>submit<span class="stringliteral">&quot; value=&quot;</span>APIs <a class="code" href="class_r_e_s_t.html">REST</a><span class="stringliteral">&quot; name=&quot;</span>api<span class="stringliteral">&quot; id=&quot;</span>detalles<span class="stringliteral">&quot;&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">                    &lt;img class=&quot;</span>bdd<span class="stringliteral">&quot; src=&quot;</span>webroot/images/api.png<span class="stringliteral">&quot; alt=&quot;</span><span class="stringliteral">&quot;/&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">                    &lt;/fieldset&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">                &lt;/form&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">&lt;/div&gt;</span></div>
+<div class="ttc" id="ac_inicio_8php_html_a7ad3735ad9b22297d4ae9db6835d53c9"><div class="ttname"><a href="c_inicio_8php.html#a7ad3735ad9b22297d4ae9db6835d53c9">$imagenUsuario</a></div><div class="ttdeci">$imagenUsuario</div><div class="ttdef"><b>Definition:</b> <a href="c_inicio_8php_source.html#l00051">cInicio.php:51</a></div></div>
+<div class="ttc" id="aclass_r_e_s_t_html"><div class="ttname"><a href="class_r_e_s_t.html">REST</a></div><div class="ttdef"><b>Definition:</b> <a href="_r_e_s_t_8php_source.html#l00002">REST.php:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
