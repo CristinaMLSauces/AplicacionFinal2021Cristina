@@ -181,7 +181,6 @@ class DepartamentoPDO{
         return $rehabilitacion;
     }
     
-    
     public static function buscaDepartamentosPorDescYEstado($descDepartamento, $estado){
         $oDepartamento = null; 
         $filtroConsulta = null;
